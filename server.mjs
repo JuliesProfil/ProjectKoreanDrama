@@ -4,6 +4,11 @@ import SERIES_API from './routes/seriesRoute.mjs';
 
 import SuperLogger from './modules/SuperLogger.mjs';
 
+import printDeveloperStartupInportantInformationMSG from "./modules/developerHelpers.mjs";
+
+printDeveloperStartupInportantInformationMSG();
+
+
 
 // Creating an instance of the server
 const server = express();

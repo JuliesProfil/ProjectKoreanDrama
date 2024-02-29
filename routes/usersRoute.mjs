@@ -67,7 +67,7 @@ USER_API.get('/:id', (req, res, next) => {
 
 
 //Create a new user---------------------------------------------------
-USER_API.post('/', (req, res, next) => {
+USER_API.post('/', async (req, res, next) => { //async from teacher
 
     // This is using javascript object destructuring.
     // Recomend reading up https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#syntax
@@ -76,7 +76,6 @@ USER_API.post('/', (req, res, next) => {
     const { name, email, password } = req.body;
 
     if (name != "" && email != "" && password != "") {
-
         //Create a new user
         const user = new User();
         user.name = name;
@@ -90,6 +89,10 @@ USER_API.post('/', (req, res, next) => {
         let exists = findUserByEmail(email);
 
         if (!exists) {
+            //TODO: What happens if this fails? //from teacher
+            //user = await user.save(); //from teacher
+            //res.status(HTTPCodes.SuccesfullRespons.Ok).json(JSON.stringify(user)).end(); //from teacher
+
             users.push(user);
             res.status(HTTPCodes.SuccesfullRespons.Ok).end();
         } else {
@@ -129,10 +132,15 @@ USER_API.post('/login', (req, res, next) => {
 
 
 //Edit and update user by ID-------------------------------------
-USER_API.put('/:id', (req, res) => {
+USER_API.put('/:id', (req, res, next) => {
     const userId = req.params.id;
     /// TODO: Edit user
     // Code to update user based on ID
+
+    //From teacher:
+    /// TODO: Edit user
+    //const user = new User(); //TODO: The user info comes as part of the request 
+    //user.save();
 })
 
 
@@ -141,6 +149,11 @@ USER_API.delete('/:id', (req, res) => {
     const userId = req.params.id;
     /// TODO: Delete user.
      // Code to delete user based on ID
+
+    //From teacher:
+    //const user = new User(); //TODO: Actual user
+    //user.delete();
 })
+
 
 export default USER_API
