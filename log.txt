@@ -70,3 +70,7 @@ A important msg
 4:54:23 PM [32mGET[39m /series/2
 4:54:24 PM [32mGET[39m /
 4:54:38 PM [33mPOST[39m /user
+####################
+Server enviorment local
+Database connection  
+####################
