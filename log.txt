@@ -74,3 +74,32 @@ A important msg
 Server enviorment local
 Database connection  
 ####################
+10:57:10 AM [32mGET[39m /
+10:57:10 AM [32mGET[39m /favicon.ico
+10:57:14 AM [32mGET[39m /
+10:57:15 AM [32mGET[39m /login
+10:57:21 AM [32mGET[39m /
+10:57:22 AM [32mGET[39m /user
+Demo of logging tool
+A important msg
+10:57:26 AM [32mGET[39m /user
+Demo of logging tool
+A important msg
+10:57:31 AM [32mGET[39m /
+10:57:33 AM [32mGET[39m /
+10:57:35 AM [32mGET[39m /series/2
+10:57:37 AM [32mGET[39m /series/2
+10:57:40 AM [32mGET[39m /series/2
+10:57:41 AM [32mGET[39m /series/1
+10:59:45 AM [32mGET[39m /series/2
+10:59:45 AM [32mGET[39m /series/2
+10:59:46 AM [32mGET[39m /
+10:59:48 AM [32mGET[39m /login
+11:00:24 AM [32mGET[39m /
+11:00:27 AM [32mGET[39m /login
+11:00:30 AM [32mGET[39m /
+11:00:30 AM [32mGET[39m /favicon.ico
+11:00:41 AM [32mGET[39m /
+11:00:43 AM [32mGET[39m /login
+11:00:49 AM [32mGET[39m /
+11:00:51 AM [32mGET[39m /2
