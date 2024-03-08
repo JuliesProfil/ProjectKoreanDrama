@@ -5,59 +5,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My app</title>
-</head>
 
+
+    <script src="./Script/fetch.js"></script>
+    <script src="./Script/templateLoader.js"></script>
+    <script src="./Script/mainUser.js"></script>
+
+
+</head>
 
 <body>
 
-    <div>
-        Name : <input type="text" id="name"><br>
-        Email: <input type="email" id="email"><br />
-        Password: <input type="password" id="pswHash"><br />
-        <button id="createUserButton">Create User</button>
+
+
+    <div id="divHeader">
+        <button id="btnHome">Home</button>
+        <button id="btnLogin">Login</button>
+        <button id="btnLogout">Logout</button>
+        <button id="btnUserProfile">User Profile</button>
+        <button id="btnSeries">Series</button>
+
+        <button id="btnListUsers">List Users</button>
+        <button id="btnUpdateUser">Update User</button>
+        <button id="btnDeleteUser">Delete User</button>
+
     </div>
 
+
+    <div id="divContent"></div>
+
+    <div id="divFooter"></div>
+
+
+    <!-- All sites templates -->
+
+    <!-- Welcome -->
+    <template id="tlHome">
+        <div class="home-template">
+            <h2>Welcome to this Korean Drama Application!</h2>
+            <p></p>
+            <!-- Add more things!! -->
+        </div>
+    </template>
+
+
+    <!-- Login -->
+    <template id="tlLogin">
+        <div class="login-template">
+            <h2>User Login</h2>
+            <form id="loginForm" action="#" method="POST" onsubmit="return loginUser()">
+                <input type="text" id="loginEMail" placeholder="EMail" />
+                <p></p>
+                <input type="password" id="loginPassword" placeholder="Password" />
+                <p></p>
+                <input type="submit" value="Submit" />
+            </form>
+            <div class="register-link">Don't have an account?
+                <a href="#" onclick="return showCreateUser()">Create an account!</a>
+            </div>
+        </div>
+    </template>
+
+
+
+    <!-- Create user -->
+    <template id="tlCreateUser">
+        <div class="createUser-template">
+            <h2>Create User</h2>
+            <form id="createUserForm" action="#" method="POST" onsubmit="return createUser()">
+                <input type="text" id="createUsername" placeholder="Username" />
+                <p></p>
+                <input type="text" id="createEmail" placeholder="Email" />
+                <p></p>
+                <input type="password" id="createPassword" placeholder="Password" />
+                <p></p>
+                <input type="submit" value="Submit" />
+
+            </form>
+            <div class="createUser-link">Already have an account?
+                <a href="#" onclick="return showLogin()">Login</a></div>
+        </div>
+    </template>
+
+
+
+
+
+    <!-- Update user -->
+    <template id="tlUpdateUser">
+        <div class="updateUser-template">
+            <h2 id="updateUserAfter">Update User</h2>
+            <form id="updateUserForm" action="#" method="PUT" onsubmit="return updateUser()">
+                <input type="text" id="updateUserName" placeholder="New Username" />
+                <p></p>
+                <input type="text" id="updateEmail" placeholder="New Email" />
+                <p></p>
+                <input type="password" id="updatePassword" placeholder="New Password" />
+                <p></p>
+                <input type="submit" value="Update User"/>
+            </form>
+        </div>
+    </template>
+
+
+
+    
+    <!-- Delete user -->
+    <template id="tlDeleteUser">
+        <div class="deleteUser-template">
+            <h2>Delete User</h2>
+            <form id="deleteUserForm" action="#" method="DELETE" onsubmit="return deleteUser()">
+                <input type="text" id="deleteUserId" placeholder="User ID to be deleted" />
+                <p></p>
+                <input type="submit" value="Delete User" />
+            </form>
+        </div>
+    </template>
+  
+
+
+
+     <!-- List all users -->
+     <template id="tlListAllUsers">
+        <div class="listUsers-template">
+
+            <h2>List of Users</h2>
+            <h4 id="listAllUsers"></h4>
+        </div>
+    </template>
+
+
+
+
+
+
+
+
+
     <script>
+        const btnUserProfile = document.getElementById("btnUserProfile");
+        const btnHome = document.getElementById("btnHome");
+        const btnSeries = document.getElementById("btnSeries");
+        const btnLogin = document.getElementById("btnLogin");
+        const btnLogout = document.getElementById("btnLogout");
+
+        const btnListUsers = document.getElementById("btnListUsers");
+        const btnUpdateUser = document.getElementById("btnUpdateUser");
+        const btnDeleteUser = document.getElementById("btnDeleteUser");
 
 
 
+        btnLogin.addEventListener("click", showLogin);
+        btnLogout.addEventListener("click", logoutUser);
+        btnUserProfile.addEventListener("click", showUserProfile);
+        btnHome.addEventListener("click", showHomePage);
+        btnSeries.addEventListener("click", showSeries);
 
-        const createUserButton = document.getElementById("createUserButton");
-
-        createUserButton.onclick = async function (e) {
-
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const pswHash = document.getElementById("pswHash").value;
-
-            const user = { name, email, pswHash };
-
-            const respon = await postTo("/user", user);
+        btnListUsers.addEventListener("click", showListUsers);
+        btnUpdateUser.addEventListener("click", showUpdateUser);
+        btnDeleteUser.addEventListener("click", showDeleteUser);
 
 
 
-
-        }
-
-
-        async function postTo(url, data) {
-            const header = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            };
-
-
-            const respon = await fetch(url, header);
-            return respon;
-        }
-
-
-        
 
     </script>
+
 
 </body>
 

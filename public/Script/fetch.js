@@ -34,9 +34,17 @@ async function putData(url, data, okHandler, errorHandler) {
     }
 }
 
-async function getData(url, okHandler, errorHandler) {
+async function getData(url, data, okHandler, errorHandler) {
     try {
-        const response = await fetch(url);
+         const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+
+        const response = await fetch(url, requestOptions);
         const responseData = await handleResponse(response);
         okHandler(responseData);
     } catch (error) {
@@ -44,10 +52,15 @@ async function getData(url, okHandler, errorHandler) {
     }
 }
 
-async function deleteData(url, okHandler, errorHandler) {
+async function deleteData(url, data, okHandler, errorHandler) {
     try {
         const requestOptions = {
-            method: 'DELETE'
+            method: 'DELETE',
+
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
         };
 
         const response = await fetch(url, requestOptions);
@@ -65,6 +78,3 @@ async function handleResponse(response) {
     }
     return response.json();
 }
-
-
-

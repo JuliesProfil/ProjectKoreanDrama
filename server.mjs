@@ -17,6 +17,12 @@ const server = express();
 const port = (process.env.PORT || 8080);
 server.set('port', port);
 
+
+//--------
+//server.use(express.json()); //parser json data //trur ikkje eg trenger det her
+//---------
+
+
 // Enable logging for server
 const logger = new SuperLogger();
 server.use(logger.createAutoHTTPRequestLogger()); // Will logg all http method requests
@@ -28,6 +34,11 @@ server.use(express.static('public'));
 // Telling the server to use the USER_API (all urls that uses this code will have to have the /user after the base address)
 server.use("/user", USER_API);
 server.use("/series", SERIES_API);
+
+
+//server.post("/login", login) ???trenger eg det??
+
+
 
 // A get request handler example)
 server.get("/", (req, res, next) => {

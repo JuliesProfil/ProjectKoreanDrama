@@ -3,4 +3,5 @@ CREATE TABLE "Users" (
     email text,
     name text,
     password text
+    
 );
