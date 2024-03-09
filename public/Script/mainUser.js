@@ -47,7 +47,7 @@ function createUser() {
     (res) => {
       // ny er nå laget
       // Vis login template
-      console.log("hva er feil?", res.data);
+      console.log("Du er har laget en ny bruker!", res.data);
 
       // Store user info in localStorage
       localStorage.setItem('userInfo', JSON.stringify(res.data));
@@ -114,8 +114,39 @@ function logoutUser() {
 
 
 
+
 function updateUser() {
-    
+  const updateUserName = document.getElementById("updateUserName");
+  const updateEmail = document.getElementById("updateEmail");
+  const updatePassword = document.getElementById("updatePassword");
+  const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+
+  const data = {
+      userID: loginData.fduserid,
+      userName: updateUserName.value,
+      userEmail: updateEmail.value,
+      userPassword: updatePassword.value
+  };
+
+
+  console.log("User login updeate data:", loginData )
+
+  if (loginData && loginData.fduserid) {
+      // Make a PUT request to update the user data
+      putData("/user/", data,
+          (res) => {
+              console.log(res); 
+              sessionStorage.setItem('loginData', JSON.stringify(res.data));
+              console.log(res.data); 
+              alert("User updated successfully!");
+              showHomePage();
+          },
+          (error) => {
+              console.error(error);
+              alert("Failed to update user.");
+          }
+      );
+  }
 }
 
 
@@ -124,6 +155,30 @@ function updateUser() {
 
 function deleteUser() {
 
+const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+
+const data = {
+    userID: loginData.fduserid,
+};
+
+console.log("User login delete data:", loginData )
+
+
+if (loginData && loginData.fduserid) {
+    // Makes a DELETE request to delete the user data
+    deleteData("/user/delete", data,
+        (res) => {
+            console.log(res); // Log response data if needed
+            sessionStorage.removeItem('loginData', JSON.stringify(res.data)); // Remove user info from localStorage
+            alert("User deleted successfully!");
+            showHomePage(); // Redirect to home page after deletion
+        },
+        (error) => {
+            console.error(error);
+            alert("Failed to delete user.");
+        }
+    );
+}
 }
 
 
@@ -135,7 +190,7 @@ function deleteUser() {
 
 async function listUsers() {
 
-  }
+}
 
 
 
@@ -180,12 +235,42 @@ function showListUsers() {
 function showUpdateUser() {
   loadNewTemplate("tlUpdateUser", divContent, true);
 
+  // Get the current user's information from sessionStorage
+  const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+  console.log("LoginData update after:", loginData);
+
+
+  if (loginData) {
+    // Display the current user information
+    const updateUserName = document.getElementById("updateUserName");
+    const updateEmail = document.getElementById("updateEmail");
+    const updatePassword = document.getElementById("updatePassword");
+    const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+
+    updateUserName.value = loginData.fdusername;
+    updateEmail.value = loginData.fdemail;
+    updatePassword.value = loginData.fdpassword;
+  }
 }
 
 
 function showDeleteUser() {
   loadNewTemplate("tlDeleteUser", divContent, true);
 
+   // Get the current user's information from sessionStorage
+   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+   console.log("LoginData delete after:", loginData);
+ 
+ 
+   if (loginData) {
+     // Display the current user information
+     const deleteUserId = document.getElementById("deleteUserId");
+     
+     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+ 
+     deleteUserId.value = loginData.fduserid;
+     
+   }
 }
 
 

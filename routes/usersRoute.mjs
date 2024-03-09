@@ -11,7 +11,12 @@ import DBManager from "../modules/storageManager.mjs";
 
 const dbm = new DBManager();
 
+//import {getUserFromPasswordAndEmail } from "../modules/storageManager.mjs"
+//import {getUserFromEmail } from "../modules/storageManager.mjs"
 
+//----------
+//import { login } from "../modules/login.mjs"
+//------------
 
 
 const USER_API = express.Router();
@@ -84,9 +89,11 @@ USER_API.post('/', async (req, res, next) => { //async from teacher
             
 
 
-                //TODO: What happens if this fails? 
-                user = await user.save(); 
+                //TODO: What happens if this fails? //from teacher
+                user = await user.save(); //from teacher
+                //res.status(HTTPCodes.SuccesfullRespons.Ok).json(JSON.stringify(user)).end(); //from teacher
                 
+                 // Log the saved user information
                  console.log('Saved user info:', user);
 
                 //users.push(user); 
@@ -159,24 +166,74 @@ USER_API.post('/login', async (req, res, next) => {
 
 
 //Edit and update user by ID-------------------------------------
-USER_API.put('/:id', (req, res, next) => {    
-        
+USER_API.put('/', async (req, res, next) => {
+
+    const { userID, userName, userEmail, userPassword } = req.body;
+
+    try {
+        const user = new User(); 
+        user.id = userID; // Set the user ID
+
+        // Assign properties directly from request body
+        user.name = userName;
+        user.email = userEmail;
+        user.pswHash = userPassword;
+
+        // Call updateUser method to update user data in the database
+        const updatedUser = await user.save();
+
+        // Send success response with updated user data
+        res.status(HTTPCodes.SuccesfullRespons.Ok).send(updatedUser).end();
+    } catch (error) {
+        console.error(error);
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to update user").end();
+    }
+
+
+
+    
     /// TODO: Edit user
-    const user = new User(); //TODO: The user info comes as part of the request 
-    user.save();
+    // Code to update user based on ID
+
+    //From teacher:
+    /// TODO: Edit user
+    //const user = new User(); //TODO: The user info comes as part of the request 
+    //user.save();
 })
+
+
 
 
 
 
 
 //Delete user by ID-------------------------------------
-USER_API.delete('/:id',  (req, res) => {
+USER_API.delete('/delete', async (req, res) => {
 
-// TODO: Delete user.
-    
-    const user = new User(); //TODO: Actual user
-    user.delete();
+    const { userID } = req.body;
+    console.log("This is the current user:", userID);
+
+
+    try {
+        // Calls deleteUser to delete the user
+        const user = new User(); 
+        user.id = userID; 
+        const deletedUser = await user.delete(userID); //????hvordan kaller eg på delete fra user.mjs
+        //eg burde sikkert ikkje lage ny bruker?????
+
+
+        //const deletedUser = await dbm.deleteUser(userID); //Går dette an?
+
+        if (deletedUser) {
+            res.status(HTTPCodes.SuccesfullRespons.Ok).json( {message: "User deleted successfully"} , deletedUser).end();
+
+        } else {
+            res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({msg:"User not found or could not be deleted"}).end();
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg:"Failed to delete user"}).end();
+    }
 
 
 })
@@ -184,10 +241,17 @@ USER_API.delete('/:id',  (req, res) => {
 
 
 
+// TODO: Delete user.
+     // Code to delete user based on ID
+
+    //From teacher:
+    //const user = new User(); //TODO: Actual user
+    //user.delete();
+
 
 
 //Get user data -----------------------------------------------
-USER_API.get('/', (req, res, next) => {
+USER_API.get('/', async (req, res, next) => {
 
     // Tip: All the information you need to get the id part of the request can be found in the documentation 
     // https://expressjs.com/en/guide/routing.html (Route parameters)
@@ -198,8 +262,15 @@ USER_API.get('/', (req, res, next) => {
     const userId = req.params.id; // Getting user ID from request parameters
 
      // Finding a user in the users array by ID
-    //let user = findUserById(userId);
+    let user = findUserById(userId);
     
+
+
+    if (user) {
+        res.status(HTTPCodes.SuccesfullRespons.Ok).res.json(user);
+    } else {
+        res.status(HTTPCodes.ClientSideErrorRespons.NotFound).send("Users is not found and may not exist").end(); //If user doesn't exist
+    }
 })
 
 

@@ -1498,3 +1498,41 @@ Database connection  postgres://julie:1234@localhost:5432/postgres
 6:46:35 PM [32mGET[39m /Script/mainUser.js
 6:46:35 PM [32mGET[39m /Script/fetch.js
 6:46:35 PM [32mGET[39m /Script/templateLoader.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+7:30:27 PM [32mGET[39m /?
+7:30:27 PM [32mGET[39m /Script/fetch.js
+7:30:27 PM [32mGET[39m /Script/main.js
+7:30:27 PM [32mGET[39m /Script/templateLoader.js
+7:30:50 PM [32mGET[39m /?
+7:30:50 PM [32mGET[39m /Script/fetch.js
+7:30:50 PM [32mGET[39m /Script/templateLoader.js
+7:30:50 PM [32mGET[39m /Script/mainUser.js
+7:30:55 PM [33mPOST[39m /user/login
+7:31:05 PM [33mPUT[39m /user/
+7:31:19 PM [33mPOST[39m /user/login
+7:31:47 PM [33mPOST[39m /user/
+7:32:09 PM [32mGET[39m /?
+7:32:09 PM [32mGET[39m /Script/fetch.js
+7:32:09 PM [32mGET[39m /Script/templateLoader.js
+7:32:09 PM [32mGET[39m /Script/mainUser.js
+7:32:24 PM [33mPOST[39m /user/
+7:32:38 PM [33mPOST[39m /user/login
+7:32:45 PM [33mPUT[39m /user/
+7:34:55 PM [32mGET[39m /?
+7:34:55 PM [32mGET[39m /Script/fetch.js
+7:34:55 PM [32mGET[39m /Script/templateLoader.js
+7:34:55 PM [32mGET[39m /Script/mainUser.js
+7:35:14 PM [33mPOST[39m /user/login
+7:35:36 PM [33mPOST[39m /user/login
+7:35:42 PM [33mPUT[39m /user/
+7:37:03 PM [32mGET[39m /?
+7:37:03 PM [32mGET[39m /Script/fetch.js
+7:37:03 PM [32mGET[39m /Script/templateLoader.js
+7:37:03 PM [32mGET[39m /Script/mainUser.js
+7:37:16 PM [33mPOST[39m /user/login
+7:37:22 PM [33mPUT[39m /user/
+7:38:06 PM [33mPOST[39m /user/login
+7:38:12 PM [33mPUT[39m /user/

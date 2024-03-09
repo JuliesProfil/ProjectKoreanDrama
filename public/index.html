@@ -41,7 +41,7 @@
 
     <!-- Welcome -->
     <template id="tlHome">
-        <div class="home-template">
+        <div class="home-box">
             <h2>Welcome to this Korean Drama Application!</h2>
             <p></p>
             <!-- Add more things!! -->
@@ -51,7 +51,7 @@
 
     <!-- Login -->
     <template id="tlLogin">
-        <div class="login-template">
+        <div class="login-box">
             <h2>User Login</h2>
             <form id="loginForm" action="#" method="POST" onsubmit="return loginUser()">
                 <input type="text" id="loginEMail" placeholder="EMail" />
@@ -70,7 +70,7 @@
 
     <!-- Create user -->
     <template id="tlCreateUser">
-        <div class="createUser-template">
+        <div class="createUser-box">
             <h2>Create User</h2>
             <form id="createUserForm" action="#" method="POST" onsubmit="return createUser()">
                 <input type="text" id="createUsername" placeholder="Username" />
@@ -93,7 +93,7 @@
 
     <!-- Update user -->
     <template id="tlUpdateUser">
-        <div class="updateUser-template">
+        <div class="updateUser-box">
             <h2 id="updateUserAfter">Update User</h2>
             <form id="updateUserForm" action="#" method="PUT" onsubmit="return updateUser()">
                 <input type="text" id="updateUserName" placeholder="New Username" />
@@ -112,7 +112,7 @@
     
     <!-- Delete user -->
     <template id="tlDeleteUser">
-        <div class="deleteUser-template">
+        <div class="deleteUser-box">
             <h2>Delete User</h2>
             <form id="deleteUserForm" action="#" method="DELETE" onsubmit="return deleteUser()">
                 <input type="text" id="deleteUserId" placeholder="User ID to be deleted" />
@@ -127,7 +127,7 @@
 
      <!-- List all users -->
      <template id="tlListAllUsers">
-        <div class="listUsers-template">
+        <div class="listUsers-box">
 
             <h2>List of Users</h2>
             <h4 id="listAllUsers"></h4>
@@ -164,8 +164,6 @@
         btnListUsers.addEventListener("click", showListUsers);
         btnUpdateUser.addEventListener("click", showUpdateUser);
         btnDeleteUser.addEventListener("click", showDeleteUser);
-
-
 
 
     </script>
