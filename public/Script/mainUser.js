@@ -301,7 +301,7 @@ function displayUsers(res) {
 
     // Create a div element for each drama
     const userItem = document.createElement("div");
-    userItem.innerHTML = `<p> ${user.fdusername}</p>` + " - " + `<p> ${user.fdemail}</p>`;
+    userItem.innerHTML = `<p> ${user.fdusername} - ${user.fdemail}</p><br>`;
     userListDiv.appendChild(userItem);
   }
   

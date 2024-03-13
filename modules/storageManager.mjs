@@ -111,11 +111,8 @@ class DBManager {
                 // User was successfully deleted
                 return true;
                 //Hvordan får eg en massage ut her?????
-
             } else {
-                // No rows were affected, user might not exist
                 return false;
-                //blir false her!!!
             }
 
         } catch (error) {
@@ -230,19 +227,19 @@ class DBManager {
     
         try {
             await client.connect();
-            //const output = await client.query('INSERT INTO tblDramas(fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate) VALUES($1::Text, $2::Text, $3::Text, $4::Int, $5::Date) RETURNING fdDramaID;',  [drama.fdTitle, drama.fdDescription, drama.fdGenre.join(','), drama.fdEpisodeNumber, drama.fdReleaseDate] );
+           
+            const output = await client.query(
+                'INSERT INTO tblDramas(fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate, fdRating, fdReview, fdCoverImageURL) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;',
+                [drama.fdTitle, drama.fdDescription, drama.fdGenre, drama.fdEpisodeNumber, drama.fdReleaseDate, drama.fdRating, drama.fdReview, drama.fdCoverImageURL]
+            );
             
-            const output = await client.query('INSERT INTO tblDramas(fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate) VALUES($1::Text, $2::Text, $3::Text, $4::Int, $5::Date) RETURNING *;', 
-            [drama.fdTitle, drama.fdDescription, drama.fdGenre.join(','), drama.fdEpisodeNumber, drama.fdReleaseDate]
-        );
     
             if (output.rows.length == 1) {
                 // We stored the drama in the DB.
                 drama.fdDramaID  = output.rows[0].fdDramaID;
-                //drama.id???
                 return drama;
             } else {
-                throw new Error('Failed to insert drama into database');
+                return null;
             }
         } catch (error) {
             console.error(error);
