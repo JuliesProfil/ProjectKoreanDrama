@@ -157,6 +157,7 @@ class DBManager {
     /// Gets User and Email-----------
 
 
+
      /// Gets Email so someone can check for already existing -----------
      async getUserFromEmail(email) {
         const sql = 'SELECT * FROM tblUsers WHERE fdEmail = $1';
@@ -175,7 +176,6 @@ class DBManager {
             }
         } catch (error) {
             console.error(error);
-            return null;
         } finally {
             client.end();
         }
@@ -183,6 +183,7 @@ class DBManager {
     /// Gets Email-----------
 
 
+    
       // List all users-----------
       async listAllUsersFromDatabase() {
         const sql = 'SELECT * FROM tblUsers';
@@ -197,11 +198,80 @@ class DBManager {
 
         } catch (error) {
             console.error(error);
-            return null;
         } finally {
             client.end();
         }
     }
+
+
+    async listAllSeriesFromDatabase() {
+        const sql = 'SELECT * FROM tblDramas';
+        
+        const client = new pg.Client(this.#credentials);
+        
+        try {
+            await client.connect();
+            const rows = (await client.query(sql)).rows;
+            
+            return rows;
+
+        } catch (error) {
+            console.error(error);
+        } finally {
+            client.end();
+        }
+    }
+
+
+
+    
+    async postSingleDrama(drama) {
+        const client = new pg.Client(this.#credentials);
+    
+        try {
+            await client.connect();
+            //const output = await client.query('INSERT INTO tblDramas(fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate) VALUES($1::Text, $2::Text, $3::Text, $4::Int, $5::Date) RETURNING fdDramaID;',  [drama.fdTitle, drama.fdDescription, drama.fdGenre.join(','), drama.fdEpisodeNumber, drama.fdReleaseDate] );
+            
+            const output = await client.query('INSERT INTO tblDramas(fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate) VALUES($1::Text, $2::Text, $3::Text, $4::Int, $5::Date) RETURNING *;', 
+            [drama.fdTitle, drama.fdDescription, drama.fdGenre.join(','), drama.fdEpisodeNumber, drama.fdReleaseDate]
+        );
+    
+            if (output.rows.length == 1) {
+                // We stored the drama in the DB.
+                drama.fdDramaID  = output.rows[0].fdDramaID;
+                //drama.id???
+                return drama;
+            } else {
+                throw new Error('Failed to insert drama into database');
+            }
+        } catch (error) {
+            console.error(error);
+        } finally {
+            client.end();
+        }
+    }
+    
+
+
+
+
+
+    //To post multiple dramas
+    async postMultipleDramas(dramasData) {
+        const insertedDramas = [];
+
+        try {
+            for (let i = 0; i < dramasData.length; i++) {
+                const drama = await this.postSingleDrama(dramasData[i]);
+                insertedDramas.push(drama);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
+        return insertedDramas;
+    }
+    
 
 
 

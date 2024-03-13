@@ -14,9 +14,6 @@ const dbm = new DBManager();
 //import {getUserFromPasswordAndEmail } from "../modules/storageManager.mjs"
 //import {getUserFromEmail } from "../modules/storageManager.mjs"
 
-//----------
-//import { login } from "../modules/login.mjs"
-//------------
 
 
 const USER_API = express.Router();
@@ -24,32 +21,6 @@ USER_API.use(express.json()); // This makes it so that express parses all incomi
 
 const users = [];
 
-
-
-
-
-/*
-// Function to find a user by email
-function findUserByEmail(email) {
-    for (let i = 0; i < users.length; i++) {
-        let user = users[i];
-        if (user.email === email) {
-            return user;
-        }
-    }
-}
-
-
-// Function to finding a user in the users array by ID
-function findUserById(userId) {
-    for (let i = 0; i < users.length; i++) {
-        let user = users[i];
-        if (user.id === userId) {
-            return user;
-        }
-    }
-}
-*/
 
 
 
@@ -146,19 +117,6 @@ USER_API.post('/login', async (req, res, next) => {
             
         }
 
-
-    /*
-    if (user) {
-        if (user.password === password) {
-            res.status(HTTPCodes.SuccessfulRespons.Ok).send("You are logged in!").end();
-        } else {
-            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send("Incorrect email or password!").end();
-        }
-    } else {
-        res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send("User not found!").end();
-    }
-    */
-
 });
 
 
@@ -218,11 +176,8 @@ USER_API.delete('/delete', async (req, res) => {
         // Calls deleteUser to delete the user
         const user = new User(); 
         user.id = userID; 
-        const deletedUser = await user.delete(userID); //????hvordan kaller eg på delete fra user.mjs
-        //eg burde sikkert ikkje lage ny bruker?????
-
-
-        //const deletedUser = await dbm.deleteUser(userID); //Går dette an?
+        const deletedUser = await user.delete(userID); 
+       
 
         if (deletedUser) {
             res.status(HTTPCodes.SuccesfullRespons.Ok).json( {message: "User deleted successfully"} , deletedUser).end();
@@ -242,8 +197,6 @@ USER_API.delete('/delete', async (req, res) => {
 
 
 // TODO: Delete user.
-     // Code to delete user based on ID
-
     //From teacher:
     //const user = new User(); //TODO: Actual user
     //user.delete();
@@ -251,7 +204,7 @@ USER_API.delete('/delete', async (req, res) => {
 
 
 //Get user data -----------------------------------------------
-USER_API.get('/', async (req, res, next) => {
+USER_API.get('/all', async (req, res, next) => {
 
     // Tip: All the information you need to get the id part of the request can be found in the documentation 
     // https://expressjs.com/en/guide/routing.html (Route parameters)
@@ -259,19 +212,34 @@ USER_API.get('/', async (req, res, next) => {
     /// TODO: 
     // Return user object
 
-    const userId = req.params.id; // Getting user ID from request parameters
+    //const userId = req.params.id; // Getting user ID from request parameters
 
      // Finding a user in the users array by ID
-    let user = findUserById(userId);
-    
+    //let user = findUserById(userId);
 
 
-    if (user) {
-        res.status(HTTPCodes.SuccesfullRespons.Ok).res.json(user);
+    const { userID } = req.body;
+    console.log("This is the current user:", userID);
+
+    try {
+
+        const user = new User(); 
+        user.id = userID; 
+        
+        const getUsers = await dbm.listAllUsersFromDatabase();
+
+
+    if (getUsers != null) {
+        res.status(HTTPCodes.SuccesfullRespons.Ok).json({msg:"Here are all the users", getUsers});
     } else {
-        res.status(HTTPCodes.ClientSideErrorRespons.NotFound).send("Users is not found and may not exist").end(); //If user doesn't exist
+        res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({msg: "Users is not found and may not exist"}).end(); //If user doesn't exist
     }
+} catch (error) {
+    console.error(error);
+    res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to fetch users from database").end();
+}
 })
+
 
 
 

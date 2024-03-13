@@ -10,6 +10,7 @@
     <script src="./Script/fetch.js"></script>
     <script src="./Script/templateLoader.js"></script>
     <script src="./Script/mainUser.js"></script>
+    <script src="./Script/mainSeries.js"></script>
 
 
 </head>
@@ -22,12 +23,21 @@
         <button id="btnHome">Home</button>
         <button id="btnLogin">Login</button>
         <button id="btnLogout">Logout</button>
-        <button id="btnUserProfile">User Profile</button>
         <button id="btnSeries">Series</button>
 
-        <button id="btnListUsers">List Users</button>
-        <button id="btnUpdateUser">Update User</button>
-        <button id="btnDeleteUser">Delete User</button>
+        <!-- Regular User Buttons -->
+        <!-- <div id="regularUserButtons" style="display: none;">-->
+            <button id="btnUserProfile">User Profile</button>
+
+            <button id="btnUpdateUser" style="display: none;">Update User</button>
+            <button id="btnDeleteUser" style="display: none;">Delete User</button>
+        <!--</div>-->
+
+        <!-- Admin User Buttons -->
+        <!--<div id="adminUserButtons" style="display: none;"> -->
+            <button id="btnListUsers">List Users</button>
+        <!--</div> -->
+    </div>
 
     </div>
 
@@ -94,7 +104,7 @@
     <!-- Update user -->
     <template id="tlUpdateUser">
         <div class="updateUser-box">
-            <h2 id="updateUserAfter">Update User</h2>
+            <h2>Update User</h2>
             <form id="updateUserForm" action="#" method="PUT" onsubmit="return updateUser()">
                 <input type="text" id="updateUserName" placeholder="New Username" />
                 <p></p>
@@ -102,14 +112,14 @@
                 <p></p>
                 <input type="password" id="updatePassword" placeholder="New Password" />
                 <p></p>
-                <input type="submit" value="Update User"/>
+                <input type="submit" value="Update User" />
             </form>
         </div>
     </template>
 
 
 
-    
+
     <!-- Delete user -->
     <template id="tlDeleteUser">
         <div class="deleteUser-box">
@@ -121,24 +131,44 @@
             </form>
         </div>
     </template>
-  
 
 
 
-     <!-- List all users -->
-     <template id="tlListAllUsers">
-        <div class="listUsers-box">
 
-            <h2>List of Users</h2>
-            <h4 id="listAllUsers"></h4>
+    <!-- User infromation -->
+    <template id="tlListUser">
+        <div class="listUser-box">
+            <h2>Your user information</h2>
+            <div id="userInfo">
+                <b> Username: </b>
+                <p id="listUserName"></p>
+                <b> Email:</b>
+                <p id="listEmail"></p>
+                <b> Password: </b>
+                <p id="listPassword"></p>
+
+            </div>
         </div>
     </template>
 
 
 
+    <!-- List all users -->
+    <template id="tlListAllUsers">
+        <div class="listAllUsers-box">
+            <div id="listAllUsersContainer">
+                <h2>List of Users</h2>
+            </div>
+        </div>
+    </template>
 
 
-
+    <template id="tlSeries">
+        <h2>List of Series</h2>
+        <div id="seriesContent">
+            <!-- Series content will be added here -->
+        </div>
+    </template>
 
 
 
@@ -150,6 +180,8 @@
         const btnLogout = document.getElementById("btnLogout");
 
         const btnListUsers = document.getElementById("btnListUsers");
+        const btnListUser = document.getElementById("btnListUser");
+
         const btnUpdateUser = document.getElementById("btnUpdateUser");
         const btnDeleteUser = document.getElementById("btnDeleteUser");
 
@@ -157,16 +189,67 @@
 
         btnLogin.addEventListener("click", showLogin);
         btnLogout.addEventListener("click", logoutUser);
-        btnUserProfile.addEventListener("click", showUserProfile);
-        btnHome.addEventListener("click", showHomePage);
-        btnSeries.addEventListener("click", showSeries);
+        
+        btnUserProfile.addEventListener("click", function() {
 
-        btnListUsers.addEventListener("click", showListUsers);
+            showUserProfile();
+            // Show the buttons
+            btnUpdateUser.style.display = 'block';
+            btnDeleteUser.style.display = 'block';
+        });
+
+
+        btnHome.addEventListener("click", showHomePage);
+        btnListUsers.addEventListener("click", listUsers);
         btnUpdateUser.addEventListener("click", showUpdateUser);
         btnDeleteUser.addEventListener("click", showDeleteUser);
 
+        btnSeries.addEventListener("click", showSeries);
+
+
+
+
 
     </script>
+
+
+
+
+    <script id="dataModelDramas" type="application/json">
+        {
+            "tblDramas": [
+                {
+                    "fdDramaID": 1,
+                    "fdTitle": "Death's game",
+                    "fdDescription": "After struggling for seven years without securing a stable job, Choi Yi Jae becomes engulfed in despair and hopelessness. Believing that ending his life would be the solution, Yi Jae is met with a surprise when he meets the entity known as Death at the gateway to Hell. Death assigns him a unique punishment: Yi Jae must endure death in 12 different bodies. To avoid his fate in Hell, he must find a way to survive.",
+                    "fdGenre": ["Thriller", "Drama", "Fantasy"],
+                    "fdEpisodeNumber": 8,
+                    "fdReleaseDate": "2023-05-12"
+                }, 
+                {
+                    "fdDramaID": 2,
+                    "fdTitle": "Reborn Rich",
+                    "fdDescription": "After he mysteriusly and suddenly dies, Yoon Hyun Woo is reborn into a rich chaebol family, he wakes up as a kid inside the body of the youngest member of the family - Jin Do Jun.  After he realizes what has happened, Yoon Hyun Wo plots to use his new “identity” to formulate a hostile takeover of the group - and punish the people who killed him. Will he succeed?",
+                    "fdGenre": ["Drama", "Fantasy", "Business", "Political"],
+                    "fdEpisodeNumber": 16,
+                    "fdReleaseDate": "2022-09-11"
+                }, 
+                {
+                    "fdDramaID": 3,
+                    "fdTitle": "Crash Landing on You",
+                    "fdDescription": "After getting into a paragliding accident, South Korean heiress Yoon Se Ri crash lands in North Korea. There, she meets North Korean army officer Ri Jung Hyuk, who agrees to help her return to South Korea. Despite the tension between their countries, the two of them start falling for one another.",
+                    "fdGenre": ["Political", "Military", "Comedy", "Romance"],
+                    "fdEpisodeNumber": 16,
+                    "fdReleaseDate": "2019-12-14"
+                }
+            ]
+        }
+        
+    </script>
+
+
+   
+  
 
 
 </body>

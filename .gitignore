@@ -5,3 +5,4 @@ node_modules/
 modules/extra.mjs
 sql/createDB.sql
 sql
+public/script/mainSeries2.js

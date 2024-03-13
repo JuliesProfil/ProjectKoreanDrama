@@ -34,14 +34,13 @@ async function putData(url, data, okHandler, errorHandler) {
     }
 }
 
-async function getData(url, data, okHandler, errorHandler) {
+async function getData(url, okHandler, errorHandler) {
     try {
          const requestOptions = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
+            }
         };
 
         const response = await fetch(url, requestOptions);
