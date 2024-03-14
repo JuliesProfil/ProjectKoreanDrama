@@ -165,8 +165,22 @@
 
     <template id="tlSeries">
         <h2>List of Series</h2>
+        <div>
+            <label for="genreSelector">Choose genre:</label>
+            <select id="genreSelector">
+                <option value="All">All genres</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Business">Business</option>
+                <option value="Political">Political</option>
+                <option value="Military">Military</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Romance">Romance</option>
+            </select>
+        </div>
+
         <div id="seriesContent">
-            <!-- Series content will be added here -->
         </div>
     </template>
 
@@ -174,7 +188,6 @@
     <template id="tlOneSeries">
         <h2>One Series</h2>
         <div id="oneSeriesContent">
-            <!-- Series content will be added here -->
         </div>
     </template>
 
@@ -212,7 +225,7 @@
         btnUpdateUser.addEventListener("click", showUpdateUser);
         btnDeleteUser.addEventListener("click", showDeleteUser);
 
-        btnSeries.addEventListener("click", showSeries);
+        btnSeries.addEventListener("click", showAllSeries);
 
 
 
