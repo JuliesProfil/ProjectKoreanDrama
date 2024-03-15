@@ -11,10 +11,6 @@ import DBManager from "../modules/storageManager.mjs";
 
 const dbm = new DBManager();
 
-//import {getUserFromPasswordAndEmail } from "../modules/storageManager.mjs"
-//import {getUserFromEmail } from "../modules/storageManager.mjs"
-
-
 
 const USER_API = express.Router();
 USER_API.use(express.json()); // This makes it so that express parses all incoming payloads as JSON for this route.
@@ -33,11 +29,7 @@ USER_API.get('/', (req, res, next) => {
 
 
 //Create a new user---------------------------------------------------
-USER_API.post('/', async (req, res, next) => { //async from teacher
-
-    // This is using javascript object destructuring.
-    // Recomend reading up https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#syntax
-    // https://www.freecodecamp.org/news/javascript-object-destructuring-spread-operator-rest-parameter/
+USER_API.post('/', async (req, res, next) => {
 
     const { userName, userEmail, userPassword } = req.body;
 
@@ -51,23 +43,17 @@ USER_API.post('/', async (req, res, next) => { //async from teacher
 
             if (!exists) {
                 console.log("User does not exist!")
-            //Create a new user
             let user = new User();
             user.name = userName;
             user.email = userEmail;
             ///TODO: Do not save passwords.
             user.pswHash = userPassword;
             
-
-
-                //TODO: What happens if this fails? //from teacher
-                user = await user.save(); //from teacher
-                //res.status(HTTPCodes.SuccesfullRespons.Ok).json(JSON.stringify(user)).end(); //from teacher
-                
-                 // Log the saved user information
+                //TODO: What happens if this fails? 
+                user = await user.save(); 
+               
                  console.log('Saved user info:', user);
 
-                //users.push(user); 
                 res.status(HTTPCodes.SuccesfullRespons.Ok).send({msg:"You sucsessfully made a new user!"}).end();
 
 
@@ -99,8 +85,7 @@ USER_API.post('/', async (req, res, next) => { //async from teacher
 USER_API.post('/login', async (req, res, next) => {
 
     const { userEmail, userPassword } = req.body;
-    //const user = await findUserByEmail(email);
-
+ 
     try {
         console.log(`Email = ${userEmail}`, `Password = ${userPassword}`);
         const userInfo = await dbm.getUserFromPasswordAndEmail(userEmail, userPassword);
@@ -132,15 +117,12 @@ USER_API.put('/', async (req, res, next) => {
         const user = new User(); 
         user.id = userID; // Set the user ID
 
-        // Assign properties directly from request body
         user.name = userName;
         user.email = userEmail;
         user.pswHash = userPassword;
 
-        // Call updateUser method to update user data in the database
         const updatedUser = await user.save();
 
-        // Send success response with updated user data
         res.status(HTTPCodes.SuccesfullRespons.Ok).send(updatedUser).end();
     } catch (error) {
         console.error(error);
@@ -148,15 +130,9 @@ USER_API.put('/', async (req, res, next) => {
     }
 
 
-
-    
     /// TODO: Edit user
-    // Code to update user based on ID
+ //TODO: The user info comes as part of the request 
 
-    //From teacher:
-    /// TODO: Edit user
-    //const user = new User(); //TODO: The user info comes as part of the request 
-    //user.save();
 })
 
 
@@ -173,7 +149,6 @@ USER_API.delete('/delete', async (req, res) => {
 
 
     try {
-        // Calls deleteUser to delete the user
         const user = new User(); 
         user.id = userID; 
         const deletedUser = await user.delete(userID); 
@@ -190,32 +165,18 @@ USER_API.delete('/delete', async (req, res) => {
         res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg:"Failed to delete user"}).end();
     }
 
-
+// TODO: Delete user.
 })
 
-
-
-
-// TODO: Delete user.
-    //From teacher:
-    //const user = new User(); //TODO: Actual user
-    //user.delete();
+    
 
 
 
 //Get user data -----------------------------------------------
 USER_API.get('/all', async (req, res, next) => {
 
-    // Tip: All the information you need to get the id part of the request can be found in the documentation 
-    // https://expressjs.com/en/guide/routing.html (Route parameters)
-
     /// TODO: 
     // Return user object
-
-    //const userId = req.params.id; // Getting user ID from request parameters
-
-     // Finding a user in the users array by ID
-    //let user = findUserById(userId);
 
 
     const { userID } = req.body;
@@ -239,17 +200,6 @@ USER_API.get('/all', async (req, res, next) => {
     res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to fetch users from database").end();
 }
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 

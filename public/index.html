@@ -11,6 +11,9 @@
     <script src="./Script/templateLoader.js"></script>
     <script src="./Script/mainUser.js"></script>
     <script src="./Script/mainSeries.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    
+
 
 
 </head>
@@ -24,6 +27,7 @@
         <button id="btnLogin">Login</button>
         <button id="btnLogout">Logout</button>
         <button id="btnSeries">Series</button>
+        <button id="btnFavoriteSeries">Favorite series</button>
 
         <!-- Regular User Buttons -->
         <!-- <div id="regularUserButtons" style="display: none;">-->
@@ -158,6 +162,7 @@
         <div class="listAllUsers-box">
             <div id="listAllUsersContainer">
                 <h2>List of Users</h2>
+                <!-- User content here -->
             </div>
         </div>
     </template>
@@ -168,7 +173,7 @@
         <div>
             <label for="genreSelector">Choose genre:</label>
             <select id="genreSelector">
-                <option value="All">All genres</option>
+                <option disabled selected value="">All genres</option>
                 <option value="Thriller">Thriller</option>
                 <option value="Drama">Drama</option>
                 <option value="Fantasy">Fantasy</option>
@@ -181,15 +186,86 @@
         </div>
 
         <div id="seriesContent">
+            <!-- Series content here -->
         </div>
     </template>
 
 
-    <template id="tlOneSeries">
-        <h2>One Series</h2>
-        <div id="oneSeriesContent">
+
+
+<template id="tlOneSeries">
+    <h2>One Series</h2>
+    <div id="oneSeriesContent">
+        <!-- Series content here -->
+    </div>
+    <h3>Here are all the reviews:</h3>
+    <div id="listAllReviewsContainer">
+         <!-- Review content here -->
+    </div>
+    <h3>Here is the overall rating:</h3>
+    <div id="averageRatingContainer">
+        <!-- Rating content here -->
+   </div>
+    
+
+
+
+    <h2>Spesific actions on series for user</h2>
+    <div id="userSeriesSection">
+    <div id="reviewSection">
+        <h3>Add a review:</h3>
+        <textarea id="commentInput" rows="3" cols="40" placeholder="Write your review here..."></textarea>
+        <br>
+
+        <label for="rating">Rate between (1-5 stars): </label>
+        <input type="number" id="ratingInput" min="1" max="5">
+
+        <label for="isFavorite">Favorite:</label>
+            <input type="checkbox" id="isFavoriteInput">
+            <br>
+
+        <label for="status">Watch status:</label>
+            <select id="statusInput">
+                <option value="watching">Watching</option>
+                <option value="completed">Completed</option>
+                <option value="onHold">On hold</option>
+                <option value="dropped">Dropped</option>
+            </select>
+            <br>
+
+            <label for="hasWatched">Has watched:</label>
+            <input type="checkbox" id="hasWatchedInput">
+            <br>
+
+        <button id="btnAddReview">Add review</button>
+    </div>
+</div>
+</template>
+
+
+
+
+
+ <!-- List all reviews -->
+ <template id="tlListAllReviews">
+    <div class="listAllReviews-box">
+        <div id="listAllReviewsContainer">
+            <h2>List of all reviws</h2>
+            <!-- User content here -->
         </div>
-    </template>
+    </div>
+</template>
+
+
+<!-- List user reviews -->
+<template id="tlListUserReviews">
+    <div class="listUserReviews-box">
+        <div id="listUserReviewsContainer">
+            <h2>List of user reviws</h2>
+            <!-- User content here -->
+        </div>
+    </div>
+</template>
 
 
 
@@ -205,6 +281,11 @@
 
         const btnUpdateUser = document.getElementById("btnUpdateUser");
         const btnDeleteUser = document.getElementById("btnDeleteUser");
+        
+        const btnFavoriteSeries = document.getElementById("btnFavoriteSeries");
+        
+        //btnFavoriteSeries.addEventListener("click", showReviewsForUser);
+
 
 
 
@@ -220,14 +301,27 @@
         });
 
 
+        
+
+
         btnHome.addEventListener("click", showHomePage);
         btnListUsers.addEventListener("click", listUsers);
         btnUpdateUser.addEventListener("click", showUpdateUser);
         btnDeleteUser.addEventListener("click", showDeleteUser);
 
-        btnSeries.addEventListener("click", showAllSeries);
+
+        btnSeries.addEventListener("click", function(){
+            localStorage.removeItem("selectedDramaId");
+            showAllSeries();
+        });
+        
 
 
+
+
+
+    
+        
 
 
 
@@ -248,7 +342,7 @@
                     "fdReleaseDate": "2023-05-12",
                     "fdRating": null,
                     "fdReview": null,
-                    "fdCoverImageURL": "public/bilder/deaths_game.jpg"
+                    "fdCoverImageURL": "bilder/deaths_game.jpg"
                 }, 
                 {
                     "fdDramaID": 2,

@@ -81,6 +81,69 @@ SERIES_API.get('/all', async (req, res, next) => {
 
 
 
+//Post review data---------------------------------------------------
+SERIES_API.post('/review', async (req, res, next) => { 
+    const { userID, dramaID, commentText, ratingNumber, status, isFavorite, hasWatched } = req.body;
+
+    console.log("Here is the review body:", req.body)
+
+
+    if (userID && dramaID && commentText && ratingNumber && status && typeof isFavorite === 'boolean' && typeof hasWatched === 'boolean') {
+
+    try {
+      
+        const reviewData = await dbm.createReview({ 
+            userId: userID, 
+            dramaId: dramaID, 
+            comment: commentText, 
+            rating: ratingNumber, 
+            status: status, 
+            isFavorite: isFavorite, 
+            hasWatched: hasWatched 
+        });
+
+        res.status(HTTPCodes.SuccesfullRespons.Ok).json({ reviewData }).end();
+    } catch (error) {
+        console.error("Error posting review:", error);
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).send("An error occurred while posting the review").end();
+    }
+
+} else {
+    res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).send({message: "Mangler data felt"}).end();
+}
+});
+
+
+
+
+
+//Get review data -----------------------------------------------
+SERIES_API.get('/allReviews', async (req, res, next) => {
+
+    try {
+        const allReviews = await dbm.listAllReviewsFromDatabase();
+
+        if (allReviews !== null) {
+            res.status(HTTPCodes.SuccesfullRespons.Ok).json({ msg: "Here are all the reviews", allReviews });
+        } else {
+            res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({ msg: "Reviews not found" }).end();
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to fetch reviews from the database").end();
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 //SERIES_API.get("/:id", Series.listAll);
 

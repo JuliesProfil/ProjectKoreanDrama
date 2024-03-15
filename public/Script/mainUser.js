@@ -33,10 +33,7 @@ function domLoaded() {
     showLogin(); //Denne siden kan heller komme opp når man trenger å være logget inn, skjekker token/autoriasasjon
   }
 
-
-
 }
-
 
 
 
@@ -46,6 +43,7 @@ function createUser() {
   const createUsername = document.getElementById("createUsername");
   const createEmail = document.getElementById("createEmail");
   const createPassword = document.getElementById("createPassword");
+
 
   const data = {
     userEmail: createEmail.value,
@@ -64,9 +62,6 @@ function createUser() {
       console.log("Created user Info:", res.data)
       //Ka må eg gjøre for at det skal fungere
 
-
-    
-
       showLogin();
 
     },
@@ -74,6 +69,7 @@ function createUser() {
       console.log(error, "Something went wrong!");
 
     });
+  
 
   return false;
 }
@@ -85,53 +81,57 @@ function createUser() {
 function loginUser() {
   const loginEmail = document.getElementById("loginEMail");
   const loginPassword = document.getElementById("loginPassword");
+  
 
-  //const isAdmin = (loginEmail === 'a@a.no' && loginPassword === 'a');
 
-  const data = {
-    userEmail: loginEmail.value,
-    userPassword: loginPassword.value,
-  };
 
-  postData("/user/login", data,
-    (res) => {
-      
-      const loginData = res.data;
-      /*
-      if (isAdmin) {
-        console.log("Hey");
-        loginData.userType = 'admin';
-      } else {
-        console.log("Ney");
-        loginData.userType = 'regular';
+    //const isAdmin = (loginEmail === 'a@a.no' && loginPassword === 'a');
+
+    const data = {
+      userEmail: loginEmail.value,
+      userPassword: loginPassword.value
+    };
+
+    postData("/user/login", data,
+      (res) => {
+
+        const loginData = res.data;
+        /*
+        if (isAdmin) {
+          console.log("Hey");
+          loginData.userType = 'admin';
+        } else {
+          console.log("Ney");
+          loginData.userType = 'regular';
+        }
+        */
+
+        sessionStorage.setItem('loginData', JSON.stringify(loginData));
+        console.log("Login Info:", loginData);
+
+
+        /*
+        // Shows or hides buttons based on user type
+        if (isAdmin) {
+          document.getElementById('adminUserButtons').style.display = 'block';
+          document.getElementById('regularUserButtons').style.display = 'none';
+        } else {
+          document.getElementById('adminUserButtons').style.display = 'none';
+          document.getElementById('regularUserButtons').style.display = 'block';
+        }
+        */
+
+
+        showHomePage();
+      },
+      (error) => {
+        console.log(error);
+        alert("Login failed.");
       }
-      */
-
-      sessionStorage.setItem('loginData', JSON.stringify(loginData));
-      console.log("Login Info:", loginData);
-
-
-      /*
-      // Shows or hides buttons based on user type
-      if (isAdmin) {
-        document.getElementById('adminUserButtons').style.display = 'block';
-        document.getElementById('regularUserButtons').style.display = 'none';
-      } else {
-        document.getElementById('adminUserButtons').style.display = 'none';
-        document.getElementById('regularUserButtons').style.display = 'block';
-      }
-      */
-
-
-      showHomePage();
-    },
-    (error) => {
-      console.log(error);
-      alert("Login failed.");
-    }
-  );
-
+    );
+  
   return false;
+
 }
 
 
@@ -160,6 +160,8 @@ function updateUser() {
   const updateEmail = document.getElementById("updateEmail");
   const updatePassword = document.getElementById("updatePassword");
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+  
+  
 
   const data = {
     userID: loginData.fduserid,
@@ -187,6 +189,7 @@ function updateUser() {
       }
     );
   }
+
 }
 
 
@@ -208,10 +211,10 @@ function deleteUser() {
     // Makes a DELETE request to delete the user data
     deleteData("/user/delete", data,
       (res) => {
-        console.log(res); // Log response data if needed
-        sessionStorage.removeItem('loginData', JSON.stringify(res.data)); // Remove user info from sessionStorage
+        console.log(res);
+        sessionStorage.removeItem('loginData', JSON.stringify(res.data)); 
         alert("User deleted successfully!");
-        showHomePage(); // Redirect to home page after deletion
+        showHomePage(); 
       },
       (error) => {
         console.error(error);
@@ -235,6 +238,7 @@ async function userProfile() {
   const updatePassword = document.getElementById("updatePassword");
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
 
+
   const data = {
     userID: loginData.fduserid,
     userName: updateUserName.value,
@@ -249,6 +253,7 @@ async function userProfile() {
   } else {
     showHomePage()
   }
+//})
 }
 
 
@@ -276,12 +281,12 @@ async function listUsers() {
     // Makes a GET request to get the user data
     getData("/user/all",
       (res) => {
-        console.log("Here is all the users: ", res); // Log response
+        console.log("Here is all the users: ", res);
         console.log("User: ", res.getUsers[0]);
 
         showListUsers();
         displayUsers(res);
-       
+
       },
       (error) => {
         console.error(error);
@@ -292,20 +297,18 @@ async function listUsers() {
 
 
 function displayUsers(res) {
-  // Process the series data and generate HTML content
   const userListDiv = document.getElementById("listAllUsersContainer");
-  //userListDiv.innerHTML = ""; // Clear existing content
+  //userListDiv.innerHTML = ""; // Clear 
 
   for (let i = 0; i < res.getUsers.length; i++) {
     const user = res.getUsers[i];
 
-    // Create a div element for each drama
     const userItem = document.createElement("div");
     userItem.innerHTML = `<p> ${user.fdusername} - ${user.fdemail}</p><br>`;
     userListDiv.appendChild(userItem);
   }
-  
-} 
+
+}
 
 
 
@@ -341,11 +344,9 @@ function showLogin() {
 function showUserProfile() {
   loadNewTemplate("tlListUser", divContent, true);
 
-  // Get the user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
 
   if (loginData != null) {
-    //Show the user information
     const listUserName = document.getElementById("listUserName");
     const listEmail = document.getElementById("listEmail");
     const listPassword = document.getElementById("listPassword");
@@ -362,17 +363,17 @@ function showUserProfile() {
 function showUpdateUser() {
   loadNewTemplate("tlUpdateUser", divContent, true);
 
-  // Get the current user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData update after:", loginData);
 
 
   if (loginData != null) {
-    // Display the current user information
     const updateUserName = document.getElementById("updateUserName");
     const updateEmail = document.getElementById("updateEmail");
-    const updatePassword = document.getElementById("updatePassword");
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+    const updatePassword = document.getElementById("updatePassword");
+  
+  
 
     updateUserName.value = loginData.fdusername;
     updateEmail.value = loginData.fdemail;
@@ -384,13 +385,11 @@ function showUpdateUser() {
 function showDeleteUser() {
   loadNewTemplate("tlDeleteUser", divContent, true);
 
-  // Get the current user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData delete after:", loginData);
 
 
   if (loginData != null) {
-    // Display the current user information
     const deleteUserId = document.getElementById("deleteUserId");
 
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));

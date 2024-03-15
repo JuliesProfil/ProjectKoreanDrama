@@ -273,6 +273,56 @@ class DBManager {
 
 
 
+    async createReview(review) {
+        const client = new pg.Client(this.#credentials);
+    
+        try {
+            await client.connect();
+            const output = await client.query(`
+                INSERT INTO tblUserSeriesList (fdUserID, fdDramaID, fdRating, fdReview, fdStatus, fdIsFavorite, fdHasWatched)
+                VALUES ($1, $2, $3, $4, $5, $6, $7)
+                RETURNING fdUserSeriesListID;
+            `, [review.userId, review.dramaId, review.rating, review.comment, review.status, review.isFavorite, review.hasWatched]);
+    
+            // If the review was successfully inserted, it updates the review object with its ID
+            if (output.rows.length === 1) {
+                review.id = output.rows[0].fdUserSeriesListID;
+                return review;
+            } else {
+                throw new Error("Failed to insert review into database.");
+            }
+        } catch (error) {
+            console.error("Error creating review:", error);
+            throw error;
+        } finally {
+            client.end();
+        }
+    }
+
+
+
+    async listAllReviewsFromDatabase() {
+        const sql = 'SELECT * FROM tblUserSeriesList';
+        
+        const client = new pg.Client(this.#credentials);
+        
+        try {
+            await client.connect();
+            const rows = (await client.query(sql)).rows;
+            
+            return rows;
+
+        } catch (error) {
+            console.error(error);
+        } finally {
+            client.end();
+        }
+    }
+    
+
+
+
+
 }
 
 
