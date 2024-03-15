@@ -3,7 +3,8 @@ async function postData(url, data, okHandler, errorHandler) {
         const requestOptions = {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": "Bearear " + sessionStorage.getItem("loginData")
             },
             body: JSON.stringify(data)
         };
@@ -21,7 +22,9 @@ async function putData(url, data, okHandler, errorHandler) {
         const requestOptions = {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": "Bearear " + sessionStorage.getItem("loginData")
+                
             },
             body: JSON.stringify(data)
         };
@@ -39,7 +42,8 @@ async function getData(url, okHandler, errorHandler) {
          const requestOptions = {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization":"Bearear " + sessionStorage.getItem("loginData")
             }
         };
 
@@ -57,7 +61,8 @@ async function deleteData(url, data, okHandler, errorHandler) {
             method: 'DELETE',
 
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": "Bearear " + sessionStorage.getItem("loginData")
             },
             body: JSON.stringify(data)
         };

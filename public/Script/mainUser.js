@@ -1,3 +1,5 @@
+
+
 "user strict"
 
 
@@ -36,6 +38,15 @@ function domLoaded() {
 }
 
 
+async function sha256(str) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(str);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map((byte) => byte.toString(16).padStart(2, "0")).join("");
+  return hashHex;
+}
+
 
 
 
@@ -43,12 +54,16 @@ function createUser() {
   const createUsername = document.getElementById("createUsername");
   const createEmail = document.getElementById("createEmail");
   const createPassword = document.getElementById("createPassword");
+  sha256(createPassword).then((pswHash) => {
+    console.log(pswHash);
 
 
   const data = {
+    userName: createUsername.value,
     userEmail: createEmail.value,
     userPassword: createPassword.value,
-    userName: createUsername.value,
+    userPassword: pswHash
+    //userName: createUsername.value,
   };
 
   postData("/user/", data,
@@ -69,7 +84,7 @@ function createUser() {
       console.log(error, "Something went wrong!");
 
     });
-  
+  });
 
   return false;
 }
@@ -81,7 +96,9 @@ function createUser() {
 function loginUser() {
   const loginEmail = document.getElementById("loginEMail");
   const loginPassword = document.getElementById("loginPassword");
-  
+  sha256(loginPassword).then((pswHash) => {
+    console.log(pswHash);
+
 
 
 
@@ -89,7 +106,8 @@ function loginUser() {
 
     const data = {
       userEmail: loginEmail.value,
-      userPassword: loginPassword.value
+      userPassword: pswHash
+      //userPassword: loginPassword.value
     };
 
     postData("/user/login", data,
@@ -105,6 +123,7 @@ function loginUser() {
           loginData.userType = 'regular';
         }
         */
+        
 
         sessionStorage.setItem('loginData', JSON.stringify(loginData));
         console.log("Login Info:", loginData);
@@ -129,7 +148,7 @@ function loginUser() {
         alert("Login failed.");
       }
     );
-  
+  });
   return false;
 
 }
@@ -161,19 +180,21 @@ function updateUser() {
   const updatePassword = document.getElementById("updatePassword");
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   
-  
+  sha256(updatePassword).then((pswHash) => {
+    console.log(pswHash);
 
   const data = {
     userID: loginData.fduserid,
     userName: updateUserName.value,
     userEmail: updateEmail.value,
     userPassword: updatePassword.value
+    //userPassword: pswHash
   };
 
 
   console.log("User login updeate data:", loginData)
 
-  if (loginData && loginData.fduserid) {
+  //if (loginData && loginData.fduserid) {
     // Make a PUT request to update the user data
     putData("/user/", data,
       (res) => {
@@ -188,8 +209,8 @@ function updateUser() {
         alert("Failed to update user.");
       }
     );
-  }
-
+  //}
+});
 }
 
 
@@ -201,13 +222,13 @@ function deleteUser() {
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
 
   const data = {
-    userID: loginData.fduserid,
+    userID: parseInt(document.getElementById("deleteUserId").value)
   };
 
-  console.log("User login delete data:", loginData)
+  //console.log("User login delete data:", loginData)
 
 
-  if (loginData && loginData.fduserid) {
+  //if (loginData && loginData.fduserid) {
     // Makes a DELETE request to delete the user data
     deleteData("/user/delete", data,
       (res) => {
@@ -221,7 +242,7 @@ function deleteUser() {
         alert("Failed to delete user.");
       }
     );
-  }
+  //}
 }
 
 
@@ -237,13 +258,15 @@ async function userProfile() {
   const updateEmail = document.getElementById("updateEmail");
   const updatePassword = document.getElementById("updatePassword");
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
-
+  sha256(updatePassword).then((pswHash) => {
+    console.log(pswHash);
 
   const data = {
     userID: loginData.fduserid,
     userName: updateUserName.value,
     userEmail: updateEmail.value,
-    userPassword: updatePassword.value
+    //userPassword: updatePassword.value
+    userPassword: pswHash
   };
 
   console.log("User info:", loginData)
@@ -253,7 +276,7 @@ async function userProfile() {
   } else {
     showHomePage()
   }
-//})
+})
 }
 
 
@@ -277,11 +300,11 @@ async function listUsers() {
   console.log("Your user info:", loginData)
 
 
-  if (loginData && loginData.fduserid) {
+  //if (loginData && loginData.fduserid) {
     // Makes a GET request to get the user data
     getData("/user/all",
       (res) => {
-        console.log("Here is all the users: ", res);
+        console.log("Here is all the users: ", res); // Log response
         console.log("User: ", res.getUsers[0]);
 
         showListUsers();
@@ -291,18 +314,20 @@ async function listUsers() {
       (error) => {
         console.error(error);
       });
-  }
+  //}
 
 }
 
 
 function displayUsers(res) {
+  // Process the series data and generate HTML content
   const userListDiv = document.getElementById("listAllUsersContainer");
-  //userListDiv.innerHTML = ""; // Clear 
+  //userListDiv.innerHTML = ""; // Clear existing content
 
   for (let i = 0; i < res.getUsers.length; i++) {
     const user = res.getUsers[i];
 
+    // Create a div element for each drama
     const userItem = document.createElement("div");
     userItem.innerHTML = `<p> ${user.fdusername} - ${user.fdemail}</p><br>`;
     userListDiv.appendChild(userItem);
@@ -344,9 +369,11 @@ function showLogin() {
 function showUserProfile() {
   loadNewTemplate("tlListUser", divContent, true);
 
+  // Get the user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
 
   if (loginData != null) {
+    //Show the user information
     const listUserName = document.getElementById("listUserName");
     const listEmail = document.getElementById("listEmail");
     const listPassword = document.getElementById("listPassword");
@@ -363,33 +390,38 @@ function showUserProfile() {
 function showUpdateUser() {
   loadNewTemplate("tlUpdateUser", divContent, true);
 
+  // Get the current user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData update after:", loginData);
 
 
   if (loginData != null) {
+    // Display the current user information
     const updateUserName = document.getElementById("updateUserName");
     const updateEmail = document.getElementById("updateEmail");
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
     const updatePassword = document.getElementById("updatePassword");
-  
-  
+    sha256(updatePassword).then((pswHash) => {
+      console.log(pswHash);
 
     updateUserName.value = loginData.fdusername;
     updateEmail.value = loginData.fdemail;
     updatePassword.value = loginData.fdpassword;
   }
+    )}
 }
 
 
 function showDeleteUser() {
   loadNewTemplate("tlDeleteUser", divContent, true);
 
+  // Get the current user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData delete after:", loginData);
 
 
   if (loginData != null) {
+    // Display the current user information
     const deleteUserId = document.getElementById("deleteUserId");
 
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
@@ -398,3 +430,17 @@ function showDeleteUser() {
 
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

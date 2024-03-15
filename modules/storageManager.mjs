@@ -32,7 +32,7 @@ class DBManager {
 
         try {
             await client.connect();
-            const output = await client.query('INSERT INTO tblUsers(fdUsername, fdEmail, fdPassword) VALUES($1::Text, $2::Text, $3::Text) RETURNING fdUserID;', [user.name, user.email, user.pswHash]);
+            const output = await client.query('INSERT INTO tblUser(fdUsername, fdEmail, fdPassword) VALUES($1::Text, $2::Text, $3::Text) RETURNING fdUserID;', [user.name, user.email, user.pswHash]);
 
             // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
             // Of special intrest is the rows and rowCount properties of this object.
@@ -62,7 +62,7 @@ class DBManager {
 
         try {
             await client.connect();
-            const output = await client.query('Update tblUsers set fdUserName = $1, fdEmail = $2, fdPassword = $3 where fdUserID = $4;', [user.name, user.email, user.pswHash, user.id]);
+            const output = await client.query('Update tblUser set fdUserName = $1, fdEmail = $2, fdPassword = $3 where fdUserID = $4;', [user.name, user.email, user.pswHash, user.id]);
 
             // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
             // Of special intrest is the rows and rowCount properties of this object.
@@ -100,14 +100,14 @@ class DBManager {
 
         try {
             await client.connect();
-            const output = await client.query('Delete from tblUsers  where fdUserID = $1;', [user.id]);
+            const output = await client.query('Delete from tblUser  where fdUserID = $1;', [user.id]);
 
             // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
             // Of special intrest is the rows and rowCount properties of this object.
 
             //TODO: Did the user get deleted?
             // hva er dette når brukeren blir slettet?
-            if (output.rows.length === 1) {
+            if (output.rowCount === 1) {
                 // User was successfully deleted
                 return true;
                 //Hvordan får eg en massage ut her?????
@@ -130,7 +130,7 @@ class DBManager {
 
     /// Gets User and Email so someone can login -----------
     async getUserFromPasswordAndEmail(email, password) {
-        const sql = 'SELECT * FROM tblUsers WHERE fdEmail = $1 AND fdPassword = $2';
+        const sql = 'SELECT * FROM tblUser WHERE fdEmail = $1 AND fdPassword = $2';
         const params = [email, password];
         
         const client = new pg.Client(this.#credentials);
@@ -157,7 +157,7 @@ class DBManager {
 
      /// Gets Email so someone can check for already existing -----------
      async getUserFromEmail(email) {
-        const sql = 'SELECT * FROM tblUsers WHERE fdEmail = $1';
+        const sql = 'SELECT * FROM tblUser WHERE fdEmail = $1';
         const params = [email];
         
         const client = new pg.Client(this.#credentials);
@@ -183,7 +183,7 @@ class DBManager {
     
       // List all users-----------
       async listAllUsersFromDatabase() {
-        const sql = 'SELECT * FROM tblUsers';
+        const sql = 'SELECT * FROM tblUser';
         
         const client = new pg.Client(this.#credentials);
         
@@ -279,14 +279,14 @@ class DBManager {
         try {
             await client.connect();
             const output = await client.query(`
-                INSERT INTO tblUserSeriesList (fdUserID, fdDramaID, fdRating, fdReview, fdStatus, fdIsFavorite, fdHasWatched)
-                VALUES ($1, $2, $3, $4, $5, $6, $7)
-                RETURNING fdUserSeriesListID;
-            `, [review.userId, review.dramaId, review.rating, review.comment, review.status, review.isFavorite, review.hasWatched]);
+                INSERT INTO tblUserDramaList (fdUserID, fdDramaID, fdRating, fdReview, fdIsFavorite)
+                VALUES ($1, $2, $3, $4, $5)
+                RETURNING fdUserDramaListID;
+            `, [review.userId, review.dramaId, review.rating, review.comment, review.isFavorite]);
     
             // If the review was successfully inserted, it updates the review object with its ID
             if (output.rows.length === 1) {
-                review.id = output.rows[0].fdUserSeriesListID;
+                review.id = output.rows[0].fdUserDramaListID;
                 return review;
             } else {
                 throw new Error("Failed to insert review into database.");
@@ -302,7 +302,7 @@ class DBManager {
 
 
     async listAllReviewsFromDatabase() {
-        const sql = 'SELECT * FROM tblUserSeriesList';
+        const sql = 'SELECT * FROM tblUserDramaList';
         
         const client = new pg.Client(this.#credentials);
         

@@ -21,6 +21,7 @@ SERIES_API.post('/', async (req, res, next) => {
     
     //const { fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate } = series[0];
     console.log("Here is the body data:", req.body);
+    
 
 
     for (const issue of series) {
@@ -83,12 +84,23 @@ SERIES_API.get('/all', async (req, res, next) => {
 
 //Post review data---------------------------------------------------
 SERIES_API.post('/review', async (req, res, next) => { 
-    const { userID, dramaID, commentText, ratingNumber, status, isFavorite, hasWatched } = req.body;
+    const { userID, dramaID, commentText, ratingNumber, isFavorite } = req.body;
 
     console.log("Here is the review body:", req.body)
 
 
-    if (userID && dramaID && commentText && ratingNumber && status && typeof isFavorite === 'boolean' && typeof hasWatched === 'boolean') {
+    let userData = req.headers.authorization.split(" ")[1];
+
+    if(userData){
+        userData = JSON.parse(userData);
+        if(!userData || !userData.fduserid){
+            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
+            return;
+        }
+    } 
+    
+
+    if (userID && dramaID && commentText && ratingNumber && typeof isFavorite === 'boolean') {
 
     try {
       
@@ -96,10 +108,8 @@ SERIES_API.post('/review', async (req, res, next) => {
             userId: userID, 
             dramaId: dramaID, 
             comment: commentText, 
-            rating: ratingNumber, 
-            status: status, 
-            isFavorite: isFavorite, 
-            hasWatched: hasWatched 
+            rating: ratingNumber,  
+            isFavorite: isFavorite
         });
 
         res.status(HTTPCodes.SuccesfullRespons.Ok).json({ reviewData }).end();

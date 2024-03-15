@@ -98,7 +98,7 @@ USER_API.post('/login', async (req, res, next) => {
 
         } catch (error) {
             console.error(error);
-            res.status(HTTPCodes.ServerErrorRespons.InternalError).send("An error occurred while creating the user").end();
+            res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg: "An error occurred while creating the user"}).end();
             
         }
 
@@ -112,6 +112,20 @@ USER_API.post('/login', async (req, res, next) => {
 USER_API.put('/', async (req, res, next) => {
 
     const { userID, userName, userEmail, userPassword } = req.body;
+     
+
+    let userData = req.headers.authorization.split(" ")[1];
+
+    if(userData){
+        userData = JSON.parse(userData);
+        if(!userData || !userData.fduserid){
+            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
+            return;
+        }
+    } 
+
+    
+
 
     try {
         const user = new User(); 
@@ -126,7 +140,7 @@ USER_API.put('/', async (req, res, next) => {
         res.status(HTTPCodes.SuccesfullRespons.Ok).send(updatedUser).end();
     } catch (error) {
         console.error(error);
-        res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to update user").end();
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg: "Failed to update user"}).end();
     }
 
 
@@ -147,6 +161,16 @@ USER_API.delete('/delete', async (req, res) => {
     const { userID } = req.body;
     console.log("This is the current user:", userID);
 
+    let userData = req.headers.authorization.split(" ")[1];
+
+    if(userData){
+        userData = JSON.parse(userData);
+        if(!userData || !userData.fduserid){
+            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
+            return;
+        }
+    } 
+
 
     try {
         const user = new User(); 
@@ -155,7 +179,7 @@ USER_API.delete('/delete', async (req, res) => {
        
 
         if (deletedUser) {
-            res.status(HTTPCodes.SuccesfullRespons.Ok).json( {message: "User deleted successfully"} , deletedUser).end();
+            res.status(HTTPCodes.SuccesfullRespons.Ok).json( {message: "User deleted successfully"} ).end();
 
         } else {
             res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({msg:"User not found or could not be deleted"}).end();
@@ -181,6 +205,16 @@ USER_API.get('/all', async (req, res, next) => {
 
     const { userID } = req.body;
     console.log("This is the current user:", userID);
+
+    let userData = req.headers.authorization.split(" ")[1];
+
+    if(userData){
+        userData = JSON.parse(userData);
+        if(!userData || !userData.fduserid){
+            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
+            return;
+        }
+    } 
 
     try {
 

@@ -9977,3 +9977,736 @@ Database connection  postgres://julie:1234@localhost:5432/postgres
 10:33:34 AM [32mGET[39m /bilder/reborn_rich.jpg
 10:33:34 AM [32mGET[39m /bilder/deaths_game.jpg
 10:33:34 AM [32mGET[39m /series/allReviews
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+10:45:28 AM [33mPOST[39m /user/
+10:45:39 AM [33mPOST[39m /user/login
+10:45:49 AM [31mDELETE[39m /user/delete
+10:46:30 AM [32mGET[39m /?
+10:46:30 AM [32mGET[39m /Script/templateLoader.js
+10:46:30 AM [32mGET[39m /Script/fetch.js
+10:46:30 AM [32mGET[39m /css/style.css
+10:46:30 AM [32mGET[39m /Script/mainUser.js
+10:46:30 AM [32mGET[39m /Script/mainSeries.js
+10:46:30 AM [32mGET[39m /series/all
+10:46:30 AM [32mGET[39m /bilder/reborn_rich.jpg
+10:46:30 AM [32mGET[39m /bilder/crash_landing_on_you.jpg
+10:46:30 AM [32mGET[39m /bilder/deaths_game.jpg
+10:46:40 AM [33mPOST[39m /user/login
+10:46:51 AM [31mDELETE[39m /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+10:48:44 AM [32mGET[39m /?
+10:48:44 AM [32mGET[39m /Script/fetch.js
+10:48:44 AM [32mGET[39m /Script/templateLoader.js
+10:48:44 AM [32mGET[39m /css/style.css
+10:48:44 AM [32mGET[39m /Script/mainUser.js
+10:48:44 AM [32mGET[39m /Script/mainSeries.js
+10:48:44 AM [32mGET[39m /series/all
+10:48:44 AM [32mGET[39m /bilder/deaths_game.jpg
+10:48:44 AM [32mGET[39m /bilder/reborn_rich.jpg
+10:48:44 AM [32mGET[39m /bilder/crash_landing_on_you.jpg
+10:48:58 AM [33mPOST[39m /user/login
+10:49:07 AM [31mDELETE[39m /user/delete
+10:51:15 AM [32mGET[39m /?
+10:51:15 AM [32mGET[39m /Script/fetch.js
+10:51:15 AM [32mGET[39m /Script/templateLoader.js
+10:51:15 AM [32mGET[39m /css/style.css
+10:51:15 AM [32mGET[39m /Script/mainUser.js
+10:51:15 AM [32mGET[39m /Script/mainSeries.js
+10:51:15 AM [32mGET[39m /series/all
+10:51:15 AM [32mGET[39m /bilder/reborn_rich.jpg
+10:51:15 AM [32mGET[39m /bilder/crash_landing_on_you.jpg
+10:51:15 AM [32mGET[39m /bilder/deaths_game.jpg
+10:51:38 AM [33mPOST[39m /user/login
+10:51:42 AM [31mDELETE[39m /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+10:54:07 AM DELETE /user/delete
+10:54:41 AM POST /user/login
+10:54:47 AM DELETE /user/delete
+10:55:53 AM POST /user/login
+10:55:58 AM DELETE /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+10:56:52 AM POST /user/login
+10:56:56 AM DELETE /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+10:58:50 AM POST /user/login
+10:58:53 AM DELETE /user/delete
+10:59:10 AM GET /series/all
+10:59:10 AM GET /bilder/reborn_rich.jpg
+10:59:10 AM GET /bilder/crash_landing_on_you.jpg
+10:59:10 AM GET /bilder/deaths_game.jpg
+10:59:12 AM GET /series/allReviews
+11:15:05 AM GET /series/all
+11:15:05 AM GET /bilder/crash_landing_on_you.jpg
+11:15:05 AM GET /bilder/deaths_game.jpg
+11:15:31 AM GET /series/allReviews
+11:41:46 AM GET /?
+11:41:46 AM GET /Script/fetch.js
+11:41:46 AM GET /Script/templateLoader.js
+11:41:46 AM GET /Script/mainUser.js
+11:41:46 AM GET /Script/mainSeries.js
+11:41:46 AM GET /css/style.css
+11:41:46 AM GET /series/all
+11:41:46 AM GET /bilder/reborn_rich.jpg
+11:41:46 AM GET /bilder/crash_landing_on_you.jpg
+11:41:46 AM GET /bilder/deaths_game.jpg
+11:44:21 AM GET /?
+11:44:21 AM GET /Script/fetch.js
+11:44:21 AM GET /Script/templateLoader.js
+11:44:21 AM GET /css/style.css
+11:44:21 AM GET /Script/mainUser.js
+11:44:21 AM GET /Script/mainSeries.js
+11:44:21 AM GET /series/all
+11:44:21 AM GET /bilder/reborn_rich.jpg
+11:44:21 AM GET /bilder/crash_landing_on_you.jpg
+11:44:21 AM GET /bilder/deaths_game.jpg
+11:46:13 AM GET /?
+11:46:13 AM GET /Script/fetch.js
+11:46:13 AM GET /Script/templateLoader.js
+11:46:13 AM GET /Script/mainUser.js
+11:46:13 AM GET /css/style.css
+11:46:13 AM GET /Script/mainSeries.js
+11:46:13 AM GET /series/all
+11:46:14 AM GET /bilder/reborn_rich.jpg
+11:46:14 AM GET /bilder/crash_landing_on_you.jpg
+11:46:14 AM GET /bilder/deaths_game.jpg
+11:46:19 AM POST /user/login
+11:46:26 AM GET /?
+11:46:26 AM GET /Script/fetch.js
+11:46:26 AM GET /Script/templateLoader.js
+11:46:26 AM GET /Script/mainUser.js
+11:46:26 AM GET /css/style.css
+11:46:26 AM GET /Script/mainSeries.js
+11:46:26 AM GET /series/all
+11:46:26 AM GET /bilder/reborn_rich.jpg
+11:46:26 AM GET /bilder/crash_landing_on_you.jpg
+11:46:26 AM GET /bilder/deaths_game.jpg
+11:46:39 AM POST /user/
+12:00:06 PM GET /?
+12:00:06 PM GET /Script/fetch.js
+12:00:06 PM GET /Script/templateLoader.js
+12:00:06 PM GET /css/style.css
+12:00:06 PM GET /Script/mainUser.js
+12:00:06 PM GET /Script/mainSeries.js
+12:00:06 PM GET /series/all
+12:00:06 PM GET /bilder/reborn_rich.jpg
+12:00:06 PM GET /bilder/crash_landing_on_you.jpg
+12:00:06 PM GET /bilder/deaths_game.jpg
+12:00:27 PM POST /user/
+12:02:31 PM GET /?
+12:02:31 PM GET /Script/fetch.js
+12:02:31 PM GET /Script/templateLoader.js
+12:02:31 PM GET /css/style.css
+12:02:31 PM GET /Script/mainUser.js
+12:02:31 PM GET /Script/mainSeries.js
+12:02:31 PM GET /series/all
+12:02:31 PM GET /bilder/crash_landing_on_you.jpg
+12:02:31 PM GET /bilder/reborn_rich.jpg
+12:02:31 PM GET /bilder/deaths_game.jpg
+12:02:58 PM POST /user/
+12:03:07 PM POST /user/login
+12:04:17 PM GET /?
+12:04:17 PM GET /Script/fetch.js
+12:04:17 PM GET /Script/templateLoader.js
+12:04:17 PM GET /css/style.css
+12:04:17 PM GET /Script/mainUser.js
+12:04:17 PM GET /Script/mainSeries.js
+12:04:17 PM GET /series/all
+12:04:17 PM GET /bilder/reborn_rich.jpg
+12:04:17 PM GET /bilder/deaths_game.jpg
+12:04:17 PM GET /bilder/crash_landing_on_you.jpg
+12:05:13 PM POST /user/
+12:25:15 PM GET /?
+12:25:15 PM GET /Script/fetch.js
+12:25:15 PM GET /Script/templateLoader.js
+12:25:15 PM GET /css/style.css
+12:25:15 PM GET /Script/mainUser.js
+12:25:15 PM GET /Script/mainSeries.js
+12:25:15 PM GET /series/all
+12:25:15 PM GET /bilder/crash_landing_on_you.jpg
+12:25:15 PM GET /bilder/deaths_game.jpg
+12:25:15 PM GET /bilder/reborn_rich.jpg
+12:25:26 PM POST /user/
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+12:26:33 PM [33mPOST[39m /user/
+12:26:39 PM [32mGET[39m /?
+12:26:39 PM [32mGET[39m /Script/fetch.js
+12:26:39 PM [32mGET[39m /Script/templateLoader.js
+12:26:39 PM [32mGET[39m /css/style.css
+12:26:39 PM [32mGET[39m /Script/mainUser.js
+12:26:39 PM [32mGET[39m /Script/mainSeries.js
+12:26:39 PM [32mGET[39m /series/all
+12:26:39 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+12:26:39 PM [32mGET[39m /bilder/reborn_rich.jpg
+12:26:39 PM [32mGET[39m /bilder/deaths_game.jpg
+12:27:10 PM [33mPOST[39m /user/
+12:27:21 PM [33mPOST[39m /user/login
+12:30:54 PM [33mPUT[39m /user/
+12:31:35 PM [33mPOST[39m /user/login
+12:31:41 PM [31mDELETE[39m /user/delete
+12:31:44 PM [32mGET[39m /?
+12:31:44 PM [32mGET[39m /Script/fetch.js
+12:31:44 PM [32mGET[39m /Script/templateLoader.js
+12:31:44 PM [32mGET[39m /css/style.css
+12:31:44 PM [32mGET[39m /Script/mainUser.js
+12:31:44 PM [32mGET[39m /Script/mainSeries.js
+12:31:44 PM [32mGET[39m /series/all
+12:31:44 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+12:31:44 PM [32mGET[39m /bilder/reborn_rich.jpg
+12:31:44 PM [32mGET[39m /bilder/deaths_game.jpg
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+12:44:51 PM [32mGET[39m /?
+12:44:51 PM [32mGET[39m /Script/fetch.js
+12:44:51 PM [32mGET[39m /Script/templateLoader.js
+12:44:51 PM [32mGET[39m /css/style.css
+12:44:51 PM [32mGET[39m /Script/mainUser.js
+12:44:51 PM [32mGET[39m /Script/mainSeries.js
+12:46:09 PM [32mGET[39m /?
+12:46:09 PM [32mGET[39m /Script/fetch.js
+12:46:09 PM [32mGET[39m /Script/templateLoader.js
+12:46:09 PM [32mGET[39m /css/style.css
+12:46:09 PM [32mGET[39m /Script/mainUser.js
+12:46:09 PM [32mGET[39m /Script/mainSeries.js
+12:46:19 PM [32mGET[39m /?
+12:46:19 PM [32mGET[39m /Script/fetch.js
+12:46:19 PM [32mGET[39m /Script/templateLoader.js
+12:46:19 PM [32mGET[39m /css/style.css
+12:46:19 PM [32mGET[39m /Script/mainUser.js
+12:46:19 PM [32mGET[39m /Script/mainSeries.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+12:47:18 PM [32mGET[39m /?
+12:47:18 PM [32mGET[39m /Script/fetch.js
+12:47:18 PM [32mGET[39m /Script/templateLoader.js
+12:47:18 PM [32mGET[39m /css/style.css
+12:47:18 PM [32mGET[39m /Script/mainUser.js
+12:47:18 PM [32mGET[39m /Script/mainSeries.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+12:49:11 PM [32mGET[39m /?
+12:49:11 PM [32mGET[39m /Script/fetch.js
+12:49:11 PM [32mGET[39m /Script/templateLoader.js
+12:49:11 PM [32mGET[39m /Script/mainUser.js
+12:49:11 PM [32mGET[39m /Script/mainSeries.js
+12:49:11 PM [32mGET[39m /css/style.css
+12:51:14 PM [32mGET[39m /?
+12:51:14 PM [32mGET[39m /Script/fetch.js
+12:51:14 PM [32mGET[39m /Script/templateLoader.js
+12:51:14 PM [32mGET[39m /Script/mainUser.js
+12:51:14 PM [32mGET[39m /Script/mainSeries.js
+12:51:14 PM [32mGET[39m /css/style.css
+12:51:25 PM [32mGET[39m /?
+12:51:25 PM [32mGET[39m /Script/fetch.js
+12:51:25 PM [32mGET[39m /Script/templateLoader.js
+12:51:25 PM [32mGET[39m /css/style.css
+12:51:25 PM [32mGET[39m /Script/mainUser.js
+12:51:25 PM [32mGET[39m /Script/mainSeries.js
+12:52:35 PM [32mGET[39m /?
+12:52:35 PM [32mGET[39m /Script/fetch.js
+12:52:35 PM [32mGET[39m /Script/templateLoader.js
+12:52:35 PM [32mGET[39m /css/style.css
+12:52:35 PM [32mGET[39m /Script/mainUser.js
+12:52:35 PM [32mGET[39m /Script/mainSeries.js
+12:52:36 PM [32mGET[39m /?
+12:52:36 PM [32mGET[39m /Script/fetch.js
+12:52:36 PM [32mGET[39m /Script/templateLoader.js
+12:52:36 PM [32mGET[39m /css/style.css
+12:52:36 PM [32mGET[39m /Script/mainUser.js
+12:52:36 PM [32mGET[39m /Script/mainSeries.js
+12:52:44 PM [32mGET[39m /?
+12:52:44 PM [32mGET[39m /Script/fetch.js
+12:52:44 PM [32mGET[39m /Script/templateLoader.js
+12:52:44 PM [32mGET[39m /css/style.css
+12:52:44 PM [32mGET[39m /Script/mainUser.js
+12:52:44 PM [32mGET[39m /Script/mainSeries.js
+12:52:45 PM [32mGET[39m /?
+12:52:45 PM [32mGET[39m /Script/fetch.js
+12:52:45 PM [32mGET[39m /Script/templateLoader.js
+12:52:45 PM [32mGET[39m /Script/mainUser.js
+12:52:45 PM [32mGET[39m /Script/mainSeries.js
+12:52:45 PM [32mGET[39m /css/style.css
+12:52:45 PM [32mGET[39m /?
+12:52:45 PM [32mGET[39m /Script/fetch.js
+12:52:45 PM [32mGET[39m /Script/templateLoader.js
+12:52:45 PM [32mGET[39m /css/style.css
+12:52:45 PM [32mGET[39m /Script/mainUser.js
+12:52:45 PM [32mGET[39m /Script/mainSeries.js
+12:53:29 PM [32mGET[39m /?
+12:53:29 PM [32mGET[39m /Script/fetch.js
+12:53:29 PM [32mGET[39m /Script/templateLoader.js
+12:53:29 PM [32mGET[39m /css/style.css
+12:53:29 PM [32mGET[39m /Script/mainUser.js
+12:53:29 PM [32mGET[39m /Script/mainSeries.js
+12:53:48 PM [32mGET[39m /?
+12:53:48 PM [32mGET[39m /Script/fetch.js
+12:53:48 PM [32mGET[39m /Script/templateLoader.js
+12:53:48 PM [32mGET[39m /Script/mainUser.js
+12:53:48 PM [32mGET[39m /Script/mainSeries.js
+12:53:48 PM [32mGET[39m /css/style.css
+12:56:33 PM [32mGET[39m /?
+12:56:33 PM [32mGET[39m /Script/fetch.js
+12:56:33 PM [32mGET[39m /Script/templateLoader.js
+12:56:33 PM [32mGET[39m /css/style.css
+12:56:33 PM [32mGET[39m /Script/mainUser.js
+12:56:33 PM [32mGET[39m /Script/mainSeries.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+12:59:08 PM [32mGET[39m /?
+12:59:08 PM [32mGET[39m /Script/fetch.js
+12:59:08 PM [32mGET[39m /Script/templateLoader.js
+12:59:08 PM [32mGET[39m /css/style.css
+12:59:08 PM [32mGET[39m /Script/mainUser.js
+12:59:08 PM [32mGET[39m /Script/mainSeries.js
+12:59:13 PM [32mGET[39m /?
+12:59:13 PM [32mGET[39m /Script/fetch.js
+12:59:13 PM [32mGET[39m /Script/templateLoader.js
+12:59:13 PM [32mGET[39m /Script/mainUser.js
+12:59:13 PM [32mGET[39m /css/style.css
+12:59:13 PM [32mGET[39m /Script/mainSeries.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:01:22 PM [31mDELETE[39m /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:02:07 PM GET /?
+1:02:07 PM GET /Script/fetch.js
+1:02:07 PM GET /Script/templateLoader.js
+1:02:07 PM GET /css/style.css
+1:02:07 PM GET /Script/mainSeries.js
+1:02:07 PM GET /Script/mainUser.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:02:56 PM GET /?
+1:02:56 PM GET /Script/fetch.js
+1:02:56 PM GET /Script/templateLoader.js
+1:02:56 PM GET /css/style.css
+1:02:56 PM GET /Script/mainUser.js
+1:02:56 PM GET /Script/mainSeries.js
+1:03:05 PM DELETE /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:03:39 PM [31mDELETE[39m /user/delete
+1:04:00 PM [33mPOST[39m /user/
+1:04:04 PM [33mPOST[39m /user/login
+1:04:09 PM [31mDELETE[39m /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:06:52 PM [32mGET[39m /?
+1:06:52 PM [32mGET[39m /Script/fetch.js
+1:06:52 PM [32mGET[39m /Script/templateLoader.js
+1:06:52 PM [32mGET[39m /css/style.css
+1:06:52 PM [32mGET[39m /Script/mainUser.js
+1:06:52 PM [32mGET[39m /Script/mainSeries.js
+1:06:54 PM [32mGET[39m /?
+1:06:54 PM [32mGET[39m /Script/fetch.js
+1:06:54 PM [32mGET[39m /Script/templateLoader.js
+1:06:54 PM [32mGET[39m /Script/mainUser.js
+1:06:54 PM [32mGET[39m /Script/mainSeries.js
+1:06:54 PM [32mGET[39m /css/style.css
+1:07:05 PM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:13:33 PM [32mGET[39m /?
+1:13:33 PM [32mGET[39m /Script/fetch.js
+1:13:33 PM [32mGET[39m /Script/templateLoader.js
+1:13:33 PM [32mGET[39m /css/style.css
+1:13:33 PM [32mGET[39m /Script/mainUser.js
+1:13:33 PM [32mGET[39m /Script/mainSeries.js
+1:13:41 PM [33mPOST[39m /user/
+1:13:51 PM [32mGET[39m /?
+1:13:51 PM [32mGET[39m /Script/fetch.js
+1:13:51 PM [32mGET[39m /Script/templateLoader.js
+1:13:51 PM [32mGET[39m /css/style.css
+1:13:51 PM [32mGET[39m /Script/mainUser.js
+1:13:51 PM [32mGET[39m /Script/mainSeries.js
+1:13:57 PM [33mPOST[39m /user/
+1:14:40 PM [32mGET[39m /?
+1:14:40 PM [32mGET[39m /Script/fetch.js
+1:14:40 PM [32mGET[39m /css/style.css
+1:14:40 PM [32mGET[39m /Script/templateLoader.js
+1:14:40 PM [32mGET[39m /Script/mainUser.js
+1:14:40 PM [32mGET[39m /Script/mainSeries.js
+1:14:43 PM [32mGET[39m /?
+1:14:43 PM [32mGET[39m /Script/fetch.js
+1:14:43 PM [32mGET[39m /Script/templateLoader.js
+1:14:43 PM [32mGET[39m /Script/mainUser.js
+1:14:43 PM [32mGET[39m /Script/mainSeries.js
+1:14:43 PM [32mGET[39m /css/style.css
+1:14:54 PM [33mPOST[39m /user/
+####################
+####################
+Database connection  postgres://julie:1234@localhost:5432/postgres
+Server enviorment local
+1:17:39 PM [32mGET[39m /?
+1:17:39 PM [32mGET[39m /Script/fetch.js
+1:17:39 PM [32mGET[39m /Script/templateLoader.js
+1:17:39 PM [32mGET[39m /css/style.css
+1:17:39 PM [32mGET[39m /Script/mainUser.js
+1:17:39 PM [32mGET[39m /Script/mainSeries.js
+1:18:00 PM [33mPOST[39m /user/
+1:20:16 PM [32mGET[39m /?
+1:20:16 PM [32mGET[39m /Script/fetch.js
+1:20:16 PM [32mGET[39m /Script/templateLoader.js
+1:20:16 PM [32mGET[39m /css/style.css
+1:20:16 PM [32mGET[39m /Script/mainUser.js
+1:20:16 PM [32mGET[39m /Script/mainSeries.js
+1:20:24 PM [33mPOST[39m /user/
+1:21:44 PM [32mGET[39m /?
+1:21:44 PM [32mGET[39m /Script/fetch.js
+1:21:44 PM [32mGET[39m /Script/templateLoader.js
+1:21:44 PM [32mGET[39m /css/style.css
+1:21:44 PM [32mGET[39m /Script/mainUser.js
+1:21:44 PM [32mGET[39m /Script/mainSeries.js
+1:21:49 PM [33mPOST[39m /user/
+1:28:13 PM [32mGET[39m /?
+1:28:13 PM [32mGET[39m /Script/fetch.js
+1:28:13 PM [32mGET[39m /Script/templateLoader.js
+1:28:13 PM [32mGET[39m /css/style.css
+1:28:13 PM [32mGET[39m /Script/mainUser.js
+1:28:13 PM [32mGET[39m /Script/mainSeries.js
+1:34:24 PM [33mPOST[39m /user/
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:36:31 PM POST /user/
+1:38:36 PM GET /?
+1:38:36 PM GET /Script/fetch.js
+1:38:36 PM GET /css/style.css
+1:38:36 PM GET /Script/templateLoader.js
+1:38:36 PM GET /Script/mainUser.js
+1:38:36 PM GET /Script/mainSeries.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:39:07 PM POST /user/
+1:39:42 PM POST /user/login
+1:39:51 PM PUT /user/
+1:40:19 PM POST /user/login
+1:40:27 PM DELETE /user/delete
+1:41:34 PM GET /series/all
+1:41:34 PM GET /bilder/reborn_rich.jpg
+1:41:34 PM GET /bilder/crash_landing_on_you.jpg
+1:41:34 PM GET /bilder/deaths_game.jpg
+1:41:37 PM GET /series/allReviews
+1:42:33 PM GET /?
+1:42:33 PM GET /Script/fetch.js
+1:42:33 PM GET /Script/templateLoader.js
+1:42:33 PM GET /css/style.css
+1:42:33 PM GET /Script/mainUser.js
+1:42:33 PM GET /Script/mainSeries.js
+1:42:34 PM GET /series/all
+1:42:34 PM GET /bilder/reborn_rich.jpg
+1:42:34 PM GET /bilder/crash_landing_on_you.jpg
+1:42:34 PM GET /bilder/deaths_game.jpg
+1:42:36 PM GET /series/allReviews
+1:45:59 PM GET /?
+1:45:59 PM GET /Script/fetch.js
+1:45:59 PM GET /Script/templateLoader.js
+1:45:59 PM GET /css/style.css
+1:46:00 PM GET /Script/mainUser.js
+1:46:00 PM GET /Script/mainSeries.js
+1:46:01 PM GET /series/all
+1:46:02 PM GET /bilder/reborn_rich.jpg
+1:46:02 PM GET /bilder/crash_landing_on_you.jpg
+1:46:02 PM GET /bilder/deaths_game.jpg
+1:46:02 PM GET /series/allReviews
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:47:03 PM [32mGET[39m /?
+1:47:03 PM [32mGET[39m /Script/fetch.js
+1:47:03 PM [32mGET[39m /Script/templateLoader.js
+1:47:03 PM [32mGET[39m /css/style.css
+1:47:03 PM [32mGET[39m /Script/mainUser.js
+1:47:03 PM [32mGET[39m /Script/mainSeries.js
+1:47:05 PM [32mGET[39m /series/all
+1:47:05 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:47:05 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:47:05 PM [32mGET[39m /bilder/deaths_game.jpg
+1:47:06 PM [32mGET[39m /series/allReviews
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:48:01 PM [32mGET[39m /?
+1:48:01 PM [32mGET[39m /Script/fetch.js
+1:48:01 PM [32mGET[39m /Script/templateLoader.js
+1:48:01 PM [32mGET[39m /css/style.css
+1:48:01 PM [32mGET[39m /Script/mainUser.js
+1:48:01 PM [32mGET[39m /Script/mainSeries.js
+1:48:02 PM [32mGET[39m /series/all
+1:48:02 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:48:02 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:48:02 PM [32mGET[39m /bilder/deaths_game.jpg
+1:48:05 PM [32mGET[39m /series/allReviews
+1:48:15 PM [32mGET[39m /series/all
+1:48:17 PM [32mGET[39m /series/allReviews
+1:48:23 PM [32mGET[39m /?
+1:48:23 PM [32mGET[39m /Script/templateLoader.js
+1:48:23 PM [32mGET[39m /Script/mainUser.js
+1:48:23 PM [32mGET[39m /css/style.css
+1:48:23 PM [32mGET[39m /Script/mainSeries.js
+1:48:23 PM [32mGET[39m /Script/fetch.js
+1:48:48 PM [33mPOST[39m /user/
+1:48:52 PM [33mPOST[39m /user/login
+1:48:59 PM [33mPOST[39m /user/
+1:49:05 PM [33mPOST[39m /user/login
+1:49:14 PM [32mGET[39m /series/all
+1:49:14 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:49:14 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:49:14 PM [32mGET[39m /bilder/deaths_game.jpg
+1:49:19 PM [32mGET[39m /series/allReviews
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:50:30 PM [32mGET[39m /?
+1:50:30 PM [32mGET[39m /Script/fetch.js
+1:50:30 PM [32mGET[39m /Script/templateLoader.js
+1:50:30 PM [32mGET[39m /css/style.css
+1:50:30 PM [32mGET[39m /Script/mainUser.js
+1:50:30 PM [32mGET[39m /Script/mainSeries.js
+1:50:32 PM [32mGET[39m /series/all
+1:50:32 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:50:32 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:50:32 PM [32mGET[39m /bilder/deaths_game.jpg
+1:50:33 PM [32mGET[39m /series/allReviews
+1:50:46 PM [32mGET[39m /?
+1:50:46 PM [32mGET[39m /Script/fetch.js
+1:50:46 PM [32mGET[39m /Script/templateLoader.js
+1:50:46 PM [32mGET[39m /css/style.css
+1:50:46 PM [32mGET[39m /Script/mainUser.js
+1:50:46 PM [32mGET[39m /Script/mainSeries.js
+1:50:54 PM [33mPOST[39m /user/login
+1:50:57 PM [32mGET[39m /series/all
+1:50:57 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:50:57 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:50:57 PM [32mGET[39m /bilder/deaths_game.jpg
+1:50:59 PM [32mGET[39m /series/allReviews
+1:51:11 PM [33mPOST[39m /series/review
+1:52:09 PM [33mPOST[39m /series/review
+1:52:38 PM [33mPOST[39m /series/review
+1:54:17 PM [32mGET[39m /?
+1:54:17 PM [32mGET[39m /Script/mainUser.js
+1:54:17 PM [32mGET[39m /Script/mainSeries.js
+1:54:17 PM [32mGET[39m /Script/fetch.js
+1:54:17 PM [32mGET[39m /Script/templateLoader.js
+1:54:17 PM [32mGET[39m /css/style.css
+1:54:18 PM [32mGET[39m /series/all
+1:54:18 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:54:18 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:54:18 PM [32mGET[39m /bilder/deaths_game.jpg
+1:54:19 PM [32mGET[39m /series/allReviews
+1:54:45 PM [33mPOST[39m /user/login
+1:54:51 PM [32mGET[39m /series/all
+1:54:51 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:54:51 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:54:51 PM [32mGET[39m /bilder/deaths_game.jpg
+1:54:52 PM [32mGET[39m /series/allReviews
+1:54:58 PM [33mPOST[39m /series/review
+1:55:07 PM [33mPOST[39m /series/review
+1:55:57 PM [32mGET[39m /?
+1:55:57 PM [32mGET[39m /Script/fetch.js
+1:55:57 PM [32mGET[39m /Script/templateLoader.js
+1:55:57 PM [32mGET[39m /css/style.css
+1:55:57 PM [32mGET[39m /Script/mainUser.js
+1:55:57 PM [32mGET[39m /Script/mainSeries.js
+1:56:04 PM [33mPOST[39m /user/login
+1:56:10 PM [32mGET[39m /series/all
+1:56:10 PM [32mGET[39m /bilder/reborn_rich.jpg
+1:56:10 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+1:56:10 PM [32mGET[39m /bilder/deaths_game.jpg
+1:56:11 PM [32mGET[39m /series/allReviews
+1:56:19 PM [33mPOST[39m /series/review
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+1:57:09 PM GET /?
+1:57:09 PM GET /Script/fetch.js
+1:57:09 PM GET /Script/templateLoader.js
+1:57:09 PM GET /Script/mainUser.js
+1:57:09 PM GET /Script/mainSeries.js
+1:57:09 PM GET /css/style.css
+1:57:11 PM GET /series/all
+1:57:11 PM GET /bilder/crash_landing_on_you.jpg
+1:57:11 PM GET /bilder/reborn_rich.jpg
+1:57:11 PM GET /bilder/deaths_game.jpg
+1:57:12 PM GET /series/allReviews
+1:57:19 PM POST /user/login
+1:57:21 PM GET /series/all
+1:57:22 PM GET /series/allReviews
+1:57:31 PM POST /series/review
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+2:03:55 PM [32mGET[39m /?
+2:03:55 PM [32mGET[39m /Script/fetch.js
+2:03:55 PM [32mGET[39m /Script/templateLoader.js
+2:03:55 PM [32mGET[39m /Script/mainUser.js
+2:03:55 PM [32mGET[39m /css/style.css
+2:03:55 PM [32mGET[39m /Script/mainSeries.js
+2:04:01 PM [33mPOST[39m /user/login
+2:04:04 PM [32mGET[39m /series/all
+2:04:04 PM [32mGET[39m /bilder/reborn_rich.jpg
+2:04:04 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+2:04:04 PM [32mGET[39m /bilder/deaths_game.jpg
+2:04:05 PM [32mGET[39m /series/allReviews
+2:04:12 PM [33mPOST[39m /series/review
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+2:05:21 PM [32mGET[39m /?
+2:05:21 PM [32mGET[39m /Script/fetch.js
+2:05:21 PM [32mGET[39m /Script/templateLoader.js
+2:05:21 PM [32mGET[39m /css/style.css
+2:05:21 PM [32mGET[39m /Script/mainUser.js
+2:05:21 PM [32mGET[39m /Script/mainSeries.js
+2:05:24 PM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+2:06:36 PM [32mGET[39m /?
+2:06:36 PM [32mGET[39m /Script/fetch.js
+2:06:36 PM [32mGET[39m /Script/templateLoader.js
+2:06:36 PM [32mGET[39m /Script/mainUser.js
+2:06:36 PM [32mGET[39m /css/style.css
+2:06:36 PM [32mGET[39m /Script/mainSeries.js
+2:06:39 PM [33mPOST[39m /user/login
+2:06:42 PM [32mGET[39m /series/all
+2:06:42 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+2:06:42 PM [32mGET[39m /bilder/reborn_rich.jpg
+2:06:42 PM [32mGET[39m /bilder/deaths_game.jpg
+2:06:43 PM [32mGET[39m /series/allReviews
+2:06:47 PM [33mPOST[39m /series/review
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+2:10:20 PM [32mGET[39m /?
+2:10:20 PM [32mGET[39m /Script/fetch.js
+2:10:20 PM [32mGET[39m /Script/templateLoader.js
+2:10:20 PM [32mGET[39m /Script/mainUser.js
+2:10:20 PM [32mGET[39m /css/style.css
+2:10:20 PM [32mGET[39m /Script/mainSeries.js
+2:10:54 PM [33mPOST[39m /user/login
+2:10:55 PM [32mGET[39m /series/all
+2:10:55 PM [32mGET[39m /bilder/reborn_rich.jpg
+2:10:55 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+2:10:55 PM [32mGET[39m /bilder/deaths_game.jpg
+2:10:55 PM [32mGET[39m /series/allReviews
+2:11:00 PM [33mPOST[39m /series/review
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+2:16:29 PM POST /series/review
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+2:22:56 PM GET /?
+2:22:56 PM GET /Script/fetch.js
+2:22:56 PM GET /Script/mainUser.js
+2:22:56 PM GET /css/style.css
+2:22:56 PM GET /Script/templateLoader.js
+2:22:56 PM GET /Script/mainSeries.js
+2:23:03 PM POST /user/login
+2:23:04 PM GET /series/all
+2:23:05 PM GET /bilder/crash_landing_on_you.jpg
+2:23:05 PM GET /bilder/reborn_rich.jpg
+2:23:05 PM GET /bilder/deaths_game.jpg
+2:23:05 PM GET /series/allReviews
+2:23:12 PM POST /series/review
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+2:25:20 PM GET /?
+2:25:20 PM GET /Script/fetch.js
+2:25:20 PM GET /Script/templateLoader.js
+2:25:20 PM GET /Script/mainUser.js
+2:25:20 PM GET /css/style.css
+2:25:20 PM GET /Script/mainSeries.js
+2:25:24 PM POST /user/login
+2:25:25 PM GET /series/all
+2:25:25 PM GET /bilder/crash_landing_on_you.jpg
+2:25:25 PM GET /bilder/reborn_rich.jpg
+2:25:25 PM GET /bilder/deaths_game.jpg
+2:25:25 PM GET /series/allReviews
+2:25:33 PM POST /series/review
+2:26:39 PM GET /?
+2:26:39 PM GET /Script/fetch.js
+2:26:39 PM GET /Script/templateLoader.js
+2:26:39 PM GET /css/style.css
+2:26:39 PM GET /Script/mainUser.js
+2:26:39 PM GET /Script/mainSeries.js
+2:26:46 PM POST /user/login
+2:26:47 PM GET /series/all
+2:26:47 PM GET /bilder/reborn_rich.jpg
+2:26:47 PM GET /bilder/crash_landing_on_you.jpg
+2:26:47 PM GET /bilder/deaths_game.jpg
+2:26:48 PM GET /series/allReviews
+2:26:52 PM GET /series/all
+2:26:53 PM GET /series/allReviews
+2:27:03 PM GET /series/all
+2:27:05 PM GET /series/allReviews
+2:27:10 PM POST /series/review
+2:27:22 PM GET /series/all
+2:27:22 PM GET /bilder/reborn_rich.jpg
+2:27:22 PM GET /bilder/crash_landing_on_you.jpg
+2:27:23 PM GET /series/allReviews
+2:27:34 PM GET /?
+2:27:34 PM GET /Script/fetch.js
+2:27:34 PM GET /Script/templateLoader.js
+2:27:34 PM GET /css/style.css
+2:27:34 PM GET /Script/mainUser.js
+2:27:34 PM GET /Script/mainSeries.js

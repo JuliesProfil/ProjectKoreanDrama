@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     localStorage.removeItem("selectedDramaId");
-    showAllSeries();
+    //showAllSeries();
 });
 
 async function showAllSeries() {
@@ -200,22 +200,23 @@ async function loadOneSeries(selectedDrama) {
 async function postReviewData() {
 
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
+    const selectedDramaId = localStorage.getItem("selectedDramaId");
 
     //let theSeries = parseInt(localStorage.getItem("theSeries"));
     let commentInput = document.getElementById("commentInput").value;
     let ratingInput = document.getElementById("ratingInput").value;
-    let statusInput = document.getElementById("statusInput").value;
+    //let statusInput = document.getElementById("statusInput").value;
     let isFavoriteInput = document.getElementById("isFavoriteInput").checked;
-    let hasWatchedInput = document.getElementById("hasWatchedInput").checked;
+    //let hasWatchedInput = document.getElementById("hasWatchedInput").checked;
 
     let reviewData = {
         userID: loginData.fduserid,
-        dramaID: theSeries,
+        dramaID: parseInt(selectedDramaId),
         commentText: commentInput,
         ratingNumber: ratingInput,
-        status: statusInput,
+        //status: statusInput,
         isFavorite: isFavoriteInput,
-        hasWatched: hasWatchedInput
+        //hasWatched: hasWatchedInput
     };
 
     /*
@@ -334,6 +335,28 @@ async function displayAverageRatings(reviews, selectedDramaId) {
         averageRatingContainer.appendChild(ratingDiv);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
