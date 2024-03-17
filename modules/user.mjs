@@ -1,8 +1,5 @@
 import DBManager from "./storageManager.mjs";
 
-//import connectionString from "./storageManager.mjs";
-//let DBManager = new DBManager(connectionString);
-//let DBManager = new DBManager();
 
 
 class User {

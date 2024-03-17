@@ -21192,3 +21192,31 @@ Database connection  postgres://julie:1234@localhost:5432/postgres
 Server enviorment local
 Database connection  postgres://julie:1234@localhost:5432/postgres
 ####################
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?
+####################
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?
+####################
+####################
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?
+####################
+Server enviorment prod
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?
+####################
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################

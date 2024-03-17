@@ -2,10 +2,8 @@ import express, { response } from "express";
 import { HTTPCodes } from "../modules/httpConstants.mjs";
 import { authenticateLogin } from "../modules/userMiddleware.mjs";
 
-//import connectionString from "../modules/storageManager.mjs"
+
 import DBManager from "../modules/storageManager.mjs";
-//let DBManager = new DBManager();
-//let DBManager = new DBManager(connectionString);
 
 
 const DRAMAS_API = express.Router();

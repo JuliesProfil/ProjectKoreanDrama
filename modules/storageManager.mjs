@@ -6,17 +6,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 
-if (connectionString == undefined) {
-    //if (process.env.DB_CONNECTIONSTRING == undefined) {
+    if (process.env.DB_CONNECTIONSTRING == undefined) {
         throw ("You forgot the db connection string");
     }
 let connectionString = process.env.DB_CONNECTIONSTRING_LOCAL;
 if (process.env.ENVIORMENT != "local") {
     connectionString = process.env.DB_CONNECTIONSTRING_PROD;
 }
-
-
-console.log(connectionString);
 
 
 
@@ -27,8 +23,8 @@ class DBManager {
     //constructor() {
         this.#credentials = {
             connectionString,
-            //ssl: (process.env.DB_SSL === "true") ? process.env.DB_SSL : false
-            ssl: (process.env.DB_SSL === "true") ? true : false
+            ssl: (process.env.DB_SSL === "true") ? process.env.DB_SSL : false
+
         };
     }
 
