@@ -6,29 +6,29 @@ import dotenv from "dotenv";
 dotenv.config();
 
 
-
-let connectionString = process.env.DB_CONNECTIONSTRING_LOCAL;
-if (process.env.ENVIORMENT != "local") {
-    connectionString = process.env.DB_CONNECTIONSTRING_PROD;
-}
 if (connectionString == undefined) {
     //if (process.env.DB_CONNECTIONSTRING == undefined) {
         throw ("You forgot the db connection string");
     }
+let connectionString = process.env.DB_CONNECTIONSTRING_LOCAL;
+if (process.env.ENVIORMENT != "local") {
+    connectionString = process.env.DB_CONNECTIONSTRING_PROD;
+}
 
-//console.log(connectionString);
+
+console.log(connectionString);
 
 
 
 class DBManager {
 
     #credentials = {};
-    //constructor(connectionString) {
-    constructor() {
+    constructor(connectionString) {
+    //constructor() {
         this.#credentials = {
             connectionString,
-            ssl: (process.env.DB_SSL === "true") ? process.env.DB_SSL : false
-            //ssl: (process.env.DB_SSL === "true") ? true : false
+            //ssl: (process.env.DB_SSL === "true") ? process.env.DB_SSL : false
+            ssl: (process.env.DB_SSL === "true") ? true : false
         };
     }
 
@@ -302,6 +302,6 @@ class DBManager {
 //let dbm = new DBManager(connectionString);
 
 //export default new DBManager(connectionString); 
-export default new DBManager(); 
+export default new DBManager(connectionString); 
 //export default DBManager;
 //export default connectionString;
