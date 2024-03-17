@@ -31,18 +31,13 @@
         <button id="btnLogout">Logout</button>
         <button id="btnDramas">Dramas</button>
 
-        <!-- Regular User Buttons -->
-        <!-- <div id="regularUserButtons" style="display: none;">-->
-            <button id="btnUserProfile">User Profile</button>
-<!--
-            <button id="btnUpdateUser" style="display: none;">Update User</button>
-            <button id="btnDeleteUser" style="display: none;">Delete User</button>-->
-        <!--</div>-->
 
-        <!-- Admin User Buttons -->
-        <!--<div id="adminUserButtons" style="display: none;"> -->
-            <button id="btnListUsers">List Users</button>
-        <!--</div> -->
+        <button id="btnUserProfile">User Profile</button>
+        <button id="btnUpdateUser" style="display: none;">Update User</button>
+        <button id="btnDeleteUser" style="display: none;">Delete User</button>
+
+        <button id="btnListUsers">List Users</button>
+
 
 
     </div>
@@ -59,7 +54,7 @@
             <h2>Welcome to this Korean Drama Application!</h2>
             <h3>Explore the world of korean dramas.</h3>
             <p>Discover new korean dramas and immerse yourself in their unique stories and cultures. Finding your next favorite drama is easy. Browse by genre and uncover hidden gems.</p>
-            <p>As a member, you have the opportunity to enhance your experience by leaving reviews and ratings for the dramas you watch. Share your thoughts with our community and help others discover their new favourte drama.</p>
+            <p>As a member, you have the opportunity to enhance your experience by leaving reviews and ratings for the dramas you watch. Share your thoughts with our community and help others discover their new favourite drama.</p>
             <p>Become a member and join this cmmunity in a journey filled with romance, intrigue, laughter, action and tears. Let the magic of korean dramas transport you to new worlds and unforgettable adventures.</p>
         </div>
     </template>
@@ -232,6 +227,14 @@
 
 
 
+
+
+
+
+
+
+
+
     <script>
         const btnUserProfile = document.getElementById("btnUserProfile");
         const btnHome = document.getElementById("btnHome");
@@ -240,23 +243,14 @@
 
         const btnListUsers = document.getElementById("btnListUsers");
         
-        //const btnListUser = document.getElementById("btnListUser");
-        //const btnUpdateUser = document.getElementById("btnUpdateUser");
-        //const btnDeleteUser = document.getElementById("btnDeleteUser");
-    
-
         btnLogin.addEventListener("click", showLogin);
         btnLogout.addEventListener("click", logoutUser);
 
         btnHome.addEventListener("click", showHomePage);
         btnListUsers.addEventListener("click", listUsers);
-        //btnUpdateUser.addEventListener("click", showUpdateUser);
-        //btnDeleteUser.addEventListener("click", showDeleteUser);
-        
+    
         btnUserProfile.addEventListener("click", function() {
             showUserProfile();
-            //btnUpdateUser.style.display = 'block';
-            //btnDeleteUser.style.display = 'block';
         });
         
 

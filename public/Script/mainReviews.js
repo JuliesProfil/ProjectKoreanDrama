@@ -1,7 +1,6 @@
 
 
 async function postReview() {
-
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
     const selectedDramaId = localStorage.getItem("selectedDramaId");
 
@@ -17,7 +16,7 @@ async function postReview() {
         isFavorite: isFavoriteInput,
     };
 
-    /*
+    
     if (commentInput.trim() === "") {
         alert("Please write a review.");
         return;
@@ -27,7 +26,7 @@ async function postReview() {
     } else {
 
     }
-    */
+    
 
     postData("/dramas/review", reviewData,
         (res) => {
@@ -41,8 +40,6 @@ async function postReview() {
             alert("Error posting review.");
         });
 }
-
-
 
 
 
@@ -78,7 +75,6 @@ async function showAllReviews(reviews, selectedDramaId) {
     let numberOfReviews = 0;
     for (let i = 0; i < reviews.length; i++) {
         const review = reviews[i];
-        // Checks if the review dramaId number is the same as the selectedDramaId
         if (review.fddramaid === parseInt(selectedDramaId)) {
             const reviewDiv = document.createElement("div");
             reviewDiv.innerHTML = `
@@ -105,7 +101,6 @@ async function showAverageRating(reviews, selectedDramaId) {
     let numberOfRatings = 0;
     for (let i = 0; i < reviews.length; i++) {
         const review = reviews[i];
-       // Checks if the review dramaId number is the same as the selectedDramaId
         if (review.fddramaid === parseInt(selectedDramaId)) {
             sumOfRating += parseFloat(review.fdrating);
             numberOfRatings++;

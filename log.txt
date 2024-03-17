@@ -19566,3 +19566,1629 @@ Database connection  postgres://julie:1234@localhost:5432/postgres
 10:33:12 AM [32mGET[39m /bilder/deaths_game.jpg
 10:33:22 AM [33mPOST[39m /user/login
 10:33:34 AM [33mPUT[39m /user/
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+11:10:56 AM [32mGET[39m /
+11:10:56 AM [32mGET[39m /Script/fetch.js
+11:10:56 AM [32mGET[39m /Script/mainUsers.js
+11:10:56 AM [32mGET[39m /css/style.css
+11:10:56 AM [32mGET[39m /Script/mainDramas.js
+11:10:56 AM [32mGET[39m /Script/mainReviews.js
+11:10:56 AM [32mGET[39m /Script/templateLoader.js
+11:10:56 AM [32mGET[39m /Script/hashPassword.js
+11:11:02 AM [33mPOST[39m /user/login
+11:11:02 AM [32mGET[39m /?
+11:11:02 AM [32mGET[39m /Script/fetch.js
+11:11:02 AM [32mGET[39m /Script/templateLoader.js
+11:11:02 AM [32mGET[39m /Script/mainUsers.js
+11:11:02 AM [32mGET[39m /Script/mainDramas.js
+11:11:02 AM [32mGET[39m /Script/mainReviews.js
+11:11:02 AM [32mGET[39m /css/style.css
+11:11:02 AM [32mGET[39m /Script/hashPassword.js
+11:11:03 AM [32mGET[39m /?
+11:11:03 AM [33mPOST[39m /user/login
+11:11:05 AM [32mGET[39m /Script/fetch.js
+11:11:05 AM [32mGET[39m /Script/templateLoader.js
+11:11:05 AM [32mGET[39m /Script/mainUsers.js
+11:11:05 AM [32mGET[39m /css/style.css
+11:11:05 AM [32mGET[39m /Script/mainDramas.js
+11:11:05 AM [32mGET[39m /Script/mainReviews.js
+11:11:05 AM [32mGET[39m /Script/hashPassword.js
+11:11:17 AM [33mPOST[39m /user/login
+11:11:17 AM [32mGET[39m /?
+11:11:19 AM [32mGET[39m /Script/fetch.js
+11:11:19 AM [32mGET[39m /Script/templateLoader.js
+11:11:19 AM [32mGET[39m /Script/mainUsers.js
+11:11:19 AM [32mGET[39m /css/style.css
+11:11:19 AM [32mGET[39m /Script/mainDramas.js
+11:11:19 AM [32mGET[39m /Script/mainReviews.js
+11:11:19 AM [32mGET[39m /Script/hashPassword.js
+11:11:27 AM [33mPOST[39m /user/login
+11:11:27 AM [32mGET[39m /?
+11:11:28 AM [32mGET[39m /Script/templateLoader.js
+11:11:28 AM [32mGET[39m /css/style.css
+11:11:28 AM [32mGET[39m /Script/fetch.js
+11:11:28 AM [32mGET[39m /Script/mainUsers.js
+11:11:28 AM [32mGET[39m /Script/mainReviews.js
+11:11:28 AM [32mGET[39m /Script/mainDramas.js
+11:11:28 AM [32mGET[39m /Script/hashPassword.js
+11:11:30 AM [32mGET[39m /
+11:11:30 AM [32mGET[39m /Script/fetch.js
+11:11:30 AM [32mGET[39m /Script/templateLoader.js
+11:11:30 AM [32mGET[39m /Script/mainUsers.js
+11:11:30 AM [32mGET[39m /css/style.css
+11:11:30 AM [32mGET[39m /Script/mainDramas.js
+11:11:30 AM [32mGET[39m /Script/mainReviews.js
+11:11:30 AM [32mGET[39m /Script/hashPassword.js
+11:11:38 AM [32mGET[39m /?
+11:11:38 AM [33mPOST[39m /user/login
+11:11:38 AM [32mGET[39m /Script/fetch.js
+11:11:38 AM [32mGET[39m /Script/templateLoader.js
+11:11:38 AM [32mGET[39m /Script/mainUsers.js
+11:11:38 AM [32mGET[39m /Script/mainDramas.js
+11:11:38 AM [32mGET[39m /Script/mainReviews.js
+11:11:38 AM [32mGET[39m /css/style.css
+11:11:38 AM [32mGET[39m /Script/hashPassword.js
+11:11:39 AM [33mPOST[39m /user/login
+11:11:39 AM [32mGET[39m /?
+11:11:40 AM [32mGET[39m /Script/fetch.js
+11:11:41 AM [32mGET[39m /Script/hashPassword.js
+11:11:41 AM [32mGET[39m /Script/templateLoader.js
+11:11:41 AM [32mGET[39m /Script/mainUsers.js
+11:11:41 AM [32mGET[39m /Script/mainDramas.js
+11:11:41 AM [32mGET[39m /css/style.css
+11:11:41 AM [32mGET[39m /Script/mainReviews.js
+####################
+####################
+Database connection  postgres://julie:1234@localhost:5432/postgres
+Server enviorment local
+11:11:52 AM [32mGET[39m /?
+11:11:52 AM [32mGET[39m /Script/fetch.js
+11:11:52 AM [32mGET[39m /Script/templateLoader.js
+11:11:52 AM [32mGET[39m /Script/mainUsers.js
+11:11:52 AM [32mGET[39m /Script/mainDramas.js
+11:11:52 AM [32mGET[39m /css/style.css
+11:11:52 AM [32mGET[39m /Script/mainReviews.js
+11:11:52 AM [32mGET[39m /Script/hashPassword.js
+11:11:54 AM [32mGET[39m /
+11:11:54 AM [32mGET[39m /Script/fetch.js
+11:11:54 AM [32mGET[39m /Script/templateLoader.js
+11:11:54 AM [32mGET[39m /Script/mainUsers.js
+11:11:54 AM [32mGET[39m /css/style.css
+11:11:54 AM [32mGET[39m /Script/mainDramas.js
+11:11:54 AM [32mGET[39m /Script/mainReviews.js
+11:11:54 AM [32mGET[39m /Script/hashPassword.js
+11:12:00 AM [32mGET[39m /?
+11:12:00 AM [33mPOST[39m /user/
+11:12:00 AM [32mGET[39m /Script/fetch.js
+11:12:00 AM [32mGET[39m /Script/mainDramas.js
+11:12:00 AM [32mGET[39m /Script/templateLoader.js
+11:12:00 AM [32mGET[39m /Script/mainUsers.js
+11:12:00 AM [32mGET[39m /Script/mainReviews.js
+11:12:00 AM [32mGET[39m /Script/hashPassword.js
+11:12:00 AM [32mGET[39m /css/style.css
+11:12:03 AM [33mPOST[39m /user/login
+11:12:15 AM [32mGET[39m /user/adminGetAll
+11:12:16 AM [32mGET[39m /dramas/all
+11:12:16 AM [32mGET[39m /bilder/crash_landing_on_you.jpg
+11:12:16 AM [32mGET[39m /bilder/deaths_game.jpg
+11:12:16 AM [32mGET[39m /bilder/reborn_rich.jpg
+11:12:16 AM [32mGET[39m /bilder/kingdom.jpg
+11:12:16 AM [32mGET[39m /bilder/itewon_class.jpg
+11:12:19 AM [32mGET[39m /dramas/allReviews
+11:12:27 AM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+11:21:06 AM [32mGET[39m /
+11:21:06 AM [32mGET[39m /Script/mainUsers.js
+11:21:06 AM [32mGET[39m /Script/templateLoader.js
+11:21:06 AM [32mGET[39m /Script/fetch.js
+11:21:06 AM [32mGET[39m /css/style.css
+11:21:06 AM [32mGET[39m /Script/mainDramas.js
+11:21:06 AM [32mGET[39m /Script/mainReviews.js
+11:21:06 AM [32mGET[39m /Script/hashPassword.js
+11:21:08 AM [32mGET[39m /
+11:21:08 AM [32mGET[39m /Script/fetch.js
+11:21:08 AM [32mGET[39m /Script/templateLoader.js
+11:21:08 AM [32mGET[39m /Script/mainUsers.js
+11:21:08 AM [32mGET[39m /Script/hashPassword.js
+11:21:08 AM [32mGET[39m /css/style.css
+11:21:08 AM [32mGET[39m /Script/mainDramas.js
+11:21:08 AM [32mGET[39m /Script/mainReviews.js
+11:21:14 AM [33mPOST[39m /user/login
+11:21:14 AM [32mGET[39m /?
+11:21:15 AM [32mGET[39m /Script/fetch.js
+11:21:15 AM [32mGET[39m /Script/templateLoader.js
+11:21:15 AM [32mGET[39m /css/style.css
+11:21:15 AM [32mGET[39m /Script/mainUsers.js
+11:21:15 AM [32mGET[39m /Script/mainDramas.js
+11:21:15 AM [32mGET[39m /Script/mainReviews.js
+11:21:15 AM [32mGET[39m /Script/hashPassword.js
+11:21:19 AM [32mGET[39m /?
+11:21:19 AM [33mPOST[39m /user/login
+11:21:20 AM [32mGET[39m /Script/fetch.js
+11:21:20 AM [32mGET[39m /Script/templateLoader.js
+11:21:20 AM [32mGET[39m /Script/mainUsers.js
+11:21:20 AM [32mGET[39m /Script/mainDramas.js
+11:21:20 AM [32mGET[39m /Script/mainReviews.js
+11:21:20 AM [32mGET[39m /Script/hashPassword.js
+11:21:20 AM [32mGET[39m /css/style.css
+11:21:24 AM [33mPOST[39m /user/login
+11:21:24 AM [32mGET[39m /?
+11:21:25 AM [32mGET[39m /Script/fetch.js
+11:21:25 AM [32mGET[39m /Script/templateLoader.js
+11:21:25 AM [32mGET[39m /Script/mainUsers.js
+11:21:25 AM [32mGET[39m /css/style.css
+11:21:25 AM [32mGET[39m /Script/mainDramas.js
+11:21:25 AM [32mGET[39m /Script/mainReviews.js
+11:21:25 AM [32mGET[39m /Script/hashPassword.js
+11:21:40 AM [33mPOST[39m /user/login
+11:21:40 AM [32mGET[39m /?
+11:21:42 AM [32mGET[39m /Script/fetch.js
+11:21:42 AM [32mGET[39m /Script/templateLoader.js
+11:21:42 AM [32mGET[39m /css/style.css
+11:21:42 AM [32mGET[39m /Script/mainUsers.js
+11:21:42 AM [32mGET[39m /Script/mainDramas.js
+11:21:42 AM [32mGET[39m /Script/mainReviews.js
+11:21:42 AM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+11:23:51 AM [32mGET[39m /?
+11:23:51 AM [32mGET[39m /Script/fetch.js
+11:23:51 AM [32mGET[39m /Script/templateLoader.js
+11:23:51 AM [32mGET[39m /Script/hashPassword.js
+11:23:51 AM [32mGET[39m /css/style.css
+11:23:51 AM [32mGET[39m /Script/mainUsers.js
+11:23:51 AM [32mGET[39m /Script/mainDramas.js
+11:23:51 AM [32mGET[39m /Script/mainReviews.js
+11:23:55 AM [32mGET[39m /?
+11:23:55 AM [32mGET[39m /Script/fetch.js
+11:23:55 AM [32mGET[39m /Script/templateLoader.js
+11:23:55 AM [32mGET[39m /Script/mainUsers.js
+11:23:55 AM [32mGET[39m /css/style.css
+11:23:55 AM [32mGET[39m /Script/mainDramas.js
+11:23:55 AM [32mGET[39m /Script/mainReviews.js
+11:23:55 AM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+11:24:01 AM [32mGET[39m /?
+11:24:01 AM [32mGET[39m /Script/fetch.js
+11:24:01 AM [32mGET[39m /Script/templateLoader.js
+11:24:01 AM [32mGET[39m /Script/hashPassword.js
+11:24:01 AM [32mGET[39m /Script/mainUsers.js
+11:24:01 AM [32mGET[39m /Script/mainDramas.js
+11:24:01 AM [32mGET[39m /Script/mainReviews.js
+11:24:01 AM [32mGET[39m /css/style.css
+11:24:03 AM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+11:57:15 AM [32mGET[39m /
+11:57:15 AM [32mGET[39m /Script/fetch.js
+11:57:15 AM [32mGET[39m /Script/templateLoader.js
+11:57:15 AM [32mGET[39m /Script/mainUsers.js
+11:57:15 AM [32mGET[39m /css/style.css
+11:57:15 AM [32mGET[39m /Script/mainDramas.js
+11:57:15 AM [32mGET[39m /Script/mainReviews.js
+11:57:15 AM [32mGET[39m /Script/hashPassword.js
+11:57:21 AM [32mGET[39m /?
+11:57:21 AM [33mPOST[39m /user/login
+11:57:21 AM [32mGET[39m /Script/fetch.js
+11:57:21 AM [32mGET[39m /Script/templateLoader.js
+11:57:21 AM [32mGET[39m /Script/mainUsers.js
+11:57:21 AM [32mGET[39m /Script/mainDramas.js
+11:57:21 AM [32mGET[39m /Script/mainReviews.js
+11:57:21 AM [32mGET[39m /css/style.css
+11:57:21 AM [32mGET[39m /Script/hashPassword.js
+11:57:25 AM [32mGET[39m /?
+11:57:25 AM [33mPOST[39m /user/login
+11:57:26 AM [32mGET[39m /Script/fetch.js
+11:57:26 AM [32mGET[39m /Script/templateLoader.js
+11:57:26 AM [32mGET[39m /Script/mainUsers.js
+11:57:26 AM [32mGET[39m /css/style.css
+11:57:26 AM [32mGET[39m /Script/mainDramas.js
+11:57:26 AM [32mGET[39m /Script/mainReviews.js
+11:57:26 AM [32mGET[39m /Script/hashPassword.js
+11:57:35 AM [32mGET[39m /css/style.css
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+11:57:53 AM [32mGET[39m /
+11:57:53 AM [32mGET[39m /Script/fetch.js
+11:57:53 AM [32mGET[39m /Script/templateLoader.js
+11:57:53 AM [32mGET[39m /Script/hashPassword.js
+11:57:53 AM [32mGET[39m /Script/mainUsers.js
+11:57:53 AM [32mGET[39m /Script/mainDramas.js
+11:57:53 AM [32mGET[39m /Script/mainReviews.js
+11:57:53 AM [32mGET[39m /css/style.css
+11:58:03 AM [33mPOST[39m /user/
+11:58:03 AM [32mGET[39m /?
+11:58:03 AM [32mGET[39m /Script/fetch.js
+11:58:03 AM [32mGET[39m /Script/templateLoader.js
+11:58:03 AM [32mGET[39m /Script/mainUsers.js
+11:58:03 AM [32mGET[39m /css/style.css
+11:58:03 AM [32mGET[39m /Script/mainDramas.js
+11:58:03 AM [32mGET[39m /Script/mainReviews.js
+11:58:03 AM [32mGET[39m /Script/hashPassword.js
+11:58:07 AM [33mPOST[39m /user/login
+11:58:15 AM [32mGET[39m /user/adminGetAll
+11:58:20 AM [33mPUT[39m /user/
+11:58:27 AM [33mPOST[39m /user/login
+11:58:27 AM [32mGET[39m /user/adminGetAll
+11:58:31 AM [32mGET[39m /dramas/all
+11:58:31 AM [32mGET[39m /bilder/crash_landing_on_you.jpg
+11:58:31 AM [32mGET[39m /bilder/deaths_game.jpg
+11:58:31 AM [32mGET[39m /bilder/itewon_class.jpg
+11:58:31 AM [32mGET[39m /bilder/reborn_rich.jpg
+11:58:31 AM [32mGET[39m /bilder/kingdom.jpg
+11:58:36 AM [32mGET[39m /dramas/allReviews
+11:58:44 AM [33mPOST[39m /dramas/review
+11:58:44 AM [32mGET[39m /dramas/allReviews
+11:58:46 AM [32mGET[39m /dramas/allReviews
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+####################
+Database connection  postgres://julie:1234@localhost:5432/postgres
+Server enviorment local
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+12:00:42 PM [32mGET[39m /?
+12:00:43 PM [32mGET[39m /Script/fetch.js
+12:00:43 PM [32mGET[39m /Script/templateLoader.js
+12:00:43 PM [32mGET[39m /css/style.css
+12:00:43 PM [32mGET[39m /Script/mainUsers.js
+12:00:43 PM [32mGET[39m /Script/mainReviews.js
+12:00:43 PM [32mGET[39m /Script/mainDramas.js
+12:00:43 PM [32mGET[39m /Script/hashPassword.js
+12:00:47 PM [33mPOST[39m /user/login
+12:00:59 PM [32mGET[39m /dramas/all
+12:00:59 PM [32mGET[39m /bilder/reborn_rich.jpg
+12:00:59 PM [32mGET[39m /bilder/deaths_game.jpg
+12:00:59 PM [32mGET[39m /bilder/itewon_class.jpg
+12:00:59 PM [32mGET[39m /bilder/kingdom.jpg
+12:00:59 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+12:01:25 PM [32mGET[39m /?
+12:01:25 PM [32mGET[39m /Script/templateLoader.js
+12:01:25 PM [32mGET[39m /Script/fetch.js
+12:01:25 PM [32mGET[39m /Script/hashPassword.js
+12:01:25 PM [32mGET[39m /css/style.css
+12:01:25 PM [32mGET[39m /Script/mainUsers.js
+12:01:25 PM [32mGET[39m /Script/mainDramas.js
+12:01:25 PM [32mGET[39m /Script/mainReviews.js
+12:01:31 PM [33mPOST[39m /user/login
+12:01:35 PM [31mDELETE[39m /user/delete
+12:01:43 PM [33mPOST[39m /user/login
+12:01:44 PM [32mGET[39m /user/adminGetAll
+12:02:46 PM [33mPOST[39m /user/login
+12:02:58 PM [31mDELETE[39m /user/delete
+12:03:09 PM [33mPOST[39m /user/login
+12:03:14 PM [32mGET[39m /user/adminGetAll
+12:03:48 PM [33mPUT[39m /user/
+12:03:53 PM [33mPOST[39m /user/login
+12:03:55 PM [32mGET[39m /user/adminGetAll
+12:04:11 PM [32mGET[39m /dramas/all
+12:04:11 PM [32mGET[39m /bilder/reborn_rich.jpg
+12:04:11 PM [32mGET[39m /bilder/deaths_game.jpg
+12:04:11 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+12:04:11 PM [32mGET[39m /bilder/itewon_class.jpg
+12:04:11 PM [32mGET[39m /bilder/kingdom.jpg
+12:04:13 PM [32mGET[39m /dramas/allReviews
+12:04:25 PM [32mGET[39m /dramas/all
+12:04:25 PM [32mGET[39m /bilder/reborn_rich.jpg
+12:04:25 PM [32mGET[39m /bilder/deaths_game.jpg
+12:04:25 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+12:04:25 PM [32mGET[39m /bilder/kingdom.jpg
+12:04:27 PM [32mGET[39m /dramas/allReviews
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+3:48:25 PM [32mGET[39m /?
+3:48:25 PM [32mGET[39m /Script/fetch.js
+3:48:25 PM [32mGET[39m /Script/templateLoader.js
+3:48:25 PM [32mGET[39m /Script/mainUsers.js
+3:48:25 PM [32mGET[39m /Script/hashPassword.js
+3:48:25 PM [32mGET[39m /Script/mainDramas.js
+3:48:25 PM [32mGET[39m /css/style.css
+3:48:25 PM [32mGET[39m /Script/mainReviews.js
+3:48:29 PM [33mPOST[39m /user/login
+3:48:45 PM [33mPOST[39m /user/login
+3:49:01 PM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+3:55:14 PM [32mGET[39m /?
+3:55:14 PM [32mGET[39m /Script/fetch.js
+3:55:14 PM [32mGET[39m /Script/templateLoader.js
+3:55:14 PM [32mGET[39m /css/style.css
+3:55:14 PM [32mGET[39m /Script/mainUsers.js
+3:55:14 PM [32mGET[39m /Script/mainDramas.js
+3:55:14 PM [32mGET[39m /Script/mainReviews.js
+3:55:14 PM [32mGET[39m /Script/hashPassword.js
+3:55:17 PM [33mPOST[39m /user/login
+3:55:23 PM [33mPOST[39m /user/login
+3:55:39 PM [33mPOST[39m /user/login
+3:55:42 PM [32mGET[39m /?
+3:55:42 PM [32mGET[39m /Script/fetch.js
+3:55:42 PM [32mGET[39m /Script/templateLoader.js
+3:55:42 PM [32mGET[39m /Script/hashPassword.js
+3:55:42 PM [32mGET[39m /css/style.css
+3:55:42 PM [32mGET[39m /Script/mainDramas.js
+3:55:42 PM [32mGET[39m /Script/mainReviews.js
+3:55:42 PM [32mGET[39m /Script/mainUsers.js
+3:55:52 PM [33mPOST[39m /user/
+3:55:56 PM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+3:59:31 PM [32mGET[39m /?
+3:59:31 PM [32mGET[39m /Script/fetch.js
+3:59:31 PM [32mGET[39m /Script/templateLoader.js
+3:59:31 PM [32mGET[39m /Script/mainUsers.js
+3:59:31 PM [32mGET[39m /Script/mainDramas.js
+3:59:31 PM [32mGET[39m /Script/mainReviews.js
+3:59:31 PM [32mGET[39m /css/style.css
+3:59:31 PM [32mGET[39m /Script/hashPassword.js
+3:59:34 PM [32mGET[39m /
+3:59:34 PM [32mGET[39m /Script/fetch.js
+3:59:34 PM [32mGET[39m /Script/mainUsers.js
+3:59:34 PM [32mGET[39m /Script/templateLoader.js
+3:59:34 PM [32mGET[39m /Script/mainReviews.js
+3:59:34 PM [32mGET[39m /Script/mainDramas.js
+3:59:34 PM [32mGET[39m /Script/hashPassword.js
+3:59:34 PM [32mGET[39m /css/style.css
+3:59:40 PM [32mGET[39m /?
+3:59:40 PM [33mPOST[39m /user/login
+3:59:40 PM [32mGET[39m /Script/fetch.js
+3:59:40 PM [32mGET[39m /Script/templateLoader.js
+3:59:40 PM [32mGET[39m /css/style.css
+3:59:40 PM [32mGET[39m /Script/mainUsers.js
+3:59:40 PM [32mGET[39m /Script/mainDramas.js
+3:59:40 PM [32mGET[39m /Script/mainReviews.js
+3:59:40 PM [32mGET[39m /Script/hashPassword.js
+3:59:56 PM [33mPOST[39m /user/login
+3:59:56 PM [32mGET[39m /?
+3:59:58 PM [32mGET[39m /Script/fetch.js
+3:59:58 PM [32mGET[39m /Script/templateLoader.js
+3:59:58 PM [32mGET[39m /Script/mainUsers.js
+3:59:58 PM [32mGET[39m /Script/hashPassword.js
+3:59:58 PM [32mGET[39m /Script/mainDramas.js
+3:59:58 PM [32mGET[39m /Script/mainReviews.js
+3:59:58 PM [32mGET[39m /css/style.css
+4:00:28 PM [33mPOST[39m /user/login
+4:00:28 PM [32mGET[39m /?
+4:00:29 PM [32mGET[39m /Script/fetch.js
+4:00:29 PM [32mGET[39m /Script/templateLoader.js
+4:00:29 PM [32mGET[39m /Script/mainUsers.js
+4:00:29 PM [32mGET[39m /Script/mainDramas.js
+4:00:29 PM [32mGET[39m /Script/hashPassword.js
+4:00:29 PM [32mGET[39m /css/style.css
+4:00:29 PM [32mGET[39m /Script/mainReviews.js
+4:00:33 PM [33mPOST[39m /user/
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:01:02 PM [32mGET[39m /?
+4:01:02 PM [32mGET[39m /Script/fetch.js
+4:01:02 PM [32mGET[39m /Script/templateLoader.js
+4:01:02 PM [32mGET[39m /Script/hashPassword.js
+4:01:02 PM [32mGET[39m /Script/mainUsers.js
+4:01:02 PM [32mGET[39m /Script/mainDramas.js
+4:01:02 PM [32mGET[39m /css/style.css
+4:01:02 PM [32mGET[39m /Script/mainReviews.js
+4:01:06 PM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:02:24 PM [32mGET[39m /?
+4:02:24 PM [32mGET[39m /Script/fetch.js
+4:02:24 PM [32mGET[39m /Script/templateLoader.js
+4:02:24 PM [32mGET[39m /Script/hashPassword.js
+4:02:24 PM [32mGET[39m /Script/mainUsers.js
+4:02:24 PM [32mGET[39m /Script/mainDramas.js
+4:02:24 PM [32mGET[39m /css/style.css
+4:02:24 PM [32mGET[39m /Script/mainReviews.js
+4:02:33 PM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:03:21 PM [32mGET[39m /?
+4:03:21 PM [32mGET[39m /Script/fetch.js
+4:03:21 PM [32mGET[39m /Script/templateLoader.js
+4:03:21 PM [32mGET[39m /Script/hashPassword.js
+4:03:21 PM [32mGET[39m /css/style.css
+4:03:21 PM [32mGET[39m /Script/mainUsers.js
+4:03:21 PM [32mGET[39m /Script/mainDramas.js
+4:03:21 PM [32mGET[39m /Script/mainReviews.js
+4:04:11 PM [32mGET[39m /?
+4:04:11 PM [32mGET[39m /Script/templateLoader.js
+4:04:11 PM [32mGET[39m /Script/fetch.js
+4:04:11 PM [32mGET[39m /css/style.css
+4:04:11 PM [32mGET[39m /Script/mainUsers.js
+4:04:11 PM [32mGET[39m /Script/mainDramas.js
+4:04:11 PM [32mGET[39m /Script/mainReviews.js
+4:04:11 PM [32mGET[39m /Script/hashPassword.js
+####################
+####################
+Database connection  postgres://julie:1234@localhost:5432/postgres
+Server enviorment local
+4:04:15 PM [32mGET[39m /?
+4:04:15 PM [32mGET[39m /Script/fetch.js
+4:04:15 PM [32mGET[39m /Script/templateLoader.js
+4:04:15 PM [32mGET[39m /Script/mainUsers.js
+4:04:15 PM [32mGET[39m /css/style.css
+4:04:15 PM [32mGET[39m /Script/mainDramas.js
+4:04:15 PM [32mGET[39m /Script/mainReviews.js
+4:04:15 PM [32mGET[39m /Script/hashPassword.js
+4:04:41 PM [32mGET[39m /?
+4:04:41 PM [32mGET[39m /Script/fetch.js
+4:04:41 PM [32mGET[39m /Script/templateLoader.js
+4:04:41 PM [32mGET[39m /Script/mainUsers.js
+4:04:41 PM [32mGET[39m /Script/mainDramas.js
+4:04:41 PM [32mGET[39m /css/style.css
+4:04:41 PM [32mGET[39m /Script/mainReviews.js
+4:04:41 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:06:27 PM [32mGET[39m /?
+4:06:27 PM [32mGET[39m /Script/fetch.js
+4:06:27 PM [32mGET[39m /Script/templateLoader.js
+4:06:27 PM [32mGET[39m /Script/mainUsers.js
+4:06:27 PM [32mGET[39m /Script/mainDramas.js
+4:06:27 PM [32mGET[39m /Script/mainReviews.js
+4:06:27 PM [32mGET[39m /Script/hashPassword.js
+4:06:27 PM [32mGET[39m /css/style.css
+4:06:30 PM [33mPOST[39m /user/login
+4:06:35 PM [32mGET[39m /user/adminGetAll
+4:06:50 PM [33mPOST[39m /user/login
+4:07:03 PM [33mPUT[39m /user/
+4:07:22 PM [33mPOST[39m /user/
+4:07:30 PM [33mPOST[39m /user/login
+4:13:16 PM [31mDELETE[39m /user/delete
+4:13:23 PM [33mPOST[39m /user/login
+4:13:33 PM [33mPUT[39m /user/
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:14:38 PM [33mPOST[39m /user/login
+4:14:43 PM [33mPUT[39m /user/
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:16:39 PM [33mPOST[39m /user/login
+4:39:39 PM [33mPOST[39m /user/login
+4:39:43 PM [33mPOST[39m /user/login
+4:40:11 PM [32mGET[39m /?
+4:40:11 PM [32mGET[39m /Script/fetch.js
+4:40:11 PM [32mGET[39m /Script/templateLoader.js
+4:40:11 PM [32mGET[39m /Script/mainReviews.js
+4:40:11 PM [32mGET[39m /Script/mainUsers.js
+4:40:11 PM [32mGET[39m /Script/mainDramas.js
+4:40:11 PM [32mGET[39m /Script/hashPassword.js
+4:40:11 PM [32mGET[39m /css/style.css
+####################
+####################
+Database connection  postgres://julie:1234@localhost:5432/postgres
+Server enviorment local
+4:40:16 PM [32mGET[39m /?
+4:40:16 PM [32mGET[39m /Script/fetch.js
+4:40:16 PM [32mGET[39m /Script/templateLoader.js
+4:40:16 PM [32mGET[39m /Script/hashPassword.js
+4:40:16 PM [32mGET[39m /Script/mainUsers.js
+4:40:16 PM [32mGET[39m /css/style.css
+4:40:16 PM [32mGET[39m /Script/mainDramas.js
+4:40:16 PM [32mGET[39m /Script/mainReviews.js
+4:40:24 PM [32mGET[39m /?
+4:40:24 PM [32mGET[39m /Script/fetch.js
+4:40:24 PM [32mGET[39m /Script/templateLoader.js
+4:40:24 PM [32mGET[39m /Script/mainUsers.js
+4:40:24 PM [32mGET[39m /Script/mainDramas.js
+4:40:24 PM [32mGET[39m /Script/mainReviews.js
+4:40:24 PM [32mGET[39m /css/style.css
+4:40:24 PM [32mGET[39m /Script/hashPassword.js
+4:40:40 PM [31mDELETE[39m /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:41:26 PM [32mGET[39m /?
+4:41:26 PM [32mGET[39m /Script/fetch.js
+4:41:26 PM [32mGET[39m /Script/templateLoader.js
+4:41:26 PM [32mGET[39m /Script/hashPassword.js
+4:41:26 PM [32mGET[39m /Script/mainUsers.js
+4:41:26 PM [32mGET[39m /Script/mainDramas.js
+4:41:26 PM [32mGET[39m /css/style.css
+4:41:26 PM [32mGET[39m /Script/mainReviews.js
+4:41:29 PM [33mPOST[39m /user/login
+4:41:33 PM [32mGET[39m /user/adminGetAll
+4:41:54 PM [31mDELETE[39m /user/delete
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+4:43:14 PM [32mGET[39m /?
+4:43:14 PM [32mGET[39m /Script/fetch.js
+4:43:14 PM [32mGET[39m /Script/templateLoader.js
+4:43:14 PM [32mGET[39m /css/style.css
+4:43:14 PM [32mGET[39m /Script/mainUsers.js
+4:43:14 PM [32mGET[39m /Script/mainDramas.js
+4:43:14 PM [32mGET[39m /Script/mainReviews.js
+4:43:14 PM [32mGET[39m /Script/hashPassword.js
+4:43:24 PM [31mDELETE[39m /user/delete
+4:45:21 PM [32mGET[39m /?
+4:45:21 PM [32mGET[39m /Script/fetch.js
+4:45:21 PM [32mGET[39m /Script/templateLoader.js
+4:45:21 PM [32mGET[39m /Script/hashPassword.js
+4:45:21 PM [32mGET[39m /Script/mainUsers.js
+4:45:21 PM [32mGET[39m /Script/mainDramas.js
+4:45:21 PM [32mGET[39m /Script/mainReviews.js
+4:45:21 PM [32mGET[39m /css/style.css
+####################
+Database connection  postgres://julie:1234@localhost:5432/postgres
+Server enviorment local
+####################
+4:45:27 PM [32mGET[39m /?
+4:45:27 PM [32mGET[39m /Script/fetch.js
+4:45:27 PM [32mGET[39m /Script/templateLoader.js
+4:45:27 PM [32mGET[39m /Script/hashPassword.js
+4:45:27 PM [32mGET[39m /Script/mainUsers.js
+4:45:27 PM [32mGET[39m /css/style.css
+4:45:27 PM [32mGET[39m /Script/mainDramas.js
+4:45:27 PM [32mGET[39m /Script/mainReviews.js
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?ssl=true
+####################
+5:24:57 PM [32mGET[39m /?
+5:24:57 PM [32mGET[39m /Script/fetch.js
+5:24:57 PM [32mGET[39m /Script/templateLoader.js
+5:24:57 PM [32mGET[39m /css/style.css
+5:24:57 PM [32mGET[39m /Script/mainUsers.js
+5:24:57 PM [32mGET[39m /Script/mainDramas.js
+5:24:57 PM [32mGET[39m /Script/mainReviews.js
+5:24:57 PM [32mGET[39m /Script/hashPassword.js
+5:24:58 PM [32mGET[39m /?
+5:24:58 PM [32mGET[39m /Script/fetch.js
+5:24:58 PM [32mGET[39m /Script/templateLoader.js
+5:24:58 PM [32mGET[39m /Script/mainUsers.js
+5:24:58 PM [32mGET[39m /css/style.css
+5:24:58 PM [32mGET[39m /Script/mainDramas.js
+5:24:58 PM [32mGET[39m /Script/mainReviews.js
+5:24:58 PM [32mGET[39m /Script/hashPassword.js
+5:25:00 PM [32mGET[39m /
+5:25:00 PM [32mGET[39m /Script/fetch.js
+5:25:00 PM [32mGET[39m /Script/templateLoader.js
+5:25:00 PM [32mGET[39m /Script/mainDramas.js
+5:25:00 PM [32mGET[39m /Script/mainUsers.js
+5:25:00 PM [32mGET[39m /css/style.css
+5:25:00 PM [32mGET[39m /Script/mainReviews.js
+5:25:00 PM [32mGET[39m /Script/hashPassword.js
+5:25:10 PM [32mGET[39m /?
+5:25:10 PM [33mPOST[39m /user/login
+5:25:10 PM [32mGET[39m /Script/fetch.js
+5:25:10 PM [32mGET[39m /Script/templateLoader.js
+5:25:10 PM [32mGET[39m /css/style.css
+5:25:10 PM [32mGET[39m /Script/mainUsers.js
+5:25:10 PM [32mGET[39m /Script/mainDramas.js
+5:25:10 PM [32mGET[39m /Script/mainReviews.js
+5:25:10 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+5:25:53 PM [32mGET[39m /?
+5:25:54 PM [32mGET[39m /Script/fetch.js
+5:25:54 PM [32mGET[39m /Script/templateLoader.js
+5:25:54 PM [32mGET[39m /Script/mainUsers.js
+5:25:54 PM [32mGET[39m /css/style.css
+5:25:54 PM [32mGET[39m /Script/mainDramas.js
+5:25:54 PM [32mGET[39m /Script/mainReviews.js
+5:25:54 PM [32mGET[39m /Script/hashPassword.js
+5:25:56 PM [32mGET[39m /
+5:25:56 PM [32mGET[39m /Script/fetch.js
+5:25:56 PM [32mGET[39m /Script/templateLoader.js
+5:25:56 PM [32mGET[39m /Script/mainUsers.js
+5:25:56 PM [32mGET[39m /Script/mainDramas.js
+5:25:56 PM [32mGET[39m /Script/mainReviews.js
+5:25:56 PM [32mGET[39m /css/style.css
+5:25:56 PM [32mGET[39m /Script/hashPassword.js
+5:26:00 PM [33mPOST[39m /user/login
+5:26:00 PM [32mGET[39m /?
+5:26:01 PM [32mGET[39m /Script/fetch.js
+5:26:01 PM [32mGET[39m /Script/templateLoader.js
+5:26:01 PM [32mGET[39m /Script/mainUsers.js
+5:26:01 PM [32mGET[39m /Script/mainDramas.js
+5:26:01 PM [32mGET[39m /Script/mainReviews.js
+5:26:01 PM [32mGET[39m /Script/hashPassword.js
+5:26:01 PM [32mGET[39m /css/style.css
+5:26:12 PM [33mPOST[39m /user/login
+5:26:12 PM [32mGET[39m /?
+5:26:13 PM [32mGET[39m /Script/fetch.js
+5:26:13 PM [32mGET[39m /Script/templateLoader.js
+5:26:13 PM [32mGET[39m /Script/mainUsers.js
+5:26:13 PM [32mGET[39m /Script/mainDramas.js
+5:26:13 PM [32mGET[39m /Script/mainReviews.js
+5:26:13 PM [32mGET[39m /css/style.css
+5:26:13 PM [32mGET[39m /Script/hashPassword.js
+5:26:15 PM [32mGET[39m /?
+5:26:15 PM [32mGET[39m /Script/fetch.js
+5:26:15 PM [32mGET[39m /Script/templateLoader.js
+5:26:15 PM [32mGET[39m /Script/mainUsers.js
+5:26:15 PM [32mGET[39m /Script/mainDramas.js
+5:26:15 PM [32mGET[39m /Script/mainReviews.js
+5:26:15 PM [32mGET[39m /css/style.css
+5:26:15 PM [32mGET[39m /Script/hashPassword.js
+5:26:20 PM [32mGET[39m /?
+5:26:20 PM [33mPOST[39m /user/login
+5:26:21 PM [32mGET[39m /Script/fetch.js
+5:26:21 PM [32mGET[39m /css/style.css
+5:26:21 PM [32mGET[39m /Script/templateLoader.js
+5:26:21 PM [32mGET[39m /Script/mainUsers.js
+5:26:21 PM [32mGET[39m /Script/hashPassword.js
+5:26:21 PM [32mGET[39m /Script/mainDramas.js
+5:26:21 PM [32mGET[39m /Script/mainReviews.js
+5:26:23 PM [32mGET[39m /?
+5:26:23 PM [32mGET[39m /Script/fetch.js
+5:26:23 PM [32mGET[39m /Script/templateLoader.js
+5:26:23 PM [32mGET[39m /Script/mainUsers.js
+5:26:23 PM [32mGET[39m /Script/mainDramas.js
+5:26:23 PM [32mGET[39m /Script/mainReviews.js
+5:26:23 PM [32mGET[39m /Script/hashPassword.js
+5:26:23 PM [32mGET[39m /css/style.css
+5:26:29 PM [32mGET[39m /dramas/all
+5:26:29 PM [32mGET[39m /bilder/reborn_rich.jpg
+5:26:29 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+5:26:29 PM [32mGET[39m /bilder/kingdom.jpg
+5:26:29 PM [32mGET[39m /bilder/deaths_game.jpg
+5:26:29 PM [32mGET[39m /bilder/itewon_class.jpg
+5:26:37 PM [33mPOST[39m /user/
+5:26:46 PM [33mPOST[39m /user/login
+5:26:51 PM [32mGET[39m /?
+5:26:51 PM [32mGET[39m /Script/fetch.js
+5:26:51 PM [32mGET[39m /Script/templateLoader.js
+5:26:51 PM [32mGET[39m /Script/mainUsers.js
+5:26:51 PM [32mGET[39m /Script/mainDramas.js
+5:26:51 PM [32mGET[39m /Script/mainReviews.js
+5:26:51 PM [32mGET[39m /Script/hashPassword.js
+5:26:51 PM [32mGET[39m /css/style.css
+5:26:54 PM [32mGET[39m /?
+5:26:54 PM [32mGET[39m /Script/fetch.js
+5:26:54 PM [32mGET[39m /Script/templateLoader.js
+5:26:54 PM [32mGET[39m /Script/mainDramas.js
+5:26:54 PM [32mGET[39m /css/style.css
+5:26:54 PM [32mGET[39m /Script/mainUsers.js
+5:26:54 PM [32mGET[39m /Script/mainReviews.js
+5:26:54 PM [32mGET[39m /Script/hashPassword.js
+5:27:00 PM [33mPOST[39m /user/login
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?ssl=true
+####################
+5:27:42 PM [32mGET[39m /
+5:27:42 PM [32mGET[39m /Script/fetch.js
+5:27:42 PM [32mGET[39m /Script/templateLoader.js
+5:27:42 PM [32mGET[39m /Script/hashPassword.js
+5:27:42 PM [32mGET[39m /css/style.css
+5:27:42 PM [32mGET[39m /Script/mainUsers.js
+5:27:42 PM [32mGET[39m /Script/mainDramas.js
+5:27:42 PM [32mGET[39m /Script/mainReviews.js
+5:27:51 PM [33mPOST[39m /user/login
+5:27:51 PM [32mGET[39m /?
+5:27:51 PM [32mGET[39m /Script/fetch.js
+5:27:51 PM [32mGET[39m /Script/templateLoader.js
+5:27:51 PM [32mGET[39m /Script/mainUsers.js
+5:27:51 PM [32mGET[39m /Script/mainDramas.js
+5:27:51 PM [32mGET[39m /Script/mainReviews.js
+5:27:51 PM [32mGET[39m /css/style.css
+5:27:51 PM [32mGET[39m /Script/hashPassword.js
+5:27:55 PM [33mPOST[39m /user/login
+5:27:55 PM [32mGET[39m /?
+5:27:56 PM [32mGET[39m /Script/fetch.js
+5:27:56 PM [32mGET[39m /Script/templateLoader.js
+5:27:56 PM [32mGET[39m /Script/mainUsers.js
+5:27:56 PM [32mGET[39m /Script/mainDramas.js
+5:27:56 PM [32mGET[39m /css/style.css
+5:27:56 PM [32mGET[39m /Script/mainReviews.js
+5:27:56 PM [32mGET[39m /Script/hashPassword.js
+5:28:01 PM [33mPOST[39m /user/
+5:28:02 PM [33mPOST[39m /user/
+5:28:08 PM [33mPOST[39m /user/login
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?
+####################
+5:29:23 PM [32mGET[39m /?
+5:29:23 PM [32mGET[39m /Script/templateLoader.js
+5:29:23 PM [32mGET[39m /Script/fetch.js
+5:29:23 PM [32mGET[39m /Script/mainDramas.js
+5:29:23 PM [32mGET[39m /Script/mainUsers.js
+5:29:23 PM [32mGET[39m /Script/mainReviews.js
+5:29:23 PM [32mGET[39m /css/style.css
+5:29:23 PM [32mGET[39m /Script/hashPassword.js
+5:29:26 PM [32mGET[39m /
+5:29:26 PM [32mGET[39m /Script/fetch.js
+5:29:26 PM [32mGET[39m /Script/templateLoader.js
+5:29:26 PM [32mGET[39m /Script/mainUsers.js
+5:29:26 PM [32mGET[39m /Script/mainDramas.js
+5:29:26 PM [32mGET[39m /Script/mainReviews.js
+5:29:26 PM [32mGET[39m /Script/hashPassword.js
+5:29:26 PM [32mGET[39m /css/style.css
+5:29:30 PM [33mPOST[39m /user/login
+5:29:30 PM [32mGET[39m /?
+5:29:30 PM [32mGET[39m /Script/fetch.js
+5:29:30 PM [32mGET[39m /Script/templateLoader.js
+5:29:30 PM [32mGET[39m /css/style.css
+5:29:30 PM [32mGET[39m /Script/mainUsers.js
+5:29:30 PM [32mGET[39m /Script/mainDramas.js
+5:29:30 PM [32mGET[39m /Script/mainReviews.js
+5:29:30 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?ssl=true
+####################
+5:29:50 PM [32mGET[39m /?
+5:29:50 PM [32mGET[39m /Script/fetch.js
+5:29:50 PM [32mGET[39m /Script/templateLoader.js
+5:29:50 PM [32mGET[39m /Script/hashPassword.js
+5:29:50 PM [32mGET[39m /Script/mainUsers.js
+5:29:50 PM [32mGET[39m /Script/mainDramas.js
+5:29:50 PM [32mGET[39m /Script/mainReviews.js
+5:29:50 PM [32mGET[39m /css/style.css
+5:29:54 PM [32mGET[39m /?
+5:29:54 PM [33mPOST[39m /user/login
+5:29:56 PM [32mGET[39m /Script/fetch.js
+5:29:56 PM [32mGET[39m /Script/templateLoader.js
+5:29:56 PM [32mGET[39m /Script/mainUsers.js
+5:29:56 PM [32mGET[39m /Script/mainDramas.js
+5:29:56 PM [32mGET[39m /Script/mainReviews.js
+5:29:56 PM [32mGET[39m /css/style.css
+5:29:56 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?ssl=true
+####################
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?ssl=true
+####################
+5:31:58 PM [32mGET[39m /
+5:31:58 PM [32mGET[39m /Script/fetch.js
+5:31:58 PM [32mGET[39m /Script/templateLoader.js
+5:31:58 PM [32mGET[39m /Script/mainDramas.js
+5:31:58 PM [32mGET[39m /Script/mainReviews.js
+5:31:58 PM [32mGET[39m /css/style.css
+5:31:58 PM [32mGET[39m /Script/mainUsers.js
+5:31:58 PM [32mGET[39m /Script/hashPassword.js
+5:32:03 PM [33mPOST[39m /user/login
+5:32:03 PM [32mGET[39m /?
+5:32:03 PM [32mGET[39m /Script/fetch.js
+5:32:03 PM [32mGET[39m /css/style.css
+5:32:03 PM [32mGET[39m /Script/templateLoader.js
+5:32:03 PM [32mGET[39m /Script/mainUsers.js
+5:32:03 PM [32mGET[39m /Script/mainDramas.js
+5:32:03 PM [32mGET[39m /Script/mainReviews.js
+5:32:03 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database
+####################
+5:32:46 PM [32mGET[39m /
+5:32:46 PM [32mGET[39m /Script/fetch.js
+5:32:46 PM [32mGET[39m /Script/templateLoader.js
+5:32:46 PM [32mGET[39m /Script/mainReviews.js
+5:32:46 PM [32mGET[39m /Script/mainUsers.js
+5:32:46 PM [32mGET[39m /Script/mainDramas.js
+5:32:46 PM [32mGET[39m /css/style.css
+5:32:46 PM [32mGET[39m /Script/hashPassword.js
+5:32:52 PM [33mPOST[39m /user/login
+5:32:52 PM [32mGET[39m /?
+5:32:52 PM [32mGET[39m /Script/fetch.js
+5:32:52 PM [32mGET[39m /Script/mainReviews.js
+5:32:52 PM [32mGET[39m /Script/templateLoader.js
+5:32:52 PM [32mGET[39m /Script/mainUsers.js
+5:32:52 PM [32mGET[39m /css/style.css
+5:32:52 PM [32mGET[39m /Script/mainDramas.js
+5:32:52 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+Server enviorment prod
+Database connection  postgres://kdrama_database_user:3X1a07Xxx50eNZ0ClL0cJH19nmJT4ZPr@dpg-cngqunect0pc73e7bl10-a.oregon-postgres.render.com/kdrama_database?ssl=true
+####################
+6:53:08 PM [32mGET[39m /
+6:53:08 PM [32mGET[39m /Script/fetch.js
+6:53:08 PM [32mGET[39m /Script/mainUsers.js
+6:53:08 PM [32mGET[39m /Script/mainDramas.js
+6:53:08 PM [32mGET[39m /Script/templateLoader.js
+6:53:08 PM [32mGET[39m /Script/hashPassword.js
+6:53:08 PM [32mGET[39m /Script/mainReviews.js
+6:53:08 PM [32mGET[39m /css/style.css
+6:53:13 PM [33mPOST[39m /user/login
+6:53:13 PM [32mGET[39m /?
+6:53:13 PM [32mGET[39m /Script/fetch.js
+6:53:13 PM [32mGET[39m /Script/templateLoader.js
+6:53:13 PM [32mGET[39m /Script/mainUsers.js
+6:53:13 PM [32mGET[39m /Script/mainDramas.js
+6:53:13 PM [32mGET[39m /Script/mainReviews.js
+6:53:13 PM [32mGET[39m /css/style.css
+6:53:13 PM [32mGET[39m /Script/hashPassword.js
+6:53:35 PM [32mGET[39m /?
+6:53:35 PM [32mGET[39m /Script/fetch.js
+6:53:35 PM [32mGET[39m /Script/templateLoader.js
+6:53:35 PM [32mGET[39m /Script/mainUsers.js
+6:53:35 PM [32mGET[39m /Script/mainDramas.js
+6:53:35 PM [32mGET[39m /Script/mainReviews.js
+6:53:35 PM [32mGET[39m /Script/hashPassword.js
+6:53:35 PM [32mGET[39m /css/style.css
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+7:03:38 PM [32mGET[39m /?
+7:03:38 PM [32mGET[39m /Script/fetch.js
+7:03:38 PM [32mGET[39m /Script/templateLoader.js
+7:03:38 PM [32mGET[39m /css/style.css
+7:03:38 PM [32mGET[39m /Script/mainUsers.js
+7:03:38 PM [32mGET[39m /Script/mainDramas.js
+7:03:38 PM [32mGET[39m /Script/mainReviews.js
+7:03:38 PM [32mGET[39m /Script/hashPassword.js
+7:03:39 PM [32mGET[39m /?
+7:03:39 PM [32mGET[39m /Script/fetch.js
+7:03:39 PM [32mGET[39m /Script/templateLoader.js
+7:03:39 PM [32mGET[39m /Script/mainUsers.js
+7:03:39 PM [32mGET[39m /Script/mainDramas.js
+7:03:39 PM [32mGET[39m /Script/mainReviews.js
+7:03:39 PM [32mGET[39m /Script/hashPassword.js
+7:03:39 PM [32mGET[39m /css/style.css
+7:05:19 PM [32mGET[39m /?
+7:05:19 PM [32mGET[39m /Script/fetch.js
+7:05:19 PM [32mGET[39m /Script/templateLoader.js
+7:05:19 PM [32mGET[39m /Script/mainUsers.js
+7:05:19 PM [32mGET[39m /Script/mainDramas.js
+7:05:19 PM [32mGET[39m /css/style.css
+7:05:19 PM [32mGET[39m /Script/mainReviews.js
+7:05:19 PM [32mGET[39m /Script/hashPassword.js
+7:05:27 PM [33mPOST[39m /user/login
+7:05:28 PM [32mGET[39m /?
+7:05:29 PM [32mGET[39m /Script/fetch.js
+7:05:29 PM [32mGET[39m /Script/mainUsers.js
+7:05:29 PM [32mGET[39m /css/style.css
+7:05:29 PM [32mGET[39m /Script/templateLoader.js
+7:05:29 PM [32mGET[39m /Script/mainDramas.js
+7:05:29 PM [32mGET[39m /Script/mainReviews.js
+7:05:29 PM [32mGET[39m /Script/hashPassword.js
+7:05:43 PM [33mPOST[39m /user/login
+7:05:43 PM [32mGET[39m /?
+7:05:44 PM [32mGET[39m /Script/fetch.js
+7:05:44 PM [32mGET[39m /Script/templateLoader.js
+7:05:44 PM [32mGET[39m /Script/mainUsers.js
+7:05:44 PM [32mGET[39m /css/style.css
+7:05:44 PM [32mGET[39m /Script/mainDramas.js
+7:05:44 PM [32mGET[39m /Script/mainReviews.js
+7:05:44 PM [32mGET[39m /Script/hashPassword.js
+7:05:50 PM [33mPOST[39m /user/login
+7:05:50 PM [32mGET[39m /?
+7:05:51 PM [32mGET[39m /Script/fetch.js
+7:05:51 PM [32mGET[39m /Script/templateLoader.js
+7:05:51 PM [32mGET[39m /Script/mainUsers.js
+7:05:51 PM [32mGET[39m /Script/mainDramas.js
+7:05:51 PM [32mGET[39m /Script/mainReviews.js
+7:05:51 PM [32mGET[39m /css/style.css
+7:05:51 PM [32mGET[39m /Script/hashPassword.js
+7:05:51 PM [32mGET[39m /css/style.css
+7:05:52 PM [32mGET[39m /?
+7:05:52 PM [32mGET[39m /Script/fetch.js
+7:05:52 PM [32mGET[39m /Script/templateLoader.js
+7:05:52 PM [32mGET[39m /Script/mainUsers.js
+7:05:52 PM [32mGET[39m /Script/mainDramas.js
+7:05:52 PM [32mGET[39m /Script/mainReviews.js
+7:05:52 PM [32mGET[39m /Script/hashPassword.js
+7:05:52 PM [32mGET[39m /css/style.css
+7:05:59 PM [33mPOST[39m /user/
+7:06:13 PM [33mPOST[39m /user/login
+7:06:32 PM [33mPUT[39m /user/
+7:06:36 PM [33mPOST[39m /user/login
+7:06:42 PM [31mDELETE[39m /user/delete
+7:08:35 PM [33mPOST[39m /user/
+7:08:42 PM [33mPOST[39m /user/login
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+8:53:21 PM [32mGET[39m /?
+8:53:21 PM [32mGET[39m /Script/fetch.js
+8:53:21 PM [32mGET[39m /Script/templateLoader.js
+8:53:21 PM [32mGET[39m /css/style.css
+8:53:21 PM [32mGET[39m /Script/mainUsers.js
+8:53:21 PM [32mGET[39m /Script/mainDramas.js
+8:53:21 PM [32mGET[39m /Script/mainReviews.js
+8:53:21 PM [32mGET[39m /Script/hashPassword.js
+8:53:25 PM [33mPOST[39m /user/login
+8:53:43 PM [32mGET[39m /dramas/all
+8:53:43 PM [32mGET[39m /bilder/reborn_rich.jpg
+8:53:43 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+8:53:43 PM [32mGET[39m /bilder/kingdom.jpg
+8:53:43 PM [32mGET[39m /bilder/deaths_game.jpg
+8:53:43 PM [32mGET[39m /bilder/itewon_class.jpg
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+8:57:15 PM [32mGET[39m /
+8:57:15 PM [32mGET[39m /Script/fetch.js
+8:57:15 PM [32mGET[39m /Script/templateLoader.js
+8:57:15 PM [32mGET[39m /Script/hashPassword.js
+8:57:15 PM [32mGET[39m /Script/mainDramas.js
+8:57:15 PM [32mGET[39m /Script/mainUsers.js
+8:57:15 PM [32mGET[39m /Script/mainReviews.js
+8:57:15 PM [32mGET[39m /css/style.css
+8:57:23 PM [32mGET[39m /?
+8:57:23 PM [33mPOST[39m /user/login
+8:57:23 PM [32mGET[39m /Script/fetch.js
+8:57:23 PM [32mGET[39m /Script/templateLoader.js
+8:57:23 PM [32mGET[39m /Script/mainUsers.js
+8:57:23 PM [32mGET[39m /Script/mainDramas.js
+8:57:23 PM [32mGET[39m /Script/mainReviews.js
+8:57:23 PM [32mGET[39m /css/style.css
+8:57:23 PM [32mGET[39m /Script/hashPassword.js
+8:57:32 PM [32mGET[39m /?
+8:57:32 PM [32mGET[39m /Script/fetch.js
+8:57:32 PM [32mGET[39m /Script/templateLoader.js
+8:57:32 PM [32mGET[39m /css/style.css
+8:57:32 PM [32mGET[39m /Script/mainUsers.js
+8:57:32 PM [32mGET[39m /Script/mainDramas.js
+8:57:32 PM [32mGET[39m /Script/mainReviews.js
+8:57:32 PM [32mGET[39m /Script/hashPassword.js
+8:57:34 PM [32mGET[39m /
+8:57:34 PM [32mGET[39m /Script/fetch.js
+8:57:34 PM [32mGET[39m /Script/templateLoader.js
+8:57:34 PM [32mGET[39m /Script/mainUsers.js
+8:57:34 PM [32mGET[39m /Script/mainDramas.js
+8:57:34 PM [32mGET[39m /Script/mainReviews.js
+8:57:34 PM [32mGET[39m /Script/hashPassword.js
+8:57:34 PM [32mGET[39m /css/style.css
+8:57:47 PM [33mPOST[39m /user/
+8:57:47 PM [32mGET[39m /?
+8:57:47 PM [32mGET[39m /Script/fetch.js
+8:57:47 PM [32mGET[39m /Script/templateLoader.js
+8:57:47 PM [32mGET[39m /Script/mainUsers.js
+8:57:47 PM [32mGET[39m /Script/mainDramas.js
+8:57:47 PM [32mGET[39m /Script/mainReviews.js
+8:57:47 PM [32mGET[39m /Script/hashPassword.js
+8:57:47 PM [32mGET[39m /css/style.css
+8:57:50 PM [33mPOST[39m /user/login
+8:58:02 PM [32mGET[39m /?
+8:58:02 PM [32mGET[39m /Script/fetch.js
+8:58:02 PM [32mGET[39m /Script/templateLoader.js
+8:58:02 PM [32mGET[39m /Script/mainUsers.js
+8:58:02 PM [32mGET[39m /Script/mainDramas.js
+8:58:02 PM [32mGET[39m /Script/mainReviews.js
+8:58:02 PM [32mGET[39m /css/style.css
+8:58:02 PM [32mGET[39m /Script/hashPassword.js
+8:58:03 PM [32mGET[39m /?
+8:58:03 PM [32mGET[39m /Script/fetch.js
+8:58:03 PM [32mGET[39m /Script/templateLoader.js
+8:58:03 PM [32mGET[39m /Script/mainUsers.js
+8:58:03 PM [32mGET[39m /Script/mainDramas.js
+8:58:03 PM [32mGET[39m /css/style.css
+8:58:03 PM [32mGET[39m /Script/mainReviews.js
+8:58:03 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+8:58:20 PM [32mGET[39m /
+8:58:20 PM [32mGET[39m /Script/fetch.js
+8:58:20 PM [32mGET[39m /Script/templateLoader.js
+8:58:20 PM [32mGET[39m /Script/mainUsers.js
+8:58:20 PM [32mGET[39m /css/style.css
+8:58:20 PM [32mGET[39m /Script/mainDramas.js
+8:58:20 PM [32mGET[39m /Script/mainReviews.js
+8:58:21 PM [32mGET[39m /Script/hashPassword.js
+8:58:25 PM [32mGET[39m /?
+8:58:25 PM [33mPOST[39m /user/login
+8:58:25 PM [32mGET[39m /Script/fetch.js
+8:58:25 PM [32mGET[39m /Script/mainReviews.js
+8:58:25 PM [32mGET[39m /Script/templateLoader.js
+8:58:25 PM [32mGET[39m /Script/mainUsers.js
+8:58:25 PM [32mGET[39m /css/style.css
+8:58:25 PM [32mGET[39m /Script/mainDramas.js
+8:58:25 PM [32mGET[39m /Script/hashPassword.js
+8:58:37 PM [32mGET[39m /css/style.css
+8:58:44 PM [33mPOST[39m /user/login
+8:58:44 PM [32mGET[39m /?
+8:58:46 PM [32mGET[39m /Script/fetch.js
+8:58:46 PM [32mGET[39m /Script/templateLoader.js
+8:58:46 PM [32mGET[39m /Script/mainUsers.js
+8:58:46 PM [32mGET[39m /Script/mainDramas.js
+8:58:46 PM [32mGET[39m /Script/mainReviews.js
+8:58:46 PM [32mGET[39m /Script/hashPassword.js
+8:58:46 PM [32mGET[39m /css/style.css
+8:58:49 PM [33mPOST[39m /user/login
+8:58:49 PM [32mGET[39m /?
+8:58:50 PM [32mGET[39m /Script/fetch.js
+8:58:50 PM [32mGET[39m /Script/templateLoader.js
+8:58:50 PM [32mGET[39m /Script/mainUsers.js
+8:58:50 PM [32mGET[39m /Script/mainDramas.js
+8:58:50 PM [32mGET[39m /css/style.css
+8:58:50 PM [32mGET[39m /Script/mainReviews.js
+8:58:50 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:00:04 PM [32mGET[39m /?
+9:00:04 PM [32mGET[39m /css/style.css
+9:00:04 PM [32mGET[39m /Script/fetch.js
+9:00:04 PM [32mGET[39m /Script/templateLoader.js
+9:00:04 PM [32mGET[39m /Script/mainUsers.js
+9:00:04 PM [32mGET[39m /Script/mainDramas.js
+9:00:04 PM [32mGET[39m /Script/mainReviews.js
+9:00:04 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:01:48 PM [32mGET[39m /?
+9:01:48 PM [32mGET[39m /Script/fetch.js
+9:01:48 PM [32mGET[39m /Script/templateLoader.js
+9:01:48 PM [32mGET[39m /Script/hashPassword.js
+9:01:48 PM [32mGET[39m /Script/mainUsers.js
+9:01:48 PM [32mGET[39m /Script/mainDramas.js
+9:01:48 PM [32mGET[39m /Script/mainReviews.js
+9:01:48 PM [32mGET[39m /css/style.css
+9:02:01 PM [32mGET[39m /?
+9:02:01 PM [32mGET[39m /Script/fetch.js
+9:02:01 PM [32mGET[39m /Script/templateLoader.js
+9:02:01 PM [32mGET[39m /Script/mainUsers.js
+9:02:01 PM [32mGET[39m /Script/mainDramas.js
+9:02:01 PM [32mGET[39m /Script/mainReviews.js
+9:02:01 PM [32mGET[39m /css/style.css
+9:02:01 PM [32mGET[39m /Script/hashPassword.js
+9:02:05 PM [32mGET[39m /dramas/all
+9:02:05 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:02:05 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:02:05 PM [32mGET[39m /bilder/deaths_game.jpg
+9:02:05 PM [32mGET[39m /bilder/kingdom.jpg
+9:02:05 PM [32mGET[39m /bilder/itewon_class.jpg
+9:02:28 PM [32mGET[39m /?
+9:02:28 PM [32mGET[39m /Script/fetch.js
+9:02:28 PM [32mGET[39m /Script/templateLoader.js
+9:02:28 PM [32mGET[39m /Script/mainDramas.js
+9:02:28 PM [32mGET[39m /Script/mainUsers.js
+9:02:28 PM [32mGET[39m /Script/mainReviews.js
+9:02:28 PM [32mGET[39m /css/style.css
+9:02:28 PM [32mGET[39m /Script/hashPassword.js
+9:02:35 PM [32mGET[39m /?
+9:02:35 PM [32mGET[39m /Script/fetch.js
+9:02:35 PM [32mGET[39m /Script/templateLoader.js
+9:02:35 PM [32mGET[39m /css/style.css
+9:02:35 PM [32mGET[39m /Script/mainUsers.js
+9:02:35 PM [32mGET[39m /Script/mainDramas.js
+9:02:35 PM [32mGET[39m /Script/mainReviews.js
+9:02:35 PM [32mGET[39m /Script/hashPassword.js
+9:02:37 PM [32mGET[39m /
+9:02:37 PM [32mGET[39m /Script/fetch.js
+9:02:37 PM [32mGET[39m /Script/templateLoader.js
+9:02:37 PM [32mGET[39m /Script/mainUsers.js
+9:02:37 PM [32mGET[39m /Script/mainDramas.js
+9:02:37 PM [32mGET[39m /css/style.css
+9:02:37 PM [32mGET[39m /Script/mainReviews.js
+9:02:37 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:04:10 PM [32mGET[39m /
+9:04:10 PM [32mGET[39m /Script/fetch.js
+9:04:10 PM [32mGET[39m /Script/templateLoader.js
+9:04:10 PM [32mGET[39m /Script/hashPassword.js
+9:04:10 PM [32mGET[39m /Script/mainUsers.js
+9:04:10 PM [32mGET[39m /Script/mainDramas.js
+9:04:10 PM [32mGET[39m /css/style.css
+9:04:10 PM [32mGET[39m /Script/mainReviews.js
+9:04:11 PM [32mGET[39m /
+9:04:11 PM [32mGET[39m /Script/fetch.js
+9:04:11 PM [32mGET[39m /Script/templateLoader.js
+9:04:11 PM [32mGET[39m /Script/mainUsers.js
+9:04:11 PM [32mGET[39m /Script/mainDramas.js
+9:04:11 PM [32mGET[39m /Script/mainReviews.js
+9:04:11 PM [32mGET[39m /Script/hashPassword.js
+9:04:11 PM [32mGET[39m /css/style.css
+9:04:14 PM [33mPOST[39m /user/login
+9:04:14 PM [32mGET[39m /?
+9:04:14 PM [32mGET[39m /Script/fetch.js
+9:04:14 PM [32mGET[39m /css/style.css
+9:04:14 PM [32mGET[39m /Script/templateLoader.js
+9:04:14 PM [32mGET[39m /Script/mainUsers.js
+9:04:14 PM [32mGET[39m /Script/mainDramas.js
+9:04:14 PM [32mGET[39m /Script/mainReviews.js
+9:04:14 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:05:01 PM [32mGET[39m /?
+9:05:01 PM [32mGET[39m /Script/fetch.js
+9:05:01 PM [32mGET[39m /Script/templateLoader.js
+9:05:01 PM [32mGET[39m /Script/mainUsers.js
+9:05:01 PM [32mGET[39m /Script/mainDramas.js
+9:05:01 PM [32mGET[39m /Script/mainReviews.js
+9:05:01 PM [32mGET[39m /Script/hashPassword.js
+9:05:01 PM [32mGET[39m /css/style.css
+9:05:04 PM [33mPOST[39m /user/login
+9:05:04 PM [32mGET[39m /?
+9:05:05 PM [32mGET[39m /Script/fetch.js
+9:05:05 PM [32mGET[39m /Script/templateLoader.js
+9:05:05 PM [32mGET[39m /Script/mainUsers.js
+9:05:05 PM [32mGET[39m /Script/mainDramas.js
+9:05:05 PM [32mGET[39m /css/style.css
+9:05:06 PM [32mGET[39m /Script/hashPassword.js
+9:05:06 PM [32mGET[39m /Script/mainReviews.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:05:36 PM [32mGET[39m /dramas/all
+9:05:36 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:05:36 PM [32mGET[39m /bilder/deaths_game.jpg
+9:05:36 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:05:36 PM [32mGET[39m /bilder/itewon_class.jpg
+9:05:36 PM [32mGET[39m /bilder/kingdom.jpg
+9:06:03 PM [32mGET[39m /?
+9:06:03 PM [32mGET[39m /Script/fetch.js
+9:06:03 PM [32mGET[39m /Script/templateLoader.js
+9:06:03 PM [32mGET[39m /Script/hashPassword.js
+9:06:03 PM [32mGET[39m /Script/mainUsers.js
+9:06:03 PM [32mGET[39m /Script/mainDramas.js
+9:06:03 PM [32mGET[39m /Script/mainReviews.js
+9:06:03 PM [32mGET[39m /css/style.css
+9:06:04 PM [32mGET[39m /
+9:06:04 PM [32mGET[39m /Script/fetch.js
+9:06:04 PM [32mGET[39m /Script/templateLoader.js
+9:06:04 PM [32mGET[39m /Script/mainUsers.js
+9:06:04 PM [32mGET[39m /Script/mainDramas.js
+9:06:04 PM [32mGET[39m /css/style.css
+9:06:04 PM [32mGET[39m /Script/mainReviews.js
+9:06:04 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:07:33 PM [32mGET[39m /
+9:07:34 PM [32mGET[39m /Script/fetch.js
+9:07:34 PM [32mGET[39m /Script/templateLoader.js
+9:07:34 PM [32mGET[39m /Script/mainUsers.js
+9:07:34 PM [32mGET[39m /Script/mainDramas.js
+9:07:34 PM [32mGET[39m /Script/mainReviews.js
+9:07:34 PM [32mGET[39m /css/style.css
+9:07:34 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:08:39 PM [32mGET[39m /
+9:08:40 PM [32mGET[39m /Script/fetch.js
+9:08:40 PM [32mGET[39m /Script/templateLoader.js
+9:08:40 PM [32mGET[39m /Script/mainUsers.js
+9:08:40 PM [32mGET[39m /css/style.css
+9:08:40 PM [32mGET[39m /Script/mainDramas.js
+9:08:40 PM [32mGET[39m /Script/mainReviews.js
+9:08:40 PM [32mGET[39m /Script/hashPassword.js
+9:08:41 PM [32mGET[39m /favicon.ico
+9:08:48 PM [32mGET[39m /?
+9:08:48 PM [33mPOST[39m /user/login
+9:08:48 PM [32mGET[39m /Script/fetch.js
+9:08:48 PM [32mGET[39m /Script/templateLoader.js
+9:08:48 PM [32mGET[39m /Script/mainUsers.js
+9:08:48 PM [32mGET[39m /css/style.css
+9:08:48 PM [32mGET[39m /Script/mainDramas.js
+9:08:48 PM [32mGET[39m /Script/mainReviews.js
+9:08:48 PM [32mGET[39m /Script/hashPassword.js
+9:08:50 PM [32mGET[39m /css/style.css
+9:08:55 PM [32mGET[39m /dramas/all
+9:08:55 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:08:55 PM [32mGET[39m /bilder/deaths_game.jpg
+9:08:55 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:08:55 PM [32mGET[39m /bilder/itewon_class.jpg
+9:08:55 PM [32mGET[39m /bilder/kingdom.jpg
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:12:01 PM [32mGET[39m /?
+9:12:01 PM [32mGET[39m /Script/fetch.js
+9:12:01 PM [32mGET[39m /Script/templateLoader.js
+9:12:01 PM [32mGET[39m /Script/mainUsers.js
+9:12:01 PM [32mGET[39m /Script/mainDramas.js
+9:12:01 PM [32mGET[39m /css/style.css
+9:12:01 PM [32mGET[39m /Script/mainReviews.js
+9:12:01 PM [32mGET[39m /Script/hashPassword.js
+9:12:04 PM [32mGET[39m /dramas/all
+9:12:04 PM [32mGET[39m /bilder/itewon_class.jpg
+9:12:04 PM [32mGET[39m /bilder/kingdom.jpg
+9:12:04 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:12:04 PM [32mGET[39m /bilder/deaths_game.jpg
+9:12:04 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:16:11 PM [32mGET[39m /?
+9:16:11 PM [32mGET[39m /Script/fetch.js
+9:16:11 PM [32mGET[39m /Script/templateLoader.js
+9:16:11 PM [32mGET[39m /Script/mainUsers.js
+9:16:11 PM [32mGET[39m /Script/mainReviews.js
+9:16:11 PM [32mGET[39m /Script/mainDramas.js
+9:16:11 PM [32mGET[39m /css/style.css
+9:16:11 PM [32mGET[39m /Script/hashPassword.js
+9:16:14 PM [33mPOST[39m /user/login
+9:16:14 PM [32mGET[39m /?
+9:16:15 PM [32mGET[39m /Script/fetch.js
+9:16:15 PM [32mGET[39m /Script/templateLoader.js
+9:16:15 PM [32mGET[39m /Script/hashPassword.js
+9:16:15 PM [32mGET[39m /Script/mainUsers.js
+9:16:15 PM [32mGET[39m /css/style.css
+9:16:15 PM [32mGET[39m /Script/mainDramas.js
+9:16:15 PM [32mGET[39m /Script/mainReviews.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:17:23 PM [32mGET[39m /?
+9:17:23 PM [32mGET[39m /Script/fetch.js
+9:17:23 PM [32mGET[39m /Script/templateLoader.js
+9:17:23 PM [32mGET[39m /Script/hashPassword.js
+9:17:23 PM [32mGET[39m /Script/mainUsers.js
+9:17:23 PM [32mGET[39m /Script/mainDramas.js
+9:17:23 PM [32mGET[39m /Script/mainReviews.js
+9:17:23 PM [32mGET[39m /css/style.css
+9:17:25 PM [32mGET[39m /
+9:17:25 PM [32mGET[39m /Script/fetch.js
+9:17:25 PM [32mGET[39m /Script/templateLoader.js
+9:17:25 PM [32mGET[39m /css/style.css
+9:17:25 PM [32mGET[39m /Script/mainUsers.js
+9:17:25 PM [32mGET[39m /Script/mainDramas.js
+9:17:25 PM [32mGET[39m /Script/mainReviews.js
+9:17:25 PM [32mGET[39m /Script/hashPassword.js
+9:17:26 PM [32mGET[39m /dramas/all
+9:17:26 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:17:26 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:17:26 PM [32mGET[39m /bilder/deaths_game.jpg
+9:17:26 PM [32mGET[39m /bilder/itewon_class.jpg
+9:17:26 PM [32mGET[39m /bilder/kingdom.jpg
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:18:42 PM [32mGET[39m /
+9:18:42 PM [32mGET[39m /Script/fetch.js
+9:18:42 PM [32mGET[39m /Script/templateLoader.js
+9:18:42 PM [32mGET[39m /Script/mainUsers.js
+9:18:42 PM [32mGET[39m /css/style.css
+9:18:42 PM [32mGET[39m /Script/mainDramas.js
+9:18:42 PM [32mGET[39m /Script/mainReviews.js
+9:18:42 PM [32mGET[39m /Script/hashPassword.js
+9:18:43 PM [32mGET[39m /dramas/all
+9:18:43 PM [32mGET[39m /bilder/deaths_game.jpg
+9:18:43 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:18:43 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:18:43 PM [32mGET[39m /bilder/itewon_class.jpg
+9:18:43 PM [32mGET[39m /bilder/kingdom.jpg
+9:19:06 PM [33mPOST[39m /user/login
+9:19:06 PM [32mGET[39m /?
+9:19:06 PM [32mGET[39m /Script/fetch.js
+9:19:06 PM [32mGET[39m /Script/mainReviews.js
+9:19:06 PM [32mGET[39m /Script/templateLoader.js
+9:19:06 PM [32mGET[39m /Script/mainUsers.js
+9:19:06 PM [32mGET[39m /css/style.css
+9:19:06 PM [32mGET[39m /Script/mainDramas.js
+9:19:06 PM [32mGET[39m /Script/hashPassword.js
+9:19:11 PM [33mPOST[39m /user/login
+9:19:11 PM [32mGET[39m /?
+9:19:12 PM [32mGET[39m /Script/fetch.js
+9:19:12 PM [32mGET[39m /Script/mainUsers.js
+9:19:12 PM [32mGET[39m /Script/templateLoader.js
+9:19:12 PM [32mGET[39m /Script/mainDramas.js
+9:19:12 PM [32mGET[39m /Script/mainReviews.js
+9:19:12 PM [32mGET[39m /Script/hashPassword.js
+9:19:12 PM [32mGET[39m /css/style.css
+9:19:19 PM [33mPOST[39m /user/
+9:19:23 PM [33mPOST[39m /user/login
+9:19:42 PM [32mGET[39m /?
+9:19:42 PM [32mGET[39m /Script/fetch.js
+9:19:42 PM [32mGET[39m /Script/templateLoader.js
+9:19:42 PM [32mGET[39m /Script/mainUsers.js
+9:19:42 PM [32mGET[39m /Script/mainDramas.js
+9:19:42 PM [32mGET[39m /Script/mainReviews.js
+9:19:42 PM [32mGET[39m /Script/hashPassword.js
+9:19:42 PM [32mGET[39m /css/style.css
+9:19:46 PM [33mPOST[39m /user/login
+9:19:47 PM [32mGET[39m /dramas/all
+9:19:47 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:19:47 PM [32mGET[39m /bilder/itewon_class.jpg
+9:19:47 PM [32mGET[39m /bilder/kingdom.jpg
+9:19:47 PM [32mGET[39m /bilder/deaths_game.jpg
+9:19:47 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:19:49 PM [32mGET[39m /user/adminGetAll
+9:20:23 PM [32mGET[39m /?
+9:20:23 PM [32mGET[39m /Script/fetch.js
+9:20:23 PM [32mGET[39m /Script/templateLoader.js
+9:20:23 PM [32mGET[39m /Script/mainUsers.js
+9:20:23 PM [32mGET[39m /Script/mainDramas.js
+9:20:23 PM [32mGET[39m /css/style.css
+9:20:23 PM [32mGET[39m /Script/mainReviews.js
+9:20:23 PM [32mGET[39m /Script/hashPassword.js
+9:20:32 PM [33mPOST[39m /user/login
+9:20:34 PM [32mGET[39m /user/adminGetAll
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:23:12 PM [33mPOST[39m /user/login
+9:23:13 PM [32mGET[39m /user/adminGetAll
+9:23:56 PM [31mDELETE[39m /user/delete
+9:24:23 PM [33mPOST[39m /user/
+9:24:48 PM [33mPOST[39m /user/login
+9:24:51 PM [32mGET[39m /dramas/all
+9:24:51 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:24:51 PM [32mGET[39m /bilder/deaths_game.jpg
+9:24:51 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:24:51 PM [32mGET[39m /bilder/itewon_class.jpg
+9:24:51 PM [32mGET[39m /bilder/kingdom.jpg
+9:24:52 PM [32mGET[39m /user/adminGetAll
+9:25:05 PM [32mGET[39m /dramas/all
+9:25:05 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:25:05 PM [32mGET[39m /bilder/deaths_game.jpg
+9:25:05 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:25:05 PM [32mGET[39m /bilder/itewon_class.jpg
+9:25:05 PM [32mGET[39m /bilder/kingdom.jpg
+9:25:06 PM [32mGET[39m /dramas/allReviews
+9:25:11 PM [33mPOST[39m /dramas/review
+9:25:11 PM [32mGET[39m /dramas/allReviews
+9:25:12 PM [32mGET[39m /dramas/allReviews
+9:26:57 PM [32mGET[39m /user/adminGetAll
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:29:03 PM [33mPOST[39m /user/login
+9:29:04 PM [32mGET[39m /user/adminGetAll
+9:29:16 PM [32mGET[39m /?
+9:29:16 PM [32mGET[39m /Script/fetch.js
+9:29:16 PM [32mGET[39m /Script/templateLoader.js
+9:29:16 PM [32mGET[39m /Script/mainDramas.js
+9:29:16 PM [32mGET[39m /Script/mainUsers.js
+9:29:16 PM [32mGET[39m /Script/mainReviews.js
+9:29:16 PM [32mGET[39m /css/style.css
+9:29:16 PM [32mGET[39m /Script/hashPassword.js
+9:29:21 PM [33mPOST[39m /user/login
+9:29:22 PM [32mGET[39m /user/adminGetAll
+9:32:10 PM [32mGET[39m /?
+9:32:10 PM [32mGET[39m /Script/fetch.js
+9:32:10 PM [32mGET[39m /Script/templateLoader.js
+9:32:10 PM [32mGET[39m /Script/mainUsers.js
+9:32:10 PM [32mGET[39m /Script/mainDramas.js
+9:32:10 PM [32mGET[39m /css/style.css
+9:32:10 PM [32mGET[39m /Script/mainReviews.js
+9:32:10 PM [32mGET[39m /Script/hashPassword.js
+9:32:38 PM [33mPOST[39m /user/login
+9:32:41 PM [32mGET[39m /dramas/all
+9:32:41 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+9:32:41 PM [32mGET[39m /bilder/deaths_game.jpg
+9:32:41 PM [32mGET[39m /bilder/reborn_rich.jpg
+9:32:41 PM [32mGET[39m /bilder/itewon_class.jpg
+9:32:41 PM [32mGET[39m /bilder/kingdom.jpg
+9:32:43 PM [32mGET[39m /user/adminGetAll
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:34:58 PM GET /?
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:42:58 PM [32mGET[39m /
+9:42:58 PM [32mGET[39m /Script/fetch.js
+9:42:58 PM [32mGET[39m /Script/templateLoader.js
+9:42:58 PM [32mGET[39m /Script/mainUsers.js
+9:42:58 PM [32mGET[39m /Script/mainDramas.js
+9:42:58 PM [32mGET[39m /css/style.css
+9:42:58 PM [32mGET[39m /Script/mainReviews.js
+9:42:58 PM [32mGET[39m /Script/hashPassword.js
+9:42:58 PM [32mGET[39m /favicon.ico
+9:43:01 PM [32mGET[39m /?
+9:43:01 PM [33mPOST[39m /user/login
+9:43:01 PM [32mGET[39m /Script/fetch.js
+9:43:01 PM [32mGET[39m /Script/mainReviews.js
+9:43:01 PM [32mGET[39m /Script/templateLoader.js
+9:43:01 PM [32mGET[39m /Script/mainUsers.js
+9:43:01 PM [32mGET[39m /css/style.css
+9:43:01 PM [32mGET[39m /Script/mainDramas.js
+9:43:01 PM [32mGET[39m /Script/hashPassword.js
+9:43:05 PM [33mPOST[39m /user/login
+9:43:05 PM [32mGET[39m /?
+9:43:07 PM [32mGET[39m /Script/fetch.js
+9:43:07 PM [32mGET[39m /Script/templateLoader.js
+9:43:07 PM [32mGET[39m /Script/mainUsers.js
+9:43:07 PM [32mGET[39m /css/style.css
+9:43:07 PM [32mGET[39m /Script/mainDramas.js
+9:43:07 PM [32mGET[39m /Script/mainReviews.js
+9:43:07 PM [32mGET[39m /Script/hashPassword.js
+9:43:16 PM [33mPOST[39m /user/login
+9:43:16 PM [32mGET[39m /?
+9:43:17 PM [32mGET[39m /Script/fetch.js
+9:43:17 PM [32mGET[39m /Script/hashPassword.js
+9:43:17 PM [32mGET[39m /css/style.css
+9:43:17 PM [32mGET[39m /Script/templateLoader.js
+9:43:17 PM [32mGET[39m /Script/mainUsers.js
+9:43:17 PM [32mGET[39m /Script/mainDramas.js
+9:43:17 PM [32mGET[39m /Script/mainReviews.js
+9:43:23 PM [33mPOST[39m /user/
+9:43:26 PM [33mPOST[39m /user/login
+9:43:33 PM [32mGET[39m /user/adminGetAll
+9:43:38 PM [32mGET[39m /css/style.css
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+9:48:17 PM [32mGET[39m /
+9:48:17 PM [32mGET[39m /Script/fetch.js
+9:48:17 PM [32mGET[39m /Script/templateLoader.js
+9:48:17 PM [32mGET[39m /Script/hashPassword.js
+9:48:17 PM [32mGET[39m /css/style.css
+9:48:17 PM [32mGET[39m /Script/mainUsers.js
+9:48:17 PM [32mGET[39m /Script/mainDramas.js
+9:48:17 PM [32mGET[39m /Script/mainReviews.js
+9:48:45 PM [33mPOST[39m /user/login
+9:48:45 PM [32mGET[39m /?
+9:48:45 PM [32mGET[39m /Script/fetch.js
+9:48:45 PM [32mGET[39m /css/style.css
+9:48:45 PM [32mGET[39m /Script/templateLoader.js
+9:48:45 PM [32mGET[39m /Script/mainUsers.js
+9:48:45 PM [32mGET[39m /Script/mainDramas.js
+9:48:45 PM [32mGET[39m /Script/mainReviews.js
+9:48:45 PM [32mGET[39m /Script/hashPassword.js
+9:48:48 PM [33mPOST[39m /user/login
+9:48:48 PM [32mGET[39m /?
+9:48:49 PM [32mGET[39m /Script/fetch.js
+9:48:49 PM [32mGET[39m /Script/templateLoader.js
+9:48:49 PM [32mGET[39m /Script/mainUsers.js
+9:48:49 PM [32mGET[39m /Script/mainDramas.js
+9:48:49 PM [32mGET[39m /css/style.css
+9:48:49 PM [32mGET[39m /Script/hashPassword.js
+9:48:49 PM [32mGET[39m /Script/mainReviews.js
+9:49:05 PM [33mPOST[39m /user/
+9:49:07 PM [33mPOST[39m /user/login
+9:49:09 PM [32mGET[39m /user/adminGetAll
+9:53:01 PM [32mGET[39m /
+9:53:01 PM [32mGET[39m /Script/fetch.js
+9:53:01 PM [32mGET[39m /Script/templateLoader.js
+9:53:01 PM [32mGET[39m /css/style.css
+9:53:01 PM [32mGET[39m /Script/mainUsers.js
+9:53:01 PM [32mGET[39m /Script/mainDramas.js
+9:53:01 PM [32mGET[39m /Script/mainReviews.js
+9:53:01 PM [32mGET[39m /Script/hashPassword.js
+9:53:06 PM [33mPOST[39m /user/login
+9:53:06 PM [32mGET[39m /?
+9:53:06 PM [32mGET[39m /Script/fetch.js
+9:53:06 PM [32mGET[39m /Script/templateLoader.js
+9:53:06 PM [32mGET[39m /Script/mainUsers.js
+9:53:06 PM [32mGET[39m /Script/mainDramas.js
+9:53:06 PM [32mGET[39m /css/style.css
+9:53:06 PM [32mGET[39m /Script/mainReviews.js
+9:53:06 PM [32mGET[39m /Script/hashPassword.js
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+10:01:23 PM [32mGET[39m /?
+10:01:23 PM [32mGET[39m /Script/fetch.js
+10:01:23 PM [32mGET[39m /Script/templateLoader.js
+10:01:23 PM [32mGET[39m /Script/mainUsers.js
+10:01:23 PM [32mGET[39m /Script/mainDramas.js
+10:01:23 PM [32mGET[39m /css/style.css
+10:01:23 PM [32mGET[39m /Script/mainReviews.js
+10:01:23 PM [32mGET[39m /Script/hashPassword.js
+10:01:25 PM [32mGET[39m /
+10:01:25 PM [32mGET[39m /Script/fetch.js
+10:01:25 PM [32mGET[39m /Script/templateLoader.js
+10:01:25 PM [32mGET[39m /Script/mainUsers.js
+10:01:25 PM [32mGET[39m /Script/mainDramas.js
+10:01:25 PM [32mGET[39m /Script/mainReviews.js
+10:01:25 PM [32mGET[39m /css/style.css
+10:01:25 PM [32mGET[39m /Script/hashPassword.js
+10:01:30 PM [33mPOST[39m /user/
+10:01:30 PM [32mGET[39m /?
+10:01:30 PM [32mGET[39m /Script/fetch.js
+10:01:30 PM [32mGET[39m /Script/templateLoader.js
+10:01:30 PM [32mGET[39m /Script/mainUsers.js
+10:01:30 PM [32mGET[39m /Script/mainDramas.js
+10:01:30 PM [32mGET[39m /Script/mainReviews.js
+10:01:30 PM [32mGET[39m /css/style.css
+10:01:30 PM [32mGET[39m /Script/hashPassword.js
+10:01:33 PM [33mPOST[39m /user/login
+10:01:36 PM [32mGET[39m /user/adminGetAll
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################
+10:05:02 PM [32mGET[39m /?
+10:05:02 PM [32mGET[39m /Script/fetch.js
+10:05:02 PM [32mGET[39m /Script/templateLoader.js
+10:05:02 PM [32mGET[39m /css/style.css
+10:05:02 PM [32mGET[39m /Script/mainUsers.js
+10:05:02 PM [32mGET[39m /Script/mainDramas.js
+10:05:02 PM [32mGET[39m /Script/mainReviews.js
+10:05:02 PM [32mGET[39m /Script/hashPassword.js
+10:05:07 PM [33mPOST[39m /user/login
+10:05:09 PM [32mGET[39m /user/adminGetAll
+10:05:32 PM [33mPOST[39m /user/login
+10:05:46 PM [33mPOST[39m /user/login
+10:05:55 PM [33mPUT[39m /user/
+10:06:00 PM [33mPOST[39m /user/login
+10:06:03 PM [33mPUT[39m /user/
+10:06:06 PM [33mPOST[39m /user/login
+10:06:12 PM [31mDELETE[39m /user/delete
+10:06:17 PM [33mPOST[39m /user/login
+10:06:22 PM [32mGET[39m /dramas/all
+10:06:22 PM [32mGET[39m /bilder/deaths_game.jpg
+10:06:22 PM [32mGET[39m /bilder/reborn_rich.jpg
+10:06:22 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+10:06:22 PM [32mGET[39m /bilder/itewon_class.jpg
+10:06:22 PM [32mGET[39m /bilder/kingdom.jpg
+10:06:24 PM [32mGET[39m /dramas/allReviews
+10:06:31 PM [32mGET[39m /dramas/allReviews
+10:06:51 PM [32mGET[39m /dramas/allReviews
+10:06:56 PM [32mGET[39m /dramas/all
+10:07:00 PM [32mGET[39m /dramas/allReviews
+10:07:04 PM [32mGET[39m /dramas/allReviews
+10:07:12 PM [33mPOST[39m /user/login
+10:07:14 PM [32mGET[39m /dramas/all
+10:07:14 PM [32mGET[39m /bilder/reborn_rich.jpg
+10:07:14 PM [32mGET[39m /bilder/deaths_game.jpg
+10:07:14 PM [32mGET[39m /bilder/crash_landing_on_you.jpg
+10:07:14 PM [32mGET[39m /bilder/kingdom.jpg
+10:07:16 PM [32mGET[39m /dramas/allReviews
+10:07:28 PM [33mPOST[39m /dramas/review
+10:07:28 PM [32mGET[39m /dramas/allReviews
+10:07:29 PM [32mGET[39m /dramas/allReviews
+####################
+Server enviorment local
+Database connection  postgres://julie:1234@localhost:5432/postgres
+####################

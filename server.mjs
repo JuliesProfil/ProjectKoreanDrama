@@ -14,7 +14,7 @@ printDeveloperStartupInportantInformationMSG();
 // Creating an instance of the server
 const server = express();
 // Selecting a port for the server to use.
-const port = (process.env.PORT || 8080);
+const port = (process.env.PORT || 8000); //8080
 server.set('port', port);
 
 

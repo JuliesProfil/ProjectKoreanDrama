@@ -6,14 +6,12 @@ function loadNewTemplate(newTemplateID, destination, empty = false){
     
     if(newTemplate.content){
         const clone = newTemplate.content.cloneNode(true);
-
         if(empty){
             emptyContainer(destination);
         }
-
         destination.appendChild(clone);
     } else{
-        console.log("Your browser does not support templates!")
+        console.log("The browser does not support templates!")
     }
 
 }

@@ -4,10 +4,14 @@ import { HTTPCodes } from "../modules/httpConstants.mjs";
 import SuperLogger from "../modules/SuperLogger.mjs";
 import { authenticateLogin } from "../modules/userMiddleware.mjs";
 
+//import DBManager from "../modules/storageManager.mjs";
+//import connectionString from "../modules/storageManager.mjs";
+//let DBManager = new DBManager();
+//let DBManager = new DBManager(connectionString);
+
 import DBManager from "../modules/storageManager.mjs";
 
-const dbm = new DBManager();
-
+//let DBManager = new DBManager();
 
 const USER_API = express.Router();
 USER_API.use(express.json()); 
@@ -15,7 +19,7 @@ USER_API.use(express.json());
 
 USER_API.get('/', (req, res, next) => {
     SuperLogger.log("Demo of logging tool");
-    SuperLogger.log("A important msg", SuperLogger.LOGGING_LEVELS.CRTICAL);
+    SuperLogger.log("A important message", SuperLogger.LOGGING_LEVELS.CRTICAL);
 })
 
 
@@ -24,42 +28,31 @@ USER_API.post('/', async (req, res, next) => {
 
     const { userName, userEmail, userPassword } = req.body;
 
-    if (userName != "" && userEmail != "" && userPassword != "") {
-
         try {
+            if (userName != "" && userEmail != "" && userPassword != "") {
             console.log(`userEmail = ${userEmail}`);
-            let exists = await dbm.getUserFromEmail(userEmail);
-
+            let exists = await DBManager.getUserFromEmail(userEmail);
 
             if (!exists) {
                 console.log("User does not exist!")
-            let user = new User();
-            user.name = userName;
-            user.email = userEmail;
-            user.pswHash = userPassword;
-            
+                let user = new User();
+                user.name = userName;
+                user.email = userEmail;
+                user.pswHash = userPassword;
                 user = await user.save(); 
                
-
-                res.status(HTTPCodes.SuccesfullRespons.Ok).send({msg:"You sucsessfully made a new user!"}).end();
-
-
+                res.status(HTTPCodes.SuccesfullRespons.Ok).json({message:"You sucsessfully made a new user!"}).end();
             } else {
-                res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).json({msg:"A user with this email already exists"}).end();
+                res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).json({message: "A user with this email already exists"}).end();
             }
-
+        } else {
+            res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).json({message: "Missing data fieleds."}).end();
+        }
 
         } catch (error) {
             console.error(error);
-            res.status(HTTPCodes.ServerErrorRespons.InternalError).send("An error occurred while creating the user").end();
-            send({message: "An error occurred while creating the user"}).end();
-
+            res.status(HTTPCodes.ServerErrorRespons.InternalError).json({message: "Failed to create the user"}).end();
         }
-
-
-    } else {
-        res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).send({message: "Mangler data felt"}).end();
-    }
 });
 
 
@@ -72,17 +65,16 @@ USER_API.post('/login', async (req, res, next) => {
  
     try {
         console.log(`Email = ${userEmail}`, `Password = ${userPassword}`);
-        const userInfo = await dbm.getUserFromPasswordAndEmail(userEmail, userPassword);
+        const userInfo = await DBManager.getUserFromPasswordAndEmail(userEmail, userPassword);
 
         if(userInfo){
-            res.status(HTTPCodes.SuccesfullRespons.Ok).send({message: "User Ok", code: 200, data: userInfo}).end();
+            res.status(HTTPCodes.SuccesfullRespons.Ok).json({message: "User succsessfully authenticated.", data: userInfo}).end();
           }else{
-            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({message: "Wrong user name or password!", data: null}).end();
+            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).json({message: "Wrong user name or password!"}).end();
           }
-
         } catch (error) {
             console.error(error);
-            res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg: "An error occurred while creating the user"}).end();  
+            res.status(HTTPCodes.ServerErrorRespons.InternalError).json({message: "Failed to log in."}).end();  
         }
 });
 
@@ -104,10 +96,14 @@ USER_API.put('/', authenticateLogin, async (req, res, next) => {
 
         const updatedUser = await user.save();
 
-        res.status(HTTPCodes.SuccesfullRespons.Ok).send(updatedUser).end();
+        if (updatedUser) {
+            res.status(HTTPCodes.SuccesfullRespons.Ok).json({message: "User updated successfully", data: updatedUser}).end();
+        } else {
+            res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).json({message: "User not found or could not be updated"}).end();
+        }
     } catch (error) {
         console.error(error);
-        res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg: "Failed to update user"}).end();
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).json({message: "Failed to update user."}).end();
     }
 })
 
@@ -118,36 +114,24 @@ USER_API.put('/', authenticateLogin, async (req, res, next) => {
 
 
 //Delete user -------------------------------------
-USER_API.delete('/delete',  async (req, res) => {
+USER_API.delete('/delete', authenticateLogin,  async (req, res, next) => {
 
     const { userID } = req.body;
     console.log("This is the current user:", userID);
     
-    let userData = req.headers.authorization.split(" ")[1];
-    
-    if(userData){
-        userData = JSON.parse(userData);
-        if(!userData || !userData.fduserid){
-            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
-            return;
-        }
-    } 
-
     try {
         const user = new User(); 
         user.id = userID; 
         const deletedUser = await user.delete(userID); 
        
-
         if (deletedUser) {
             res.status(HTTPCodes.SuccesfullRespons.Ok).json( {message: "User deleted successfully"} ).end();
-
         } else {
-            res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({msg:"User not found or could not be deleted"}).end();
+            res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({message: "User is not found."}).end();
         }
     } catch (error) {
         console.error(error);
-        res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg:"Failed to delete user"}).end();
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).json({message:"Failed to delete user."}).end();
     }
 })
 
@@ -155,35 +139,28 @@ USER_API.delete('/delete',  async (req, res) => {
 
 
 
-//Admin - Get user data -----------------------------------------------
-USER_API.get('/adminGetAll', authenticateLogin, async (req, res, next) => {
+//Admin - List all users
+USER_API.get('/adminGetAll', authenticateLogin, async (req, res) => {
 
     const { userID } = req.body;
     console.log("This is the current user:", userID);
 
     try {
-
         const user = new User(); 
         user.id = userID; 
         
-        const getUsers = await dbm.listAllUsersFromDatabase();
-
+        const getUsers = await DBManager.listAllUsersFromDatabase();
 
     if (getUsers != null) {
-        res.status(HTTPCodes.SuccesfullRespons.Ok).json({msg:"Here are all the users", getUsers});
+        res.status(HTTPCodes.SuccesfullRespons.Ok).json({message:"Users succsessfully listed. Here are all the users: ", data: getUsers});
     } else {
-        res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({msg: "Users is not found and may not exist"}).end(); 
+        res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({message: "Users are not found."}).end(); 
     }
 } catch (error) {
     console.error(error);
-    res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to find users from database").end();
+    res.status(HTTPCodes.ServerErrorRespons.InternalError).json("Failed to list all users.").end();
 }
 })
-
-
-
-
-
 
 
 

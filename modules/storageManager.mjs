@@ -1,23 +1,35 @@
 import pg from "pg";
 import SuperLogger from "./SuperLogger.mjs";
-import User from "../modules/user.mjs";
+import User from "./user.mjs";
 
 import dotenv from "dotenv";
 dotenv.config();
 
 
-/// TODO: is the structure / design of the DBManager as good as it could be?
+
+let connectionString = process.env.DB_CONNECTIONSTRING_LOCAL;
+if (process.env.ENVIORMENT != "local") {
+    connectionString = process.env.DB_CONNECTIONSTRING_PROD;
+}
+if (connectionString == undefined) {
+    //if (process.env.DB_CONNECTIONSTRING == undefined) {
+        throw ("You forgot the db connection string");
+    }
+
+//console.log(connectionString);
+
+
 
 class DBManager {
 
     #credentials = {};
-
+    //constructor(connectionString) {
     constructor() {
         this.#credentials = {
             connectionString,
             ssl: (process.env.DB_SSL === "true") ? process.env.DB_SSL : false
+            //ssl: (process.env.DB_SSL === "true") ? true : false
         };
-
     }
 
     
@@ -29,26 +41,19 @@ class DBManager {
             await client.connect();
             const output = await client.query('INSERT INTO tblUser(fdUsername, fdEmail, fdPassword) VALUES($1::Text, $2::Text, $3::Text) RETURNING fdUserID;', [user.name, user.email, user.pswHash]);
 
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
-
             if (output.rows.length == 1) {
-                // We stored the user in the DB.
                 user.id = output.rows[0].id;
-                console.log("User created successfully", user.id, output.rows.id );
+                console.log("User created successfully");
             } else {
                 console.log("User not created");
             }
 
         } catch (error) {
             console.error(error);
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end(); 
         }
-
         return user;
-
     }
 
 
@@ -62,14 +67,12 @@ class DBManager {
             await client.connect();
             const output = await client.query('UPDATE tblUser SET fdUserName = $1, fdEmail = $2, fdPassword = $3 WHERE fdUserID = $4;', [user.name, user.email, user.pswHash, user.id]);
 
-        //if (output.rows.length === 1) {
-        if (output.rowCount === 1) {
+        if (output.rowCount == 1) {
             user.id = output.rows[0];
             console.log("User updated successfully");
         } else {
             console.log("User not updated");
         }
-
         } catch (error) {
             console.error(error);
         } finally {
@@ -92,11 +95,12 @@ class DBManager {
             output = await client.query('DELETE FROM tblUser  WHERE fdUserID = $1;', [user.id]);
             
             if (output.rowCount === 1) {
+                console.log("User deleted successfully");
                 return true;
             } else {
+                console.log("User not deleted");
                 return false;
             }
-
         } catch (error) {
             console.error(error);
         } finally {
@@ -107,6 +111,7 @@ class DBManager {
 
 
 
+    
     
     async getUserFromPasswordAndEmail(email, password) {
         const sql = 'SELECT * FROM tblUser WHERE fdEmail = $1 AND fdPassword = $2';
@@ -119,13 +124,14 @@ class DBManager {
             const rows = (await client.query(sql, params)).rows;
             
             if (rows && rows.length === 1) {
+                console.log("User found.");
                 return rows[0];
             } else {
+                console.log("User not found.");
                 return null;
             }
         } catch (error) {
             console.error(error);
-            return null;
         } finally {
             client.end();
         }
@@ -165,7 +171,7 @@ class DBManager {
         try {
             await client.connect();
             const rows = (await client.query(sql)).rows;
-            
+            console.log("Successful.");
             return rows;
 
         } catch (error) {
@@ -184,6 +190,7 @@ class DBManager {
         try {
             await client.connect();
             const rows = (await client.query(sql)).rows;
+            console.log("Successful.");
             return rows;
 
         } catch (error) {
@@ -210,10 +217,9 @@ class DBManager {
     
             if (output.rows.length > 0) {
                 drama.fddramaid  = output.rows[0].fddramaid;
-                console.log("Det fungerte")
-                return drama;
+                console.log("It posted")
             } else {
-                console.log("Det ble ikkje postet!")
+                console.log("It did not post.")
                 return null;
             }
         } catch (error) {
@@ -221,11 +227,9 @@ class DBManager {
         } finally {
             client.end();
         }
+        return drama;
     }
     
-
-
-
 
 
     //To post multiple dramas
@@ -240,12 +244,9 @@ class DBManager {
         } catch (error) {
             console.error(error);
         }
-
         return insertedDramas;
     }
     
-
-
 
 
     async createReview(review) {
@@ -261,13 +262,13 @@ class DBManager {
     
             if (output.rows.length === 1) {
                 review.id = output.rows[0].fdUserDramaListID;
+                console.log("The review was created.")
                 return review;
             } else {
-                throw new Error("Failed to insert review into database.");
+                console.log("The review failed.")
             }
         } catch (error) {
-            console.error("Error creating review:", error);
-            throw error;
+            console.error( error);
         } finally {
             client.end();
         }
@@ -283,9 +284,7 @@ class DBManager {
         try {
             await client.connect();
             const rows = (await client.query(sql)).rows;
-            
             return rows;
-
         } catch (error) {
             console.error(error);
         } finally {
@@ -300,32 +299,9 @@ class DBManager {
 }
 
 
+//let dbm = new DBManager(connectionString);
 
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-let connectionString = process.env.DB_CONNECTIONSTRING_LOCAL;
-if (process.env.ENVIORMENT != "local") {
-    connectionString = process.env.DB_CONNECTIONSTRING_PROD;
-}
-
-if (connectionString == undefined) {
-    throw ("You forgot the db connection string");
-}
-
-
-
-//export default new DBManager(connectionString); //Trenge eg den eller går den under??
-
-export default DBManager;
+//export default new DBManager(connectionString); 
+export default new DBManager(); 
+//export default DBManager;
+//export default connectionString;

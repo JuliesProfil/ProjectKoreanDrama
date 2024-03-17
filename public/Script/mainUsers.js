@@ -1,3 +1,5 @@
+
+
 let divHeader = null;
 let divContent = null;
 let divFooter = null;
@@ -14,7 +16,7 @@ function contentLoaded() {
   if (loginData && loginData.fduserid) {
     showHomePage();
   } else {
-    //showHomePage();
+
     showLogin();
   }
 }
@@ -56,8 +58,7 @@ function loginUser() {
   sha256(loginPassword).then((pswHash) => {
   console.log(pswHash);
 
-    //const isAdmin = (loginEmail === 'a@a.no' && loginPassword === 'a');
-
+  
     const data = {
       userEmail: loginEmail.value,
       userPassword: pswHash
@@ -67,31 +68,11 @@ function loginUser() {
       (res) => {
 
         const loginData = res.data;
-        /*
-        if (isAdmin) {
-          console.log("Hey");
-          loginData.userType = 'admin';
-        } else {
-          console.log("Ney");
-          loginData.userType = 'regular';
-        }
-        */
+       
         
 
         sessionStorage.setItem('loginData', JSON.stringify(loginData));
         console.log("Login Info:", loginData);
-
-
-        /*
-        // Shows or hides buttons based on user type
-        if (isAdmin) {
-          document.getElementById('adminUserButtons').style.display = 'block';
-          document.getElementById('regularUserButtons').style.display = 'none';
-        } else {
-          document.getElementById('adminUserButtons').style.display = 'none';
-          document.getElementById('regularUserButtons').style.display = 'block';
-        }
-        */
 
         showHomePage();
       },
@@ -111,13 +92,8 @@ function logoutUser() {
   sessionStorage.removeItem('loginData');
   console.log("You are logged out!")
 
-  /*
-  document.getElementById('adminUserButtons').style.display = 'none';
-  document.getElementById('regularUserButtons').style.display = 'none';
-*/
 
   showHomePage();
-  //showHomePage();
 }
 
 
@@ -209,6 +185,7 @@ async function userProfile() {
   sha256(updatePassword).then((pswHash) => {
     console.log(pswHash);
 
+
   const data = {
     userID: loginData.fduserid,
     userName: updateUserName.value,
@@ -240,18 +217,18 @@ async function listUsers() {
 
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
 
-  const data = {
+
+  if (loginData && loginData.fduserid) {
+  
+    const data = {
     userID: loginData.fduserid,
-  };
+    };
 
   console.log("Your user info:", loginData)
 
-
-  //if (loginData && loginData.fduserid) {
     getData("/user/adminGetAll",
       (res) => {
-        console.log("Here is all the users: ", res, data); 
-
+        console.log("Here is all the users: ", res, loginData); 
 
         showListUsers();
         showAllUsers(res);
@@ -260,7 +237,7 @@ async function listUsers() {
       (error) => {
         console.error(error);
       });
-  //}
+  }
 
 }
 
@@ -269,8 +246,8 @@ function showAllUsers(res) {
   const userListDiv = document.getElementById("listAllUsersContainer");
   userListDiv.innerHTML = ""; 
 
-  for (let i = 0; i < res.getUsers.length; i++) {
-    const user = res.getUsers[i];
+  for (let i = 0; i < res.data.length; i++) {
+    const user = res.data[i];
 
     const userItem = document.createElement("div");
     userItem.innerHTML = `
@@ -354,8 +331,6 @@ function showUserProfile() {
 
 
 function showUpdateUser() {
-  //loadNewTemplate("tlUpdateUser", divContent, true);
-
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData update after:", loginData);
 
@@ -377,8 +352,6 @@ function showUpdateUser() {
 
 
 function showDeleteUser() {
-  //loadNewTemplate("tlDeleteUser", divContent, true);
-
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData delete after:", loginData);
 

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 async function showAllDramas() {
-    //postJsonDramaData(); //Put into admin verifications so it can only run once!!
+    //postJsonDramaData(); //Sender JSON data fra index.html så kan bare bli kallt på 1 gang
 
     loadNewTemplate("tlDramas", divContent, true);
 
