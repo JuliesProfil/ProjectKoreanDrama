@@ -1,5 +1,5 @@
 import pg from "pg";
-import SuperLogger from "./superLogger.mjs";
+import SuperLogger from "./SuperLogger.mjs";
 import User from "../modules/user.mjs";
 
 import dotenv from "dotenv";

@@ -82,10 +82,9 @@ async function showDramasAllGeneres(dramas) {
 
         const dramaDiv = document.createElement("div");
         dramaDiv.innerHTML = `
-            <h3>${drama.fdtitle}</h3>
+            <h2>${drama.fdtitle}</h2>
             <img src="${drama.fdcoverimageurl}"></img>
             <p><b>Release date:</b> ${convertedDate}</p>
-            <br>
             <br>
         `;
         dramaContent.appendChild(dramaDiv);
@@ -113,7 +112,7 @@ async function showDramasAllGeneres(dramas) {
 
 
 async function showDramaByGenere(dramas, genre) {
-
+    const dramaDiv = document.createElement("div");
     dramaContent.innerHTML = "";
     for (let i = 0; i < dramas.length; i++) {
         const drama = dramas[i];
@@ -123,9 +122,9 @@ async function showDramaByGenere(dramas, genre) {
         if (drama.fdgenre.includes(genre)) {
             const dramaDiv = document.createElement("div");
             dramaDiv.innerHTML = `
-                <h3>${drama.fdtitle}</h3>
+                <h2>${drama.fdtitle}</h2>
                 <img src="${drama.fdcoverimageurl}"></img>
-                <p><b>Release date:</b> ${convertedDate}</p>
+                <b><p>Release date:</b> ${convertedDate}</p>
                 <br>
                 <br>
             `;
@@ -161,9 +160,11 @@ async function loadOneDrama(selectedDrama) {
 
     const genres = selectedDrama.fdgenre.split(",");
     let listGenre = "<ul>";
-    genres.forEach(genre => {
+
+    for (let i = 0; i < genres.length; i++) {
+        let genre = genres[i];
         listGenre += "<li>" + genre;
-    });
+    };
     listGenre += "</ul>";
 
     let convertedDate = convertDate(selectedDrama.fdreleasedate);

@@ -1,6 +1,8 @@
 import express, { response } from "express";
 import { HTTPCodes } from "../modules/httpConstants.mjs";
 import Dramas from "../modules/dramas.mjs";
+import { authenticateLogin } from "../modules/userMiddleware.mjs";
+
 
 import DBManager from "../modules/storageManager.mjs";
 
@@ -17,21 +19,19 @@ DRAMAS_API.use(express.json());
 
 //Post sereis data---------------------------------------------------
 DRAMAS_API.post('/', async (req, res, next) => { 
-    const dramas = req.body;
     
-    //const { fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate } = dramas[0];
+    const dramas = req.body;
     console.log("Here is the body data:", req.body);
     
-
-
-    for (const issue of dramas) {
-        if (!issue.fdTitle || !issue.fdDescription || !issue.fdGenre || !issue.fdEpisodeNumber || !issue.fdReleaseDate) {
+    for (let i = 0; i < dramas.length; i++) {
+        const drama = dramas[i];
+        if (!drama.fdTitle || !drama.fdDescription || !drama.fdGenre || !drama.fdEpisodeNumber || !drama.fdReleaseDate) {
             console.log("Something is wrong!")
             return res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).send({ message: 'Invalid request body' });
         }
-    }
+    };
 
-
+    
     try {
         const insertedDrama = await dbm.postMultipleDramas(dramas);
 
@@ -73,7 +73,7 @@ DRAMAS_API.get('/all', async (req, res, next) => {
 
 
 //Post review data---------------------------------------------------
-DRAMAS_API.post('/review', async (req, res, next) => { 
+DRAMAS_API.post('/review', authenticateLogin, async (req, res, next) => { 
     const { userID, dramaID, commentText, ratingNumber, isFavorite } = req.body;
 
     console.log("Here is the review body:", req.body)

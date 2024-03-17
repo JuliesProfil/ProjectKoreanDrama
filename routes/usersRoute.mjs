@@ -1,7 +1,7 @@
 import express, { response } from "express";
 import User from "../modules/user.mjs";
 import { HTTPCodes } from "../modules/httpConstants.mjs";
-import SuperLogger from "../modules/superLogger.mjs";
+import SuperLogger from "../modules/SuperLogger.mjs";
 import { authenticateLogin } from "../modules/userMiddleware.mjs";
 
 import DBManager from "../modules/storageManager.mjs";
@@ -10,17 +10,13 @@ const dbm = new DBManager();
 
 
 const USER_API = express.Router();
-USER_API.use(express.json()); // This makes it so that express parses all incoming payloads as JSON for this route.
-
-
+USER_API.use(express.json()); 
 
 
 USER_API.get('/', (req, res, next) => {
     SuperLogger.log("Demo of logging tool");
     SuperLogger.log("A important msg", SuperLogger.LOGGING_LEVELS.CRTICAL);
 })
-
-
 
 
 //Create a new user---------------------------------------------------
@@ -31,7 +27,6 @@ USER_API.post('/', async (req, res, next) => {
     if (userName != "" && userEmail != "" && userPassword != "") {
 
         try {
-            ///TODO: Does the user exist?
             console.log(`userEmail = ${userEmail}`);
             let exists = await dbm.getUserFromEmail(userEmail);
 
@@ -41,13 +36,10 @@ USER_API.post('/', async (req, res, next) => {
             let user = new User();
             user.name = userName;
             user.email = userEmail;
-            ///TODO: Do not save passwords.
             user.pswHash = userPassword;
             
-                //TODO: What happens if this fails? 
                 user = await user.save(); 
                
-                 console.log('Saved user info:', user);
 
                 res.status(HTTPCodes.SuccesfullRespons.Ok).send({msg:"You sucsessfully made a new user!"}).end();
 
@@ -68,10 +60,7 @@ USER_API.post('/', async (req, res, next) => {
     } else {
         res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).send({message: "Mangler data felt"}).end();
     }
-
 });
-
-
 
 
 
@@ -93,21 +82,18 @@ USER_API.post('/login', async (req, res, next) => {
 
         } catch (error) {
             console.error(error);
-            res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg: "An error occurred while creating the user"}).end();
-            
+            res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg: "An error occurred while creating the user"}).end();  
         }
-
 });
 
 
 
 
 
-//Edit and update user by ID-------------------------------------
+//Edit and update user -------------------------------------
 USER_API.put('/', authenticateLogin, async (req, res, next) => {
 
     const { userID, userName, userEmail, userPassword } = req.body;
-     
 
     try {
         const user = new User(); 
@@ -123,11 +109,6 @@ USER_API.put('/', authenticateLogin, async (req, res, next) => {
         console.error(error);
         res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg: "Failed to update user"}).end();
     }
-
-
-    // TODO: Edit user
-    //TODO: The user info comes as part of the request 
-
 })
 
 
@@ -136,7 +117,7 @@ USER_API.put('/', authenticateLogin, async (req, res, next) => {
 
 
 
-//Delete user by ID-------------------------------------
+//Delete user -------------------------------------
 USER_API.delete('/delete',  async (req, res) => {
 
     const { userID } = req.body;
@@ -168,8 +149,6 @@ USER_API.delete('/delete',  async (req, res) => {
         console.error(error);
         res.status(HTTPCodes.ServerErrorRespons.InternalError).send({msg:"Failed to delete user"}).end();
     }
-
-// TODO: Delete user.
 })
 
     
@@ -179,22 +158,8 @@ USER_API.delete('/delete',  async (req, res) => {
 //Admin - Get user data -----------------------------------------------
 USER_API.get('/adminGetAll', authenticateLogin, async (req, res, next) => {
 
-    /// TODO: 
-    // Return user object
-
-
     const { userID } = req.body;
     console.log("This is the current user:", userID);
-
-    let userData = req.headers.authorization.split(" ")[1];
-
-    if(userData){
-        userData = JSON.parse(userData);
-        if(!userData || !userData.fduserid){
-            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
-            return;
-        }
-    } 
 
     try {
 
