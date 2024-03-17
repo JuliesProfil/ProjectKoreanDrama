@@ -10,8 +10,10 @@
 
     <script src="./Script/fetch.js"></script>
     <script src="./Script/templateLoader.js"></script>
-    <script src="./Script/mainUser.js"></script>
-    <script src="./Script/mainSeries.js"></script>
+    <script src="./Script/mainUsers.js"></script>
+    <script src="./Script/mainDramas.js"></script>
+    <script src="./Script/mainReviews.js"></script>
+    <script src="./Script/hashPassword.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     
 
@@ -27,78 +29,77 @@
         <button id="btnHome">Home</button>
         <button id="btnLogin">Login</button>
         <button id="btnLogout">Logout</button>
-        <button id="btnSeries">Series</button>
-        <button id="btnFavoriteSeries">Favorite series</button>
+        <button id="btnDramas">Dramas</button>
 
         <!-- Regular User Buttons -->
         <!-- <div id="regularUserButtons" style="display: none;">-->
             <button id="btnUserProfile">User Profile</button>
-
+<!--
             <button id="btnUpdateUser" style="display: none;">Update User</button>
-            <button id="btnDeleteUser" style="display: none;">Delete User</button>
+            <button id="btnDeleteUser" style="display: none;">Delete User</button>-->
         <!--</div>-->
 
         <!-- Admin User Buttons -->
         <!--<div id="adminUserButtons" style="display: none;"> -->
             <button id="btnListUsers">List Users</button>
         <!--</div> -->
-    </div>
+
 
     </div>
 
 
     <div id="divContent"></div>
-
     <div id="divFooter"></div>
 
 
-    <!-- All sites templates -->
-
+    <!-- All templates -->
     <!-- Welcome -->
-    <template id="tlHome">
-        <div class="home-box">
+    <template id="tlHomePage">
+        <div class="home-style">
             <h2>Welcome to this Korean Drama Application!</h2>
-            <p></p>
-            <!-- Add more things!! -->
+            <h3>Explore the world of korean dramas.</h3>
+            <p>Discover a diverse collection of captivating korean dramas and immerse yourself in their unique stories and cultures.</p>
+            <p>Finding your next favorite drama is easy. Browse by genre and uncover hidden gems.</p>
+            <p>As a member, you have the opportunity to enhance your experience by leaving reviews and ratings for the dramas you watch. Share your thoughts with our community and help others discover their new favourte drama.</p>
+            <p>Become a member and join this cmmunity in a journey filled with romance, intrigue, laughter, action and tears. Let the magic of korean dramas transport you to new worlds and unforgettable adventures.</p>
         </div>
     </template>
 
 
+  
     <!-- Login -->
     <template id="tlLogin">
-        <div class="login-box">
+        <div class="login-style">
             <h2>User Login</h2>
-            <form id="loginForm" action="#" method="POST" onsubmit="return loginUser()">
-                <input type="text" id="loginEMail" placeholder="EMail" />
+            <form id="loginForm">
+                <input type="text" id="loginEmail" placeholder="Email" />
                 <p></p>
                 <input type="password" id="loginPassword" placeholder="Password" />
                 <p></p>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Login" />
             </form>
-            <div class="register-link">Don't have an account?
-                <a href="#" onclick="return showCreateUser()">Create an account!</a>
+            <div class="createUser-link">Don't have an account?
+                <a href="#" id="createUserLink">Create an account!</a>
             </div>
         </div>
     </template>
 
 
-
     <!-- Create user -->
     <template id="tlCreateUser">
-        <div class="createUser-box">
+        <div class="createUser-style">
             <h2>Create User</h2>
-            <form id="createUserForm" action="#" method="POST" onsubmit="return createUser()">
+            <form id="createUserForm">
                 <input type="text" id="createUsername" placeholder="Username" />
                 <p></p>
                 <input type="text" id="createEmail" placeholder="Email" />
                 <p></p>
                 <input type="password" id="createPassword" placeholder="Password" />
                 <p></p>
-                <input type="submit" value="Submit" />
-
+                <input type="submit" value="Create user" />
             </form>
-            <div class="createUser-link">Already have an account?
-                <a href="#" onclick="return showLogin()">Login</a></div>
+            <div class="loginUser-link">Already have an account?
+                <a href="#" id="loginUserLink">Login</a></div>
         </div>
     </template>
 
@@ -106,73 +107,64 @@
 
 
 
-    <!-- Update user -->
-    <template id="tlUpdateUser">
-        <div class="updateUser-box">
-            <h2>Update User</h2>
-            <form id="updateUserForm" action="#" method="PUT" onsubmit="return updateUser()">
+    <template id="tlUserProfile">
+
+        <!-- User Information -->
+        <div class="listUser-style">
+            <h2>Your user information</h2>
+            <div id="userInfo">
+                <b> Your username: </b>
+                <p id="listUserName"></p>
+                <b> Your email:</b>
+                <p id="listEmail"></p>
+            </div>
+        </div>
+
+        <div class="updateUser-style">
+            <h2>Update user</h2>
+    
+            <!-- Update User Form -->
+            <form id="updateUserForm">
                 <input type="text" id="updateUserName" placeholder="New Username" />
                 <p></p>
                 <input type="text" id="updateEmail" placeholder="New Email" />
                 <p></p>
                 <input type="password" id="updatePassword" placeholder="New Password" />
                 <p></p>
-                <input type="submit" value="Update User" />
+                <input type="submit" value="Update user"/>
             </form>
         </div>
-    </template>
-
-
-
-
-    <!-- Delete user -->
-    <template id="tlDeleteUser">
-        <div class="deleteUser-box">
-            <h2>Delete User</h2>
-            <form id="deleteUserForm" action="#" method="DELETE" onsubmit="return deleteUser()">
-                <input type="text" id="deleteUserId" placeholder="User ID to be deleted" />
-                <p></p>
-                <input type="submit" value="Delete User" />
-            </form>
-        </div>
-    </template>
-
-
-
-
-    <!-- User infromation -->
-    <template id="tlListUser">
-        <div class="listUser-box">
-            <h2>Your user information</h2>
-            <div id="userInfo">
-                <b> Username: </b>
-                <p id="listUserName"></p>
-                <b> Email:</b>
-                <p id="listEmail"></p>
-                <b> Password: </b>
-                <p id="listPassword"></p>
-
+    
+            <!-- Delete User Form -->
+            <div class="deleteUser-style">
+                <h2>Delete User</h2>
+                <form id="deleteUserForm">
+                    <input type="text" id="deleteUserId" placeholder="User ID to be deleted" />
+                    <p></p>
+                    <input type="submit" value="Delete user"/>
+                </form>
             </div>
-        </div>
+    
     </template>
-
+    
 
 
     <!-- List all users -->
     <template id="tlListAllUsers">
-        <div class="listAllUsers-box">
+        <div class="listAllUsers-style">
+            <h2>List of all users</h2>
             <div id="listAllUsersContainer">
-                <h2>List of Users</h2>
                 <!-- User content here -->
             </div>
         </div>
     </template>
 
 
-    <template id="tlSeries">
-        <h2>List of Series</h2>
+    <template id="tlDramas">
+        <div class="dramas-style">
+        <h1>Different Korean Dramas</h1>
         <div>
-            <label for="genreSelector">Choose genre:</label>
+            <label for="genreSelector"><b>Choose a genre:</b></label>
             <select id="genreSelector">
                 <option disabled selected value="">All genres</option>
                 <option value="Thriller">Thriller</option>
@@ -183,48 +175,53 @@
                 <option value="Military">Military</option>
                 <option value="Comedy">Comedy</option>
                 <option value="Romance">Romance</option>
+                <option value="Horror">Horror</option>
+                <option value="Life">Life</option>
+                <option value="Historical">Historical</option>
             </select>
         </div>
 
-        <div id="seriesContent">
-            <!-- Series content here -->
+        <div id="dramaContent">
+            <!-- Drama content here -->
         </div>
+    </div>
     </template>
 
 
 
 
-<template id="tlOneSeries">
-    <h2>One Series</h2>
-    <div id="oneSeriesContent">
-        <!-- Series content here -->
+<template id="tlOneDrama">
+   <div class="oneDrama-style">
+    <div id="oneDramaContent1">
+        <!-- Drama content here -->
     </div>
+
+    <div id="averageRatingContainer">
+        <!-- Rating content here -->
+    </div>
+
+    <div id="oneDramaContent2">
+        <!-- Drama content here -->
+    </div>
+
     <h3>Here are all the reviews:</h3>
     <div id="listAllReviewsContainer">
          <!-- Review content here -->
     </div>
-    <h3>Here is the overall rating:</h3>
-    <div id="averageRatingContainer">
-        <!-- Rating content here -->
-   </div>
+    <br>
     
-
-
-
-    <h2>Spesific actions on series for user</h2>
-    <div id="userSeriesSection">
+    <br>
     <div id="reviewSection">
-        <h3>Add a review:</h3>
+        <h2>Add a review:</h2>
         <textarea id="commentInput" rows="3" cols="40" placeholder="Write your review here..."></textarea>
         <br>
 
         <label for="rating">Rate between (1-5 stars): </label>
         <input type="number" id="ratingInput" min="1" max="5">
 
-        <label for="isFavorite">Favorite:</label>
+        <label for="isFavorite">Add to favorites:</label>
             <input type="checkbox" id="isFavoriteInput">
             <br>
-
 
         <button id="btnAddReview">Add review</button>
     </div>
@@ -235,83 +232,38 @@
 
 
 
- <!-- List all reviews -->
- <template id="tlListAllReviews">
-    <div class="listAllReviews-box">
-        <div id="listAllReviewsContainer">
-            <h2>List of all reviws</h2>
-            <!-- User content here -->
-        </div>
-    </div>
-</template>
-
-
-<!-- List user reviews -->
-<template id="tlListUserReviews">
-    <div class="listUserReviews-box">
-        <div id="listUserReviewsContainer">
-            <h2>List of user reviws</h2>
-            <!-- User content here -->
-        </div>
-    </div>
-</template>
-
-
 
     <script>
         const btnUserProfile = document.getElementById("btnUserProfile");
         const btnHome = document.getElementById("btnHome");
-        const btnSeries = document.getElementById("btnSeries");
         const btnLogin = document.getElementById("btnLogin");
         const btnLogout = document.getElementById("btnLogout");
 
         const btnListUsers = document.getElementById("btnListUsers");
-        const btnListUser = document.getElementById("btnListUser");
-
-        const btnUpdateUser = document.getElementById("btnUpdateUser");
-        const btnDeleteUser = document.getElementById("btnDeleteUser");
         
-        const btnFavoriteSeries = document.getElementById("btnFavoriteSeries");
-        
-        //btnFavoriteSeries.addEventListener("click", showReviewsForUser);
-
-
-
+        //const btnListUser = document.getElementById("btnListUser");
+        //const btnUpdateUser = document.getElementById("btnUpdateUser");
+        //const btnDeleteUser = document.getElementById("btnDeleteUser");
+    
 
         btnLogin.addEventListener("click", showLogin);
         btnLogout.addEventListener("click", logoutUser);
-        
-        btnUserProfile.addEventListener("click", function() {
-
-            showUserProfile();
-            // Show the buttons
-            btnUpdateUser.style.display = 'block';
-            btnDeleteUser.style.display = 'block';
-        });
-
-
-        
-
 
         btnHome.addEventListener("click", showHomePage);
         btnListUsers.addEventListener("click", listUsers);
-        btnUpdateUser.addEventListener("click", showUpdateUser);
-        btnDeleteUser.addEventListener("click", showDeleteUser);
-
-
-        btnSeries.addEventListener("click", function(){
-            localStorage.removeItem("selectedDramaId");
-            showAllSeries();
+        //btnUpdateUser.addEventListener("click", showUpdateUser);
+        //btnDeleteUser.addEventListener("click", showDeleteUser);
+        
+        btnUserProfile.addEventListener("click", function() {
+            showUserProfile();
+            //btnUpdateUser.style.display = 'block';
+            //btnDeleteUser.style.display = 'block';
         });
         
-
-
 
 
 
     
-        
-
 
 
     </script>
@@ -326,34 +278,46 @@
                     "fdDramaID": 1,
                     "fdTitle": "Death's game",
                     "fdDescription": "After struggling for seven years without securing a stable job, Choi Yi Jae becomes engulfed in despair and hopelessness. Believing that ending his life would be the solution, Yi Jae is met with a surprise when he meets the entity known as Death at the gateway to Hell. Death assigns him a unique punishment: Yi Jae must endure death in 12 different bodies. To avoid his fate in Hell, he must find a way to survive.",
-                    "fdGenre": ["Thriller", "Drama", "Fantasy"],
+                    "fdGenre": "Thriller, Drama, Fantasy",
                     "fdEpisodeNumber": 8,
                     "fdReleaseDate": "2023-05-12",
-                    "fdRating": null,
-                    "fdReview": null,
                     "fdCoverImageURL": "bilder/deaths_game.jpg"
                 }, 
                 {
                     "fdDramaID": 2,
                     "fdTitle": "Reborn Rich",
                     "fdDescription": "After he mysteriusly and suddenly dies, Yoon Hyun Woo is reborn into a rich chaebol family, he wakes up as a kid inside the body of the youngest member of the family - Jin Do Jun.  After he realizes what has happened, Yoon Hyun Wo plots to use his new “identity” to formulate a hostile takeover of the group - and punish the people who killed him. Will he succeed?",
-                    "fdGenre": ["Drama", "Fantasy", "Business", "Political"],
+                    "fdGenre": "Drama, Fantasy, Business, Political",
                     "fdEpisodeNumber": 16,
                     "fdReleaseDate": "2022-09-11",
-                    "fdRating": null,
-                    "fdReview": null,
-                    "fdCoverImageURL": "public/bilder/reborn_rich.jpg"
+                    "fdCoverImageURL": "bilder/reborn_rich.jpg"
                 }, 
                 {
                     "fdDramaID": 3,
                     "fdTitle": "Crash Landing on You",
                     "fdDescription": "After getting into a paragliding accident, South Korean heiress Yoon Se Ri crash lands in North Korea. There, she meets North Korean army officer Ri Jung Hyuk, who agrees to help her return to South Korea. Despite the tension between their countries, the two of them start falling for one another.",
-                    "fdGenre": ["Political", "Military", "Comedy", "Romance"],
+                    "fdGenre": "Political, Military, Comedy, Romance",
                     "fdEpisodeNumber": 16,
                     "fdReleaseDate": "2019-12-14",
-                    "fdRating": null,
-                    "fdReview": null,
-                    "fdCoverImageURL": "public/bilder/crash_landing_on_you.jpg"
+                    "fdCoverImageURL": "bilder/crash_landing_on_you.jpg"
+                },
+                {
+                    "fdDramaID": 4,
+                    "fdTitle": "Itewon Class",
+                    "fdDescription": "Park Saeroyi's life has been turned upside down after he gets expelled from school for punching a bully and his father is killed in an accident. Following his father's steps, he opens a pub named DanBam in Itaewon and, along with his manager and staff, strives towards success and reaching greater heights.",
+                    "fdGenre": "Drama, Life, Business, Romance",
+                    "fdEpisodeNumber": 16,
+                    "fdReleaseDate": "2020-01-31",
+                    "fdCoverImageURL": "bilder/itewon_class.jpg"
+                },
+                {
+                    "fdDramaID": 5,
+                    "fdTitle": "Kingdom",
+                    "fdDescription": "No sooner does the Joseon King succumb to smallpox, do the rumors of his death begin. The Cho Clan, the clan of the pregnant Queen and her father, Chief State Councillor Cho Hak Joo, declares the Crown Prince, a traitor. Questioning the circumstances surrounding the King’s death, the Crown Prince and his guard, Moo Young, set forth to locate Lee Seung Hui, the last physician to treat his father. But the two end up stuck with Assistant Physician Seo Bi and a mysterious man named Young Shin in a village plagued with a terrifying disease.",
+                    "fdGenre": "Thriller, Historical, Horror, Political",
+                    "fdEpisodeNumber": 6,
+                    "fdReleaseDate": "2019-01-25",
+                    "fdCoverImageURL": "bilder/kingdom.jpg"
                 }
             ]
         }

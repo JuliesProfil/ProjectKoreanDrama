@@ -23,7 +23,7 @@ class User {
       }
     } catch (error) {
       console.error("Error saving user:", error);
-      return false; //it failed
+      return false; 
     }
   }
 
@@ -34,7 +34,7 @@ class User {
       return await dbm.deleteUser(this);
     } catch (error) {
       console.error("Error deleting user:", error);
-      return false; //it failed
+      return false; 
     }
   }
 }

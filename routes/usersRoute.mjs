@@ -1,11 +1,8 @@
-import express, {
-    response
-} from "express";
+import express, { response } from "express";
 import User from "../modules/user.mjs";
-import {
-    HTTPCodes
-} from "../modules/httpConstants.mjs";
-import SuperLogger from "../modules/SuperLogger.mjs";
+import { HTTPCodes } from "../modules/httpConstants.mjs";
+import SuperLogger from "../modules/superLogger.mjs";
+import { authenticateLogin } from "../modules/userMiddleware.mjs";
 
 import DBManager from "../modules/storageManager.mjs";
 
@@ -14,8 +11,6 @@ const dbm = new DBManager();
 
 const USER_API = express.Router();
 USER_API.use(express.json()); // This makes it so that express parses all incoming payloads as JSON for this route.
-
-const users = [];
 
 
 
@@ -109,28 +104,14 @@ USER_API.post('/login', async (req, res, next) => {
 
 
 //Edit and update user by ID-------------------------------------
-USER_API.put('/', async (req, res, next) => {
+USER_API.put('/', authenticateLogin, async (req, res, next) => {
 
     const { userID, userName, userEmail, userPassword } = req.body;
      
 
-    let userData = req.headers.authorization.split(" ")[1];
-
-    if(userData){
-        userData = JSON.parse(userData);
-        if(!userData || !userData.fduserid){
-            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
-            return;
-        }
-    } 
-
-    
-
-
     try {
         const user = new User(); 
-        user.id = userID; // Set the user ID
-
+        user.id = userID; 
         user.name = userName;
         user.email = userEmail;
         user.pswHash = userPassword;
@@ -144,8 +125,8 @@ USER_API.put('/', async (req, res, next) => {
     }
 
 
-    /// TODO: Edit user
- //TODO: The user info comes as part of the request 
+    // TODO: Edit user
+    //TODO: The user info comes as part of the request 
 
 })
 
@@ -156,13 +137,13 @@ USER_API.put('/', async (req, res, next) => {
 
 
 //Delete user by ID-------------------------------------
-USER_API.delete('/delete', async (req, res) => {
+USER_API.delete('/delete',  async (req, res) => {
 
     const { userID } = req.body;
     console.log("This is the current user:", userID);
-
+    
     let userData = req.headers.authorization.split(" ")[1];
-
+    
     if(userData){
         userData = JSON.parse(userData);
         if(!userData || !userData.fduserid){
@@ -170,7 +151,6 @@ USER_API.delete('/delete', async (req, res) => {
             return;
         }
     } 
-
 
     try {
         const user = new User(); 
@@ -196,8 +176,8 @@ USER_API.delete('/delete', async (req, res) => {
 
 
 
-//Get user data -----------------------------------------------
-USER_API.get('/all', async (req, res, next) => {
+//Admin - Get user data -----------------------------------------------
+USER_API.get('/adminGetAll', authenticateLogin, async (req, res, next) => {
 
     /// TODO: 
     // Return user object
@@ -227,11 +207,11 @@ USER_API.get('/all', async (req, res, next) => {
     if (getUsers != null) {
         res.status(HTTPCodes.SuccesfullRespons.Ok).json({msg:"Here are all the users", getUsers});
     } else {
-        res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({msg: "Users is not found and may not exist"}).end(); //If user doesn't exist
+        res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({msg: "Users is not found and may not exist"}).end(); 
     }
 } catch (error) {
     console.error(error);
-    res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to fetch users from database").end();
+    res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to find users from database").end();
 }
 })
 

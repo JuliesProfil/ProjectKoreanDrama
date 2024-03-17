@@ -1,9 +1,9 @@
 import 'dotenv/config'
-import express from 'express' // Express is installed using npm
-import USER_API from './routes/usersRoute.mjs'; // This is where we have defined the API for working with users.
-import SERIES_API from './routes/seriesRoute.mjs';
+import express from 'express' 
+import USER_API from './routes/usersRoute.mjs'; 
+import DRAMAS_API from './routes/dramasRoute.mjs';
 
-import SuperLogger from './modules/SuperLogger.mjs';
+import SuperLogger from './modules/superLogger.mjs';
 
 import printDeveloperStartupInportantInformationMSG from "./modules/developerHelpers.mjs";
 
@@ -18,14 +18,9 @@ const port = (process.env.PORT || 8080);
 server.set('port', port);
 
 
-//--------
-//server.use(express.json()); //parser json data //trur ikkje eg trenger det her
-//---------
 
-
-// Enable logging for server
 const logger = new SuperLogger();
-server.use(logger.createAutoHTTPRequestLogger()); // Will logg all http method requests
+server.use(logger.createAutoHTTPRequestLogger()); 
 
 
 // Defining a folder that will contain static files.
@@ -33,18 +28,9 @@ server.use(express.static('public'));
 
 // Telling the server to use the USER_API (all urls that uses this code will have to have the /user after the base address)
 server.use("/user", USER_API);
-server.use("/series", SERIES_API);
+server.use("/dramas", DRAMAS_API);
 
 
-//server.post("/login", login) ???trenger eg det??
-
-
-
-// A get request handler example)
-server.get("/", (req, res, next) => {
-
-    res.status(200).send(JSON.stringify({ msg: "These are not the droids...." })).end();
-});
 
 // Start the server 
 server.listen(server.get('port'), function () {

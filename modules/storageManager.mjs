@@ -1,12 +1,9 @@
 import pg from "pg";
-import SuperLogger from "./SuperLogger.mjs";
+import SuperLogger from "./superLogger.mjs";
+import User from "../modules/user.mjs";
 
-//-----------
 import dotenv from "dotenv";
 dotenv.config();
-
-//-----------
-
 
 
 /// TODO: is the structure / design of the DBManager as good as it could be?
@@ -24,8 +21,6 @@ class DBManager {
     }
 
     
-
-
     async createUser(user) {
 
         const client = new pg.Client(this.#credentials);
@@ -39,7 +34,10 @@ class DBManager {
 
             if (output.rows.length == 1) {
                 // We stored the user in the DB.
-                user.id = output.rows[0].fduserid;
+                user.id = output.rows[0].id;
+                console.log("User created successfully", user.id, output.rows.id );
+            } else {
+                console.log("User not created");
             }
 
         } catch (error) {
@@ -62,34 +60,22 @@ class DBManager {
 
         try {
             await client.connect();
-            const output = await client.query('Update tblUser set fdUserName = $1, fdEmail = $2, fdPassword = $3 where fdUserID = $4;', [user.name, user.email, user.pswHash, user.id]);
+            const output = await client.query('UPDATE tblUser SET fdUserName = $1, fdEmail = $2, fdPassword = $3 WHERE fdUserID = $4;', [user.name, user.email, user.pswHash, user.id]);
 
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
-
-            //TODO Did we update the user?
-
-            // Check if exactly one row was updated
-        if (output.rows.length === 1) {
-            // User was successfully updated
-            const updatedUser = output.rows[0];
-            return updatedUser;
-
+        //if (output.rows.length === 1) {
+        if (output.rowCount === 1) {
+            user.id = output.rows[0];
+            console.log("User updated successfully");
         } else {
-            // No rows were updated 
-            console.log('User not updated');
+            console.log("User not updated");
         }
-
 
         } catch (error) {
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
             console.error(error);
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end(); 
         }
-
         return user;
-
     }
 
 
@@ -100,35 +86,28 @@ class DBManager {
 
         try {
             await client.connect();
-            const output = await client.query('Delete from tblUser  where fdUserID = $1;', [user.id]);
 
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
+            let output = await client.query('DELETE FROM tblUserDramaList  WHERE fdUserID = $1;', [user.id]);
 
-            //TODO: Did the user get deleted?
-            // hva er dette når brukeren blir slettet?
+            output = await client.query('DELETE FROM tblUser  WHERE fdUserID = $1;', [user.id]);
+            
             if (output.rowCount === 1) {
-                // User was successfully deleted
                 return true;
-                //Hvordan får eg en massage ut her?????
             } else {
                 return false;
             }
 
         } catch (error) {
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
+            console.error(error);
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end();
         }
-
         return user;
     }
 
 
 
     
-
-    /// Gets User and Email so someone can login -----------
     async getUserFromPasswordAndEmail(email, password) {
         const sql = 'SELECT * FROM tblUser WHERE fdEmail = $1 AND fdPassword = $2';
         const params = [email, password];
@@ -151,11 +130,9 @@ class DBManager {
             client.end();
         }
     }
-    /// Gets User and Email-----------
 
 
 
-     /// Gets Email so someone can check for already existing -----------
      async getUserFromEmail(email) {
         const sql = 'SELECT * FROM tblUser WHERE fdEmail = $1';
         const params = [email];
@@ -177,11 +154,9 @@ class DBManager {
             client.end();
         }
     }
-    /// Gets Email-----------
 
 
     
-      // List all users-----------
       async listAllUsersFromDatabase() {
         const sql = 'SELECT * FROM tblUser';
         
@@ -201,15 +176,14 @@ class DBManager {
     }
 
 
-    async listAllSeriesFromDatabase() {
-        const sql = 'SELECT * FROM tblDramas';
+    async listAllDramasFromDatabase() {
+        const sql = 'SELECT * FROM tblDrama';
         
         const client = new pg.Client(this.#credentials);
         
         try {
             await client.connect();
             const rows = (await client.query(sql)).rows;
-            
             return rows;
 
         } catch (error) {
@@ -229,16 +203,17 @@ class DBManager {
             await client.connect();
            
             const output = await client.query(
-                'INSERT INTO tblDramas(fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate, fdRating, fdReview, fdCoverImageURL) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;',
-                [drama.fdTitle, drama.fdDescription, drama.fdGenre, drama.fdEpisodeNumber, drama.fdReleaseDate, drama.fdRating, drama.fdReview, drama.fdCoverImageURL]
+                'INSERT INTO tblDrama(fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate, fdCoverImageURL) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;',
+                [drama.fdTitle, drama.fdDescription, drama.fdGenre, drama.fdEpisodeNumber, drama.fdReleaseDate, drama.fdCoverImageURL]
             );
             
     
-            if (output.rows.length == 1) {
-                // We stored the drama in the DB.
-                drama.fdDramaID  = output.rows[0].fdDramaID;
+            if (output.rows.length > 0) {
+                drama.fddramaid  = output.rows[0].fddramaid;
+                console.log("Det fungerte")
                 return drama;
             } else {
+                console.log("Det ble ikkje postet!")
                 return null;
             }
         } catch (error) {
@@ -254,12 +229,12 @@ class DBManager {
 
 
     //To post multiple dramas
-    async postMultipleDramas(dramasData) {
+    async postMultipleDramas(dramaData) {
         const insertedDramas = [];
 
         try {
-            for (let i = 0; i < dramasData.length; i++) {
-                const drama = await this.postSingleDrama(dramasData[i]);
+            for (let i = 0; i < dramaData.length; i++) {
+                const drama = await this.postSingleDrama(dramaData[i]);
                 insertedDramas.push(drama);
             }
         } catch (error) {
@@ -284,7 +259,6 @@ class DBManager {
                 RETURNING fdUserDramaListID;
             `, [review.userId, review.dramaId, review.rating, review.comment, review.isFavorite]);
     
-            // If the review was successfully inserted, it updates the review object with its ID
             if (output.rows.length === 1) {
                 review.id = output.rows[0].fdUserDramaListID;
                 return review;
@@ -340,24 +314,12 @@ class DBManager {
 
 
 
-// The following is thre examples of how to get the db connection string from the enviorment variables.
-// They accomplish the same thing but in different ways.
-// It is a judgment call which one is the best. But go for the one you understand the best.
 
-// 1:
-//let connectionString = process.env.ENVIORMENT == "local" ? process.env.DB_CONNECTIONSTRING_LOCAL : process.env.DB_CONNECTIONSTRING_PROD;
-
-// 2:
 let connectionString = process.env.DB_CONNECTIONSTRING_LOCAL;
 if (process.env.ENVIORMENT != "local") {
     connectionString = process.env.DB_CONNECTIONSTRING_PROD;
 }
 
-//3: 
-//connectionString = process.env["DB_CONNECTIONSTRING_" + process.env.ENVIORMENT.toUpperCase()];
-
-
-// We are using an enviorment variable to get the db credentials 
 if (connectionString == undefined) {
     throw ("You forgot the db connection string");
 }

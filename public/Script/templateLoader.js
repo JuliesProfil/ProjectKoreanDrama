@@ -13,7 +13,7 @@ function loadNewTemplate(newTemplateID, destination, empty = false){
 
         destination.appendChild(clone);
     } else{
-        console.log("Your browser does not support newTemplates!")
+        console.log("Your browser does not support templates!")
     }
 
 }

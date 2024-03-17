@@ -1,14 +1,14 @@
 import express, { response } from "express";
 import { HTTPCodes } from "../modules/httpConstants.mjs";
-import Series from "../modules/series.mjs";
+import Dramas from "../modules/dramas.mjs";
 
 import DBManager from "../modules/storageManager.mjs";
 
 const dbm = new DBManager();
 
 
-const SERIES_API = express.Router();
-SERIES_API.use(express.json()); // This makes it so that express parses all incoming payloads as JSON for this route.
+const DRAMAS_API = express.Router();
+DRAMAS_API.use(express.json()); 
 
 
 
@@ -16,39 +16,29 @@ SERIES_API.use(express.json()); // This makes it so that express parses all inco
 
 
 //Post sereis data---------------------------------------------------
-SERIES_API.post('/', async (req, res, next) => { 
-    const series = req.body;
+DRAMAS_API.post('/', async (req, res, next) => { 
+    const dramas = req.body;
     
-    //const { fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate } = series[0];
+    //const { fdTitle, fdDescription, fdGenre, fdEpisodeNumber, fdReleaseDate } = dramas[0];
     console.log("Here is the body data:", req.body);
     
 
 
-    for (const issue of series) {
+    for (const issue of dramas) {
         if (!issue.fdTitle || !issue.fdDescription || !issue.fdGenre || !issue.fdEpisodeNumber || !issue.fdReleaseDate) {
             console.log("Something is wrong!")
             return res.status(HTTPCodes.ClientSideErrorRespons.BadRequest).send({ message: 'Invalid request body' });
         }
     }
-    
-    
-/*
-    const drama = {
-        fdTitle,
-        fdDescription,
-        fdGenre,
-        fdEpisodeNumber,
-        fdReleaseDate
-    };
-    */
+
 
     try {
-        const insertedDrama = await dbm.postMultipleDramas(series);
+        const insertedDrama = await dbm.postMultipleDramas(dramas);
 
         res.status(HTTPCodes.SuccesfullRespons.Ok).send({ message: 'Inserted Ok', code: 200, data: insertedDrama });
     } catch (error) {
         console.error(error);
-        res.status(HTTPCodes.ServerErrorRespons.InternalError).send({ message: 'An error occurred while posting series' });
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).send({ message: 'An error occurred while posting dramas' });
     }
 });
 
@@ -60,20 +50,20 @@ SERIES_API.post('/', async (req, res, next) => {
 
 
 
-//Get series data -----------------------------------------------
-SERIES_API.get('/all', async (req, res, next) => {
+//Get dramas data -----------------------------------------------
+DRAMAS_API.get('/all', async (req, res, next) => {
 
     try {
-        const allSeries = await dbm.listAllSeriesFromDatabase();
+        const allDramas = await dbm.listAllDramasFromDatabase();
 
-        if (allSeries !== null) {
-            res.status(HTTPCodes.SuccesfullRespons.Ok).json({ msg: "Here are all the series", allSeries });
+        if (allDramas !== null) {
+            res.status(HTTPCodes.SuccesfullRespons.Ok).json({ msg: "Here are all the dramas", allDramas });
         } else {
-            res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({ msg: "Series not found" }).end();
+            res.status(HTTPCodes.ClientSideErrorRespons.NotFound).json({ msg: "Dramas not found" }).end();
         }
     } catch (error) {
         console.error(error);
-        res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to fetch series from the database").end();
+        res.status(HTTPCodes.ServerErrorRespons.InternalError).send("Failed to fetch dramas from the database").end();
     }
 });
 
@@ -83,22 +73,11 @@ SERIES_API.get('/all', async (req, res, next) => {
 
 
 //Post review data---------------------------------------------------
-SERIES_API.post('/review', async (req, res, next) => { 
+DRAMAS_API.post('/review', async (req, res, next) => { 
     const { userID, dramaID, commentText, ratingNumber, isFavorite } = req.body;
 
     console.log("Here is the review body:", req.body)
 
-
-    let userData = req.headers.authorization.split(" ")[1];
-
-    if(userData){
-        userData = JSON.parse(userData);
-        if(!userData || !userData.fduserid){
-            res.status(HTTPCodes.ClientSideErrorRespons.Unauthorized).send({msg: "User not logged in. "}).end();
-            return;
-        }
-    } 
-    
 
     if (userID && dramaID && commentText && ratingNumber && typeof isFavorite === 'boolean') {
 
@@ -128,7 +107,7 @@ SERIES_API.post('/review', async (req, res, next) => {
 
 
 //Get review data -----------------------------------------------
-SERIES_API.get('/allReviews', async (req, res, next) => {
+DRAMAS_API.get('/allReviews', async (req, res, next) => {
 
     try {
         const allReviews = await dbm.listAllReviewsFromDatabase();
@@ -151,10 +130,4 @@ SERIES_API.get('/allReviews', async (req, res, next) => {
 
 
 
-
-
-
-
-//SERIES_API.get("/:id", Series.listAll);
-
-export default SERIES_API;
+export default DRAMAS_API;

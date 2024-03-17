@@ -13,7 +13,7 @@ async function postData(url, data, okHandler, errorHandler) {
         const responseData = await handleResponse(response);
         okHandler(responseData);
     } catch (error) {
-        errorHandler(error);
+        errorHandler("Error in postData", error);
     }
 }
 
@@ -33,7 +33,7 @@ async function putData(url, data, okHandler, errorHandler) {
         const responseData = await handleResponse(response);
         okHandler(responseData);
     } catch (error) {
-        errorHandler(error);
+        errorHandler("Error in putData", error);
     }
 }
 
@@ -51,7 +51,7 @@ async function getData(url, okHandler, errorHandler) {
         const responseData = await handleResponse(response);
         okHandler(responseData);
     } catch (error) {
-        errorHandler(error);
+        errorHandler("Error in getData", error);
     }
 }
 
@@ -71,14 +71,14 @@ async function deleteData(url, data, okHandler, errorHandler) {
         const responseData = await handleResponse(response);
         okHandler(responseData);
     } catch (error) {
-        errorHandler(error);
+        errorHandler("Error in deleteData", error);
     }
 }
 
 
 async function handleResponse(response) {
     if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
+        throw new Error(`The error: ${response.status}`);
     }
     return response.json();
 }

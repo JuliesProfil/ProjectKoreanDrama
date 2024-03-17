@@ -1,53 +1,23 @@
-
-
-"user strict"
-
-
-
 let divHeader = null;
 let divContent = null;
 let divFooter = null;
 
-document.addEventListener("DOMContentLoaded", domLoaded);
+document.addEventListener("DOMContentLoaded", contentLoaded);
 
-
-
-function domLoaded() {
+function contentLoaded() {
   sessionStorage.clear();
   //localStorage.clear();
   divContent = document.getElementById("divContent");
 
-  //legg in check (if) for token => om man har token trenger man ikkje å få opp denne login siden, då kan man heller få home 
-
-
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
-  console.log("Login Info:", loginData)
-
-
-
 
   if (loginData && loginData.fduserid) {
     showHomePage();
-
-
   } else {
     //showHomePage();
-    showLogin(); //Denne siden kan heller komme opp når man trenger å være logget inn, skjekker token/autoriasasjon
+    showLogin();
   }
-
 }
-
-
-async function sha256(str) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(str);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashHex = hashArray.map((byte) => byte.toString(16).padStart(2, "0")).join("");
-  return hashHex;
-}
-
-
 
 
 function createUser() {
@@ -57,57 +27,40 @@ function createUser() {
   sha256(createPassword).then((pswHash) => {
     console.log(pswHash);
 
-
   const data = {
     userName: createUsername.value,
     userEmail: createEmail.value,
-    userPassword: createPassword.value,
     userPassword: pswHash
-    //userName: createUsername.value,
   };
 
   postData("/user/", data,
     (res) => {
-      // ny er nå laget
-      // Vis login template
       console.log("Du er har laget en ny bruker!", res.data);
-
-      // Store user info in sessionStorage
       sessionStorage.setItem('userInfo', JSON.stringify(res.data));
-      console.log("Created user Info:", res.data)
-      //Ka må eg gjøre for at det skal fungere
-
+    
       showLogin();
-
     },
     (error) => {
       console.log(error, "Something went wrong!");
 
     });
   });
-
   return false;
 }
 
 
 
-
-
 function loginUser() {
-  const loginEmail = document.getElementById("loginEMail");
+  const loginEmail = document.getElementById("loginEmail");
   const loginPassword = document.getElementById("loginPassword");
   sha256(loginPassword).then((pswHash) => {
-    console.log(pswHash);
-
-
-
+  console.log(pswHash);
 
     //const isAdmin = (loginEmail === 'a@a.no' && loginPassword === 'a');
 
     const data = {
       userEmail: loginEmail.value,
       userPassword: pswHash
-      //userPassword: loginPassword.value
     };
 
     postData("/user/login", data,
@@ -140,7 +93,6 @@ function loginUser() {
         }
         */
 
-
         showHomePage();
       },
       (error) => {
@@ -156,17 +108,15 @@ function loginUser() {
 
 
 function logoutUser() {
-  // Clear session storage
   sessionStorage.removeItem('loginData');
   console.log("You are logged out!")
 
   /*
-  // Reset the display of buttons to their initial state
   document.getElementById('adminUserButtons').style.display = 'none';
   document.getElementById('regularUserButtons').style.display = 'none';
 */
 
-  showLogin();
+  showHomePage();
   //showHomePage();
 }
 
@@ -187,26 +137,25 @@ function updateUser() {
     userID: loginData.fduserid,
     userName: updateUserName.value,
     userEmail: updateEmail.value,
-    userPassword: updatePassword.value
-    //userPassword: pswHash
+    userPassword: pswHash
   };
 
 
-  console.log("User login updeate data:", loginData)
+  console.log("User login update data:", loginData)
 
   //if (loginData && loginData.fduserid) {
-    // Make a PUT request to update the user data
     putData("/user/", data,
       (res) => {
         console.log(res);
         sessionStorage.setItem('loginData', JSON.stringify(res.data));
         console.log(res.data);
         alert("User updated successfully!");
-        showHomePage();
+        showLogin();
       },
       (error) => {
         console.error(error);
         alert("Failed to update user.");
+        showLogin();
       }
     );
   //}
@@ -225,17 +174,16 @@ function deleteUser() {
     userID: parseInt(document.getElementById("deleteUserId").value)
   };
 
-  //console.log("User login delete data:", loginData)
+  console.log("User login delete data:", loginData)
 
 
   //if (loginData && loginData.fduserid) {
-    // Makes a DELETE request to delete the user data
     deleteData("/user/delete", data,
       (res) => {
         console.log(res);
         sessionStorage.removeItem('loginData', JSON.stringify(res.data)); 
         alert("User deleted successfully!");
-        showHomePage(); 
+        showLogin(); 
       },
       (error) => {
         console.error(error);
@@ -265,7 +213,6 @@ async function userProfile() {
     userID: loginData.fduserid,
     userName: updateUserName.value,
     userEmail: updateEmail.value,
-    //userPassword: updatePassword.value
     userPassword: pswHash
   };
 
@@ -301,14 +248,13 @@ async function listUsers() {
 
 
   //if (loginData && loginData.fduserid) {
-    // Makes a GET request to get the user data
-    getData("/user/all",
+    getData("/user/adminGetAll",
       (res) => {
-        console.log("Here is all the users: ", res); // Log response
-        console.log("User: ", res.getUsers[0]);
+        console.log("Here is all the users: ", res, data); 
+
 
         showListUsers();
-        displayUsers(res);
+        showAllUsers(res);
 
       },
       (error) => {
@@ -319,17 +265,21 @@ async function listUsers() {
 }
 
 
-function displayUsers(res) {
-  // Process the series data and generate HTML content
+function showAllUsers(res) {
   const userListDiv = document.getElementById("listAllUsersContainer");
-  //userListDiv.innerHTML = ""; // Clear existing content
+  userListDiv.innerHTML = ""; 
 
   for (let i = 0; i < res.getUsers.length; i++) {
     const user = res.getUsers[i];
 
-    // Create a div element for each drama
     const userItem = document.createElement("div");
-    userItem.innerHTML = `<p> ${user.fdusername} - ${user.fdemail}</p><br>`;
+    userItem.innerHTML = `
+    <ul>
+        <b>This is user ${user.fduserid}</b>
+        <li>Username: ${user.fdusername}</li>
+        <li>Email: ${user.fdemail}</li>
+    </ul>
+`;
     userListDiv.appendChild(userItem);
   }
 
@@ -338,65 +288,79 @@ function displayUsers(res) {
 
 
 
-
-
 function showListUsers() {
   loadNewTemplate("tlListAllUsers", divContent, true);
 }
 
-
-
-
 function showHomePage() {
-  loadNewTemplate("tlHome", divContent, true);
+  loadNewTemplate("tlHomePage", divContent, true);
 }
 
 
 function showCreateUser() {
   loadNewTemplate("tlCreateUser", divContent, true);
+
+  let loginUserLink = document.getElementById("loginUserLink");
+  loginUserLink.addEventListener("click", showLogin);
+
+  let createUserForm = document.getElementById("createUserForm");
+  createUserForm.addEventListener("submit", function() {
+      createUser();
+  });
 }
 
 
 function showLogin() {
   loadNewTemplate("tlLogin", divContent, true);
+
+  let createUserLink = document.getElementById("createUserLink");
+  createUserLink.addEventListener("click", showCreateUser);
+
+  let loginForm = document.getElementById("loginForm");
+  loginForm.addEventListener("submit", function() {
+      loginUser();
+  });
 }
 
 
 
-
-
-
 function showUserProfile() {
-  loadNewTemplate("tlListUser", divContent, true);
+  loadNewTemplate("tlUserProfile", divContent, true);
 
-  // Get the user's information from sessionStorage
+  let updateUserForm = document.getElementById("updateUserForm");
+  updateUserForm.addEventListener("submit", function() {
+      updateUser();
+  });
+
+  let deleteUserForm = document.getElementById("deleteUserForm");
+  deleteUserForm.addEventListener("submit", function() {
+      deleteUser();
+  });
+
+  showUpdateUser();
+  showDeleteUser();
+
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
 
   if (loginData != null) {
-    //Show the user information
     const listUserName = document.getElementById("listUserName");
     const listEmail = document.getElementById("listEmail");
-    const listPassword = document.getElementById("listPassword");
 
     listUserName.innerText = loginData.fdusername;
     listEmail.innerText = loginData.fdemail;
-    listPassword.innerText = loginData.fdpassword;
-
   }
 }
 
 
 
 function showUpdateUser() {
-  loadNewTemplate("tlUpdateUser", divContent, true);
+  //loadNewTemplate("tlUpdateUser", divContent, true);
 
-  // Get the current user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData update after:", loginData);
 
 
   if (loginData != null) {
-    // Display the current user information
     const updateUserName = document.getElementById("updateUserName");
     const updateEmail = document.getElementById("updateEmail");
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
@@ -413,15 +377,13 @@ function showUpdateUser() {
 
 
 function showDeleteUser() {
-  loadNewTemplate("tlDeleteUser", divContent, true);
+  //loadNewTemplate("tlDeleteUser", divContent, true);
 
-  // Get the current user's information from sessionStorage
   const loginData = JSON.parse(sessionStorage.getItem('loginData'));
   console.log("LoginData delete after:", loginData);
 
 
   if (loginData != null) {
-    // Display the current user information
     const deleteUserId = document.getElementById("deleteUserId");
 
     const loginData = JSON.parse(sessionStorage.getItem('loginData'));
